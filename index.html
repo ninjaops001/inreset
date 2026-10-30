@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INRESET | 電子部品修理・開発</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0e17;
+        }
+        header {
+            background: rgba(10, 14, 23, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #1e2a3a;
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00d4ff;
+            letter-spacing: 2px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #00d4ff;
+        }
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #0a0e17 0%, #1a2332 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%2300d4ff" opacity="0.1"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: #b0c4de;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            color: #0a0e17;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        }
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #00d4ff;
+        }
+        .about, .services {
+            background: #111827;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: #1a2332;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #2a3a4a;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+        }
+        .service-card h3 {
+            color: #00ff88;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .contact {
+            text-align: center;
+            background: linear-gradient(135deg, #1a2332, #0a0e17);
+            border-radius: 20px;
+            padding: 4rem;
+        }
+        .contact a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #05070a;
+            color: #666;
+            border-top: 1px solid #1e2a3a;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">INRESET</div>
+            <ul>
+                <li><a href="#about">会社概要</a></li>
+                <li><a href="#services">サービス</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="top">
+        <div class="hero-content">
+            <h1>INRESET</h1>
+            <p>電子部品の修理と開発で、技術の未来を再起動する</p>
+            <a href="#contact" class="btn">お問い合わせ</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>会社概要</h2>
+        <div class="about">
+            <p>INRESETは、電子部品の修理と開発を専門とする会社です。高精度な修理技術と独自の開発力で、お客様の機器を最適な状態に戻し、新たな価値を生み出します。</p>
+            <br>
+            <p>故障した基板の再生から、新規回路の設計・開発まで、幅広いニーズに対応。短納期・高品質をモットーに、ものづくりの現場を支えています。</p>
+            <br>
+            <p style="text-align: center; color: #00d4ff; font-style: italic; margin-top: 1.5rem;">
+                詳細解説は準備中です。<br>
+                Detailed explanation is in preparation.
+            </p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>サービス</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>電子部品修理</h3>
+                <p>基板修理、BGA/CSP交換、ジャンパー配線対応。メーカー終了品や回路図なしでも対応可能。高い再生率でコスト削減と環境負荷低減を実現します。</p>
+            </div>
+            <div class="service-card">
+                <h3>開発</h3>
+                <p>電子回路の設計・開発、試作、量産支援。お客様のアイデアを形にし、実用的な製品へと昇華させます。</p>
+            </div>
+            <div class="service-card">
+                <h3>カスタム対応</h3>
+                <p>小ロットから大規模まで柔軟に対応。診断から修理・改良まで一貫したサービスを提供します。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>お問い合わせ</h2>
+        <p><a href="mailto:transgun@gmail.com">transgun@gmail.com</a></p>
+        <p>修理のご相談や開発のお問い合わせはお気軽にどうぞ。</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 INRESET. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -90,6 +90,11 @@
         .service-card:hover { transform: translateY(-10px); border-color: #00d4ff; }
         .service-card h3 { color: #00ff88; margin-bottom: 1rem; font-size: 1.4rem; }
 
+        .menu-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+        .menu-grid figure { margin:0; background:#0d1520; border:1px solid #2a3a4a; border-radius:12px; overflow:hidden; }
+        .menu-grid img { width:100%; display:block; image-rendering:pixelated; }
+        .menu-grid figcaption { padding:.8rem 1rem; color:#c8d6e5; font-size:.95rem; }
+        @media (max-width:900px){ .menu-grid{grid-template-columns:1fr;} }
         table.spec { width: 100%; border-collapse: collapse; }
         table.spec th, table.spec td { text-align: left; padding: 1rem; border-bottom: 1px solid #2a3a4a; vertical-align: top; }
         table.spec th { color: #00ff88; width: 30%; font-weight: bold; }
@@ -178,6 +183,17 @@
                 <p>赤・黒・青を基調にした、16bit時代を思わせるデザイン。メニューは日本語と英語に対応します。</p>
             </div>
         </div>
+    </section>
+
+    <section id="menu">
+        <h2>メニュー画面（開発中）</h2>
+        <p class="sub">レトロな雰囲気の赤・黒・青のメニュー。日本語と英語を切り替えられます。</p>
+        <div class="menu-grid">
+            <figure><img src="images/mark16_menu_main.jpg" alt="Mark 16 メインメニュー"><figcaption>メインメニュー：カートリッジ起動、ゲームリスト、設定など</figcaption></figure>
+            <figure><img src="images/mark16_menu_settings.jpg" alt="Mark 16 設定画面"><figcaption>設定：画面比率、言語、自動起動など</figcaption></figure>
+            <figure><img src="images/mark16_menu_controller.jpg" alt="Mark 16 コントローラー設定"><figcaption>コントローラー設定：ボタン割り当て、連射、3/6ボタン切替</figcaption></figure>
+        </div>
+        <p class="sub">※画面は開発中のものです。製品版では変更になる場合があります。</p>
     </section>
 
     <section id="spec">

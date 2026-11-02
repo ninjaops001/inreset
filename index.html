@@ -143,6 +143,49 @@
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
+        .product-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            background: #1a2332;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #2a3a4a;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+        }
+        .product-card h3 {
+            color: #00ff88;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .product-card .badge {
+            display: inline-block;
+            padding: 0.2rem 0.9rem;
+            border: 1px solid #00ff88;
+            color: #00ff88;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+        .product-card .more {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #00d4ff;
+            font-weight: bold;
+        }
         .contact {
             text-align: center;
             background: linear-gradient(135deg, #1a2332, #0a0e17);
@@ -164,6 +207,7 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             nav ul { display: none; }
+            .product-card { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -174,6 +218,7 @@
             <ul>
                 <li><a href="#about">会社概要</a></li>
                 <li><a href="#services">サービス</a></li>
+                <li><a href="#products">開発中の製品</a></li>
                 <li><a href="#contact">お問い合わせ</a></li>
             </ul>
         </nav>
@@ -217,6 +262,19 @@
                 <p>小ロットから大規模まで柔軟に対応。診断から修理・改良まで一貫したサービスを提供します。</p>
             </div>
         </div>
+    </section>
+
+    <section id="products">
+        <h2>開発中の製品</h2>
+        <a href="mark16.html" class="product-card">
+            <img src="images/mark16_case_render.jpg" alt="Mark 16 本体ケースの3Dイメージ（開発中）">
+            <div>
+                <span class="badge">開発中</span>
+                <h3>Mark 16</h3>
+                <p>FPGA採用の16bitカートリッジ対応ゲーム機。お持ちのカートリッジを上から差し込み、HDMIでテレビへ。セーブステートやmicroSDでのアップデートにも対応予定です。</p>
+                <span class="more">詳しく見る &rarr;</span>
+            </div>
+        </a>
     </section>
 
     <section id="contact" class="contact">

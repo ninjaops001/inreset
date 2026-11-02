@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark 16（開発中） | INRESET</title>
+    <meta name="description" content="INRESETが開発中のFPGAゲーム機「Mark 16」。16bitカートリッジ対応、HDMI出力、セーブステート対応。クラウドファンディングを予定しています。">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0e17;
+        }
+        header {
+            background: rgba(10, 14, 23, 0.95);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid #1e2a3a;
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #00d4ff; letter-spacing: 2px; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #00d4ff; }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0e17 0%, #1a2332 100%);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+            padding: 7rem 2rem 4rem;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%2300d4ff" opacity="0.1"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 1200px; width: 100%;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border: 1px solid #00ff88; color: #00ff88;
+            border-radius: 50px; font-size: 0.9rem; font-weight: bold;
+            margin-bottom: 1rem; letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 4rem; line-height: 1.1; margin-bottom: 1rem;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero .lead { font-size: 1.4rem; margin-bottom: 1.5rem; color: #b0c4de; }
+        .hero .sub { color: #9fb0c6; margin-bottom: 2rem; }
+        .stripe { display: flex; height: 6px; width: 180px; border-radius: 3px; overflow: hidden; margin-bottom: 1.5rem; }
+        .stripe span { flex: 1; }
+        .stripe .r { background: #e0262e; } .stripe .k { background: #1b1b1f; border: 1px solid #333; } .stripe .b { background: #1e5bd8; }
+        .product-visual {
+            background: #111827; border: 1px solid #2a3a4a; border-radius: 20px;
+            padding: 1rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .product-visual img { width: 100%; display: block; border-radius: 12px; }
+        .product-visual figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; margin-top: 0.6rem; }
+
+        .btn {
+            display: inline-block; padding: 1rem 2.5rem;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            color: #0a0e17; text-decoration: none; border-radius: 50px; font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
+
+        section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+        h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #00d4ff; }
+        .panel { background: #111827; border-radius: 20px; padding: 3rem; margin-bottom: 2rem; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card {
+            background: #1a2332; padding: 2rem; border-radius: 15px;
+            border: 1px solid #2a3a4a; transition: transform 0.3s, border-color 0.3s;
+        }
+        .service-card:hover { transform: translateY(-10px); border-color: #00d4ff; }
+        .service-card h3 { color: #00ff88; margin-bottom: 1rem; font-size: 1.4rem; }
+
+        table.spec { width: 100%; border-collapse: collapse; }
+        table.spec th, table.spec td { text-align: left; padding: 1rem; border-bottom: 1px solid #2a3a4a; vertical-align: top; }
+        table.spec th { color: #00ff88; width: 30%; font-weight: bold; }
+        table.spec tr:last-child th, table.spec tr:last-child td { border-bottom: none; }
+        .planned { color: #00d4ff; font-size: 0.9rem; margin-left: 0.4rem; }
+
+        .notes { list-style: none; }
+        .notes li { padding-left: 1.4rem; position: relative; margin-bottom: 0.6rem; color: #b0c4de; }
+        .notes li::before { content: '※'; position: absolute; left: 0; color: #00d4ff; }
+
+        .contact {
+            text-align: center; background: linear-gradient(135deg, #1a2332, #0a0e17);
+            border-radius: 20px; padding: 4rem;
+        }
+        .contact p { margin-bottom: 1rem; }
+        .contact a.mail { color: #00d4ff; text-decoration: none; font-size: 1.2rem; }
+
+        footer { text-align: center; padding: 2rem; background: #05070a; color: #666; border-top: 1px solid #1e2a3a; }
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+            .panel { padding: 1.5rem; }
+            table.spec th, table.spec td { display: block; width: 100%; padding: 0.5rem 0; }
+            table.spec th { border-bottom: none; padding-top: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">INRESET</a>
+            <ul>
+                <li><a href="index.html#about">会社概要</a></li>
+                <li><a href="index.html#services">サービス</a></li>
+                <li><a href="mark16.html" class="active">開発中の製品</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="top">
+        <div class="hero-inner">
+            <div>
+                <span class="badge">開発中 / IN DEVELOPMENT</span>
+                <h1>Mark 16</h1>
+                <div class="stripe"><span class="r"></span><span class="k"></span><span class="b"></span></div>
+                <p class="lead">手持ちのカートリッジを、いまのテレビで。<br>FPGA採用の16bitカートリッジ対応ゲーム機</p>
+                <p class="sub">ソフトウェアによるエミュレーションではなく、FPGAで回路そのものを再現。カートリッジを上から差し込み、HDMIでテレビにきれいに映します。</p>
+                <a href="#crowdfunding" class="btn">クラウドファンディング予定</a>
+            </div>
+            <figure class="product-visual">
+                <img src="images/mark16_case_render.jpg" alt="Mark 16 本体ケースの3Dイメージ（開発中）">
+                <figcaption>※ 開発中のケース3Dイメージです。実際の製品とは異なる場合があります。</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="features">
+        <h2>特長</h2>
+        <div class="features-grid">
+            <div class="service-card">
+                <h3>実機カートリッジをそのまま</h3>
+                <p>16bitカートリッジ対応のトップローディング方式。お持ちのカートリッジを上から差し込むだけで遊べます。海外版カートリッジもそのまま差し込めます。</p>
+            </div>
+            <div class="service-card">
+                <h3>HDMIで映像と音声</h3>
+                <p>HDMIケーブル1本で、映像と音声をまとめてテレビやモニターへ出力。いまの画面でくっきり楽しめます。</p>
+            </div>
+            <div class="service-card">
+                <h3>セーブステート</h3>
+                <p>ゲームのどの場面でも状態を保存・再開できます。microSDカードにセーブデータやスクリーンショットを保存できます。</p>
+            </div>
+            <div class="service-card">
+                <h3>USBコントローラー</h3>
+                <p>USBコントローラー用のポートを2つ搭載。2人で同時に遊べます。</p>
+            </div>
+            <div class="service-card">
+                <h3>アップデートで進化</h3>
+                <p>microSDカードからファームウェアを更新できます。8bit系カートリッジへの対応も予定しています。</p>
+            </div>
+            <div class="service-card">
+                <h3>懐かしさを感じるデザイン</h3>
+                <p>赤・黒・青を基調にした、16bit時代を思わせるデザイン。メニューは日本語と英語に対応します。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="spec">
+        <h2>主な仕様（予定）</h2>
+        <div class="panel">
+            <table class="spec">
+                <tr><th>方式</th><td>FPGAによる回路再現</td></tr>
+                <tr><th>対応ソフト</th><td>16bitカートリッジ対応（国内版・海外版）<br>8bit系カートリッジ<span class="planned">（対応予定）</span></td></tr>
+                <tr><th>カートリッジ挿入</th><td>トップローディング（上から差し込み）</td></tr>
+                <tr><th>映像・音声出力</th><td>HDMI（映像＋音声）</td></tr>
+                <tr><th>コントローラー</th><td>USBポート × 2</td></tr>
+                <tr><th>電源</th><td>USB Type-C</td></tr>
+                <tr><th>ストレージ</th><td>microSDカード（セーブデータ、スクリーンショット、アップデート）</td></tr>
+                <tr><th>機能</th><td>セーブステート、スクリーンショット</td></tr>
+                <tr><th>メニュー言語</th><td>日本語 / 英語</td></tr>
+                <tr><th>別売品</th><td>ACアダプター、コントローラー</td></tr>
+            </table>
+        </div>
+        <div class="panel">
+            <ul class="notes">
+                <li>仕様・デザインは開発中のもので、予告なく変更する場合があります。</li>
+                <li>ACアダプターとコントローラーは付属しません（別売）。</li>
+                <li>すべてのソフトの動作を保証するものではありません。</li>
+                <li>本製品は各ゲーム機メーカーとは関係のない、INRESETの独自製品です。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="crowdfunding">
+        <h2>クラウドファンディング予定</h2>
+        <div class="panel" style="text-align: center;">
+            <p>Mark 16は、クラウドファンディングでの販売を予定しています。</p>
+            <br>
+            <p style="color: #00d4ff; font-style: italic;">
+                詳細は近日公開。<br>
+                Details coming soon.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>お問い合わせ</h2>
+        <p><a class="mail" href="mailto:transgun@gmail.com">transgun@gmail.com</a></p>
+        <p>Mark 16に関するご質問やご意見はお気軽にどうぞ。</p>
+        <p><a href="index.html" class="btn">トップページへ戻る</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 INRESET. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鳴魔奏乱録（開発中） | INRESET</title>
+    <meta name="description" content="INRESETが開発中のメガドライブ※用オリジナル新作ソフト『鳴魔奏乱録』。ドラマチックシミュレーションゲーム。">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0e17;
+        }
+        header {
+            background: rgba(10, 14, 23, 0.95);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid #1e2a3a;
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #00d4ff; letter-spacing: 2px; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #00d4ff; }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0e17 0%, #1a2332 100%);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+            padding: 7rem 2rem 4rem;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%2300d4ff" opacity="0.1"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 1200px; width: 100%;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border: 1px solid #00ff88; color: #00ff88;
+            border-radius: 50px; font-size: 0.9rem; font-weight: bold;
+            margin-bottom: 1rem; letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 4rem; line-height: 1.1; margin-bottom: 1rem;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero .lead { font-size: 1.4rem; margin-bottom: 1.5rem; color: #b0c4de; }
+        .hero .sub { color: #9fb0c6; margin-bottom: 2rem; }
+        .stripe { display: flex; height: 6px; width: 180px; border-radius: 3px; overflow: hidden; margin-bottom: 1.5rem; }
+        .stripe span { flex: 1; }
+        .stripe .r { background: #e0262e; } .stripe .k { background: #1b1b1f; border: 1px solid #333; } .stripe .b { background: #1e5bd8; }
+        .product-visual {
+            background: #111827; border: 1px solid #2a3a4a; border-radius: 20px;
+            padding: 1rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .product-visual img { width: 100%; display: block; border-radius: 12px; }
+        .product-visual figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; margin-top: 0.6rem; }
+
+        .btn {
+            display: inline-block; padding: 1rem 2.5rem;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            color: #0a0e17; text-decoration: none; border-radius: 50px; font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
+
+        section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+        h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #00d4ff; }
+        .panel { background: #111827; border-radius: 20px; padding: 3rem; margin-bottom: 2rem; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card {
+            background: #1a2332; padding: 2rem; border-radius: 15px;
+            border: 1px solid #2a3a4a; transition: transform 0.3s, border-color 0.3s;
+        }
+        .service-card:hover { transform: translateY(-10px); border-color: #00d4ff; }
+        .service-card h3 { color: #00ff88; margin-bottom: 1rem; font-size: 1.4rem; }
+
+        .menu-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+        .menu-grid figure { margin:0; background:#0d1520; border:1px solid #2a3a4a; border-radius:12px; overflow:hidden; }
+        .menu-grid img { width:100%; display:block; image-rendering:pixelated; }
+        .menu-grid figcaption { padding:.8rem 1rem; color:#c8d6e5; font-size:.95rem; }
+        @media (max-width:900px){ .menu-grid{grid-template-columns:1fr;} }
+        table.spec { width: 100%; border-collapse: collapse; }
+        table.spec th, table.spec td { text-align: left; padding: 1rem; border-bottom: 1px solid #2a3a4a; vertical-align: top; }
+        table.spec th { color: #00ff88; width: 30%; font-weight: bold; }
+        table.spec tr:last-child th, table.spec tr:last-child td { border-bottom: none; }
+        .planned { color: #00d4ff; font-size: 0.9rem; margin-left: 0.4rem; }
+
+        .notes { list-style: none; }
+        .notes li { padding-left: 1.4rem; position: relative; margin-bottom: 0.6rem; color: #b0c4de; }
+        .notes li::before { content: '※'; position: absolute; left: 0; color: #00d4ff; }
+
+        .contact {
+            text-align: center; background: linear-gradient(135deg, #1a2332, #0a0e17);
+            border-radius: 20px; padding: 4rem;
+        }
+        .contact p { margin-bottom: 1rem; }
+        .contact a.mail { color: #00d4ff; text-decoration: none; font-size: 1.2rem; }
+
+        footer { text-align: center; padding: 2rem; background: #05070a; color: #666; border-top: 1px solid #1e2a3a; }
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+            .panel { padding: 1.5rem; }
+            table.spec th, table.spec td { display: block; width: 100%; padding: 0.5rem 0; }
+            table.spec th { border-bottom: none; padding-top: 1rem; }
+        }
+      .shot{width:100%;border-radius:8px;image-rendering:pixelated;border:1px solid #1e2a3a}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">INRESET</a>
+            <ul>
+                <li><a href="index.html#about">会社概要</a></li>
+                <li><a href="index.html#services">サービス</a></li>
+                <li><a href="mark16.html" class="active">開発中の製品</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="top">
+        <div class="hero-inner">
+            <div>
+                <span class="badge">開発中 / IN DEVELOPMENT</span>
+                <h1>鳴魔奏乱録</h1>
+                <p class="sub">なるまそうらんろく</p>
+                <div class="stripe"><span class="r"></span><span class="k"></span><span class="b"></span></div>
+                <p class="lead">ドラマチックシミュレーションゲーム</p>
+                <p class="sub">メガドライブ※用オリジナル新作ソフト。会話パートとクォータービューの戦術バトルで描く、音で動く装甲と少女たちの物語。</p>
+            </div>
+            <figure class="product-visual">
+                <img class="shot" src="images/narumaso_title.png" alt="鳴魔奏乱録 タイトル画面">
+                <figcaption>※ 開発中の画面です。</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="story">
+        <h2>あらすじ</h2>
+        <p>元陸軍通信隊中尉の鐘崎律は、国境で部隊を魔獣に壊滅させられ、軍を離れようとしていた。そこへ「湊部放送局への出向」の辞令が届く。任されたのは第七特別放送班の班長。だが班の本当の姿は、音で動く人型装甲「鳴令機」を操る5人の少女たちの部隊だった。港を襲う魔獣と、その裏で暗躍する魔獣使いの組織「鵺鳴党」に、律と班員たちが立ち向かう。</p>
+    </section>
+
+    <section id="features">
+        <h2>特長</h2>
+        <div class="features-grid">
+            <div class="service-card"><h3>時間制限つきの選択</h3><p>会話中の選択には制限時間があります。選んだ答えで隊員との関係が変わり、戦闘にも影響します。</p></div>
+            <div class="service-card"><h3>鳴令機</h3><p>全高約3mのスチームパンクな武者鎧風メカ。足の車輪でスケートのように滑走します。</p></div>
+            <div class="service-card"><h3>指揮車から戦う戦術バトル</h3><p>格子線のないクォータービューのシミュレーション。主人公は前線に出ず、指揮車から通信を中継して隊員を支援します。</p></div>
+            <div class="service-card"><h3>歌入りオープニング</h3><p>アニメ主題歌風の歌入りオープニング。シネマスコープの画面で、多重スクロールの演出が曲に合わせて動きます。</p></div>
+            <div class="service-card"><h3>個性豊かな5人の隊員</h3><p>それぞれにイメージカラーの制服と専用の鳴令機。武器は旧日本陸軍の兵器がモチーフです。</p></div>
+        </div>
+    </section>
+
+    <section id="screens">
+        <h2>開発中の画面</h2>
+        <div class="menu-grid">
+            <figure><img class="shot" src="images/narumaso_talk.png" alt="会話画面"><figcaption>会話画面</figcaption></figure>
+            <figure><img class="shot" src="images/narumaso_op_squad.jpg" alt="オープニング 隊員カット"><figcaption>オープニング：5人の隊員</figcaption></figure>
+            <figure><img class="shot" src="images/narumaso_op_scroll.jpg" alt="オープニング 演出"><figcaption>オープニング：多重スクロール演出</figcaption></figure>
+        </div>
+        <p class="sub">※画面は開発中のものです。製品版では変更になる場合があります。</p>
+    </section>
+
+    <section id="spec">
+        <h2>概要</h2>
+        <table>
+            <tr><th>タイトル</th><td>鳴魔奏乱録（なるまそうらんろく）</td></tr>
+            <tr><th>ジャンル</th><td>ドラマチック・シミュレーションRPG</td></tr>
+            <tr><th>対応機種</th><td>メガドライブ※（オリジナル新作）</td></tr>
+            <tr><th>開発状況</th><td>試作版がエミュレータで動作中。オープニングと戦闘マップのグラフィックを作り込み中です。</td></tr>
+            <tr><th>発売日・価格</th><td>未定</td></tr>
+        </table>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>お問い合わせ</h2>
+        <p><a class="mail" href="mailto:transgun@gmail.com">transgun@gmail.com</a></p>
+        <p><a href="index.html" class="btn">トップページへ戻る</a></p>
+    </section>
+
+    <footer>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「メガドライブ」「MEGA DRIVE」は株式会社セガの登録商標です。本作はINRESETが独自に開発したソフトであり、株式会社セガとは一切関係がなく、同社による承認・保証を受けたものではありません。</p>
+        <p>&copy; 2026 INRESET. All rights reserved.</p>
+    </footer>
+</body>
+</html>

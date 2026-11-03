@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narumasouranroku (in development) | INRESET</title>
+    <meta name="description" content="Narumasouranroku, a MEGA DRIVE* game in development by INRESET. A dramatic simulation game.">
+    <link rel="alternate" hreflang="ja" href="https://ninjaops001.github.io/inreset/narumaso.html">
+    <link rel="alternate" hreflang="en" href="https://ninjaops001.github.io/inreset/en/narumaso.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="INRESET">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Narumasouranroku (in development) | INRESET">
+    <meta property="og:description" content="Narumasouranroku, a MEGA DRIVE* game in development by INRESET. A dramatic simulation game.">
+    <meta property="og:url" content="https://ninjaops001.github.io/inreset/en/narumaso.html">
+    <meta property="og:image" content="https://ninjaops001.github.io/inreset/images/og_narumaso.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Narumasouranroku (in development) | INRESET">
+    <meta name="twitter:description" content="Narumasouranroku, a MEGA DRIVE* game in development by INRESET. A dramatic simulation game.">
+    <meta name="twitter:image" content="https://ninjaops001.github.io/inreset/images/og_narumaso.jpg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0e17;
+        }
+        header {
+            background: rgba(10, 14, 23, 0.95);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid #1e2a3a;
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #00d4ff; letter-spacing: 2px; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #00d4ff; }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0e17 0%, #1a2332 100%);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+            padding: 7rem 2rem 4rem;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%2300d4ff" opacity="0.1"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 1200px; width: 100%;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border: 1px solid #00ff88; color: #00ff88;
+            border-radius: 50px; font-size: 0.9rem; font-weight: bold;
+            margin-bottom: 1rem; letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 4rem; line-height: 1.1; margin-bottom: 1rem;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero .lead { font-size: 1.4rem; margin-bottom: 1.5rem; color: #b0c4de; }
+        .hero .sub { color: #9fb0c6; margin-bottom: 2rem; }
+        .stripe { display: flex; height: 6px; width: 180px; border-radius: 3px; overflow: hidden; margin-bottom: 1.5rem; }
+        .stripe span { flex: 1; }
+        .stripe .r { background: #e0262e; } .stripe .k { background: #1b1b1f; border: 1px solid #333; } .stripe .b { background: #1e5bd8; }
+        .product-visual {
+            background: #111827; border: 1px solid #2a3a4a; border-radius: 20px;
+            padding: 1rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .product-visual img { width: 100%; display: block; border-radius: 12px; }
+        .product-visual figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; margin-top: 0.6rem; }
+
+        .btn {
+            display: inline-block; padding: 1rem 2.5rem;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            color: #0a0e17; text-decoration: none; border-radius: 50px; font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
+
+        section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+        h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #00d4ff; }
+        .panel { background: #111827; border-radius: 20px; padding: 3rem; margin-bottom: 2rem; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card {
+            background: #1a2332; padding: 2rem; border-radius: 15px;
+            border: 1px solid #2a3a4a; transition: transform 0.3s, border-color 0.3s;
+        }
+        .service-card:hover { transform: translateY(-10px); border-color: #00d4ff; }
+        .service-card h3 { color: #00ff88; margin-bottom: 1rem; font-size: 1.4rem; }
+
+        .menu-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+        .menu-grid figure { margin:0; background:#0d1520; border:1px solid #2a3a4a; border-radius:12px; overflow:hidden; }
+        .menu-grid img { width:100%; display:block; image-rendering:pixelated; }
+        .menu-grid figcaption { padding:.8rem 1rem; color:#c8d6e5; font-size:.95rem; }
+        @media (max-width:900px){ .menu-grid{grid-template-columns:1fr;} }
+        table.spec { width: 100%; border-collapse: collapse; }
+        table.spec th, table.spec td { text-align: left; padding: 1rem; border-bottom: 1px solid #2a3a4a; vertical-align: top; }
+        table.spec th { color: #00ff88; width: 30%; font-weight: bold; }
+        table.spec tr:last-child th, table.spec tr:last-child td { border-bottom: none; }
+        .planned { color: #00d4ff; font-size: 0.9rem; margin-left: 0.4rem; }
+
+        .notes { list-style: none; }
+        .notes li { padding-left: 1.4rem; position: relative; margin-bottom: 0.6rem; color: #b0c4de; }
+        .notes li::before { content: '※'; position: absolute; left: 0; color: #00d4ff; }
+
+        .contact {
+            text-align: center; background: linear-gradient(135deg, #1a2332, #0a0e17);
+            border-radius: 20px; padding: 4rem;
+        }
+        .contact p { margin-bottom: 1rem; }
+        .contact a.mail { color: #00d4ff; text-decoration: none; font-size: 1.2rem; }
+
+        footer { text-align: center; padding: 2rem; background: #05070a; color: #666; border-top: 1px solid #1e2a3a; }
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+            .panel { padding: 1.5rem; }
+            table.spec th, table.spec td { display: block; width: 100%; padding: 0.5rem 0; }
+            table.spec th { border-bottom: none; padding-top: 1rem; }
+        }
+      .shot{width:100%;border-radius:8px;image-rendering:pixelated;border:1px solid #1e2a3a}
+        nav ul { margin-left: auto; }
+        .lang { margin-left: 1.5rem; padding: 0.2rem 0.9rem; border: 1px solid #2a3a4a; border-radius: 50px; font-size: 0.85rem; color: #e0e0e0; text-decoration: none; white-space: nowrap; }
+        .lang:hover { border-color: #00d4ff; color: #00d4ff; }
+        .faq-item { background: #1a2332; border: 1px solid #2a3a4a; border-radius: 15px; padding: 1.5rem 2rem; margin-bottom: 1rem; }
+        .faq-item h3 { color: #00ff88; font-size: 1.15rem; margin-bottom: 0.6rem; }
+        .faq-item h3::before { content: 'Q. '; color: #00d4ff; }
+        .faq-item p { color: #c8d6e5; }
+        .faq-item p::before { content: 'A. '; color: #00d4ff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">INRESET</a>
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#products" class="active">Products</a></li>
+                <li><a href="blog.html">Dev Diary</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="../narumaso.html" class="lang" lang="ja" hreflang="ja">日本語</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="top">
+        <div class="hero-inner">
+            <div>
+                <span class="badge">IN DEVELOPMENT</span>
+                <h1>Narumasouranroku</h1>
+                <p class="sub" lang="ja">鳴魔奏乱録</p>
+                <div class="stripe"><span class="r"></span><span class="k"></span><span class="b"></span></div>
+                <p class="lead">A dramatic simulation game</p>
+                <p class="sub">Software for the MEGA DRIVE*. A story of sound-powered armor and the girls who pilot it, told through conversation scenes and quarter-view tactical battles.</p>
+            </div>
+            <figure class="product-visual">
+                <img class="shot" src="../images/narumaso_title.png" alt="Narumasouranroku title screen">
+                <figcaption>* Screen from development.</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="story">
+        <h2>Story</h2>
+        <p>Ritsu Kanezaki, a former lieutenant in the army signal corps, was about to leave the military after his unit was wiped out by magical beasts at the border. Then an order arrives: a transfer to the Minatobe Broadcasting Station. He is made leader of the 7th Special Broadcasting Unit. But the unit's true nature is a squad of five girls who pilot "Meireiki", humanoid armor powered by sound. Ritsu and his squad stand against the beasts attacking the harbor, and against "Nuemeitou", a secret organization of beast tamers working behind them.</p>
+    </section>
+
+    <section id="features">
+        <h2>Features</h2>
+        <div class="features-grid">
+            <div class="service-card"><h3>Timed choices</h3><p>Choices in conversations have a time limit. Your answers change your relationships with squad members and affect battles.</p></div>
+            <div class="service-card"><h3>Meireiki</h3><p>Steampunk, samurai-armor-style mecha about 3 m tall. They glide like skaters on wheels in their feet.</p></div>
+            <div class="service-card"><h3>Tactics from the command vehicle</h3><p>Quarter-view simulation battles without grid lines. The hero stays off the front line and supports the squad by relaying communications from the command vehicle.</p></div>
+            <div class="service-card"><h3>Opening with vocals</h3><p>An anime-style opening with a vocal theme song. In a cinemascope frame, multi-layer scrolling moves in time with the music.</p></div>
+            <div class="service-card"><h3>Five unique squad members</h3><p>Each has a uniform in her own color and her own Meireiki. The weapons are inspired by old Imperial Japanese Army equipment.</p></div>
+        </div>
+    </section>
+
+    <section id="screens">
+        <h2>Screens in development</h2>
+        <div class="menu-grid">
+            <figure><img class="shot" src="../images/narumaso_talk.png" alt="Conversation screen"><figcaption>Conversation screen</figcaption></figure>
+            <figure><img class="shot" src="../images/narumaso_op_squad.jpg" alt="Opening: squad members"><figcaption>Opening: the five squad members</figcaption></figure>
+            <figure><img class="shot" src="../images/narumaso_op_scroll.jpg" alt="Opening: scrolling scenes"><figcaption>Opening: multi-layer scrolling</figcaption></figure>
+        </div>
+        <p class="sub">* Screens are from development and may change in the final product.</p>
+    </section>
+
+    <section id="spec">
+        <h2>Overview</h2>
+        <div class="panel">
+        <table class="spec">
+            <tr><th>Title</th><td>Narumasouranroku (<span lang="ja">鳴魔奏乱録</span>)</td></tr>
+            <tr><th>Genre</th><td>Dramatic simulation RPG</td></tr>
+            <tr><th>Platform</th><td>Software for MEGA DRIVE*</td></tr>
+            <tr><th>Status</th><td>A prototype runs on an emulator. We are polishing the opening and the battle map graphics.</td></tr>
+            <tr><th>Release / price</th><td>Not decided</td></tr>
+        </table>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2>FAQ</h2>
+            <div class="faq-item"><h3>Can I play it on real MEGA DRIVE* hardware?</h3><p>We plan to make it playable on real hardware using a flash cartridge. Right now the prototype runs on an emulator, and real-hardware testing has not been done yet.</p></div>
+            <div class="faq-item"><h3>How far along is development?</h3><p>In the prototype (M1), the opening, title, conversations, battles and saving all work. We are now polishing the opening and the battle map graphics.</p></div>
+            <div class="faq-item"><h3>When is the release, and what is the price?</h3><p>Not decided yet. We will announce them as soon as they are.</p></div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p><a class="mail" href="mailto:transgun@gmail.com">transgun@gmail.com</a></p>
+        <p><a href="index.html" class="btn">Back to top page</a></p>
+    </section>
+
+    <footer>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">* "MEGA DRIVE" is a registered trademark of SEGA CORPORATION. This game is developed independently by INRESET and is not affiliated with, approved, or endorsed by SEGA CORPORATION.</p>
+        <p>&copy; 2026 INRESET. All rights reserved.</p>
+    </footer>
+</body>
+</html>

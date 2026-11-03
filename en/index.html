@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INRESET | Electronics Repair & Development</title>
+    <meta name="description" content="INRESET repairs and develops electronics. Now developing the FPGA game console "Mark 16" and the MEGA DRIVE* game "Narumasouranroku".">
+    <link rel="alternate" hreflang="ja" href="https://ninjaops001.github.io/inreset/">
+    <link rel="alternate" hreflang="en" href="https://ninjaops001.github.io/inreset/en/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="INRESET">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="INRESET | Electronics Repair & Development">
+    <meta property="og:description" content="INRESET repairs and develops electronics. Now developing the FPGA game console "Mark 16" and the MEGA DRIVE* game "Narumasouranroku".">
+    <meta property="og:url" content="https://ninjaops001.github.io/inreset/en/">
+    <meta property="og:image" content="https://ninjaops001.github.io/inreset/images/og_index.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="INRESET | Electronics Repair & Development">
+    <meta name="twitter:description" content="INRESET repairs and develops electronics. Now developing the FPGA game console "Mark 16" and the MEGA DRIVE* game "Narumasouranroku".">
+    <meta name="twitter:image" content="https://ninjaops001.github.io/inreset/images/og_index.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0e17;
+        }
+        header {
+            background: rgba(10, 14, 23, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #1e2a3a;
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00d4ff;
+            letter-spacing: 2px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #00d4ff;
+        }
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10,14,23,0.55), rgba(10,14,23,0.75)), url('../images/hero_space_base.jpg') center/cover no-repeat, #0a0e17;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%2300d4ff" opacity="0.1"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: #b0c4de;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            color: #0a0e17;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        }
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #00d4ff;
+        }
+        .about, .services {
+            background: #111827;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: #1a2332;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #2a3a4a;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+        }
+        .service-card h3 {
+            color: #00ff88;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .product-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            background: #1a2332;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #2a3a4a;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+        }
+        .product-card h3 {
+            color: #00ff88;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .product-card .badge {
+            display: inline-block;
+            padding: 0.2rem 0.9rem;
+            border: 1px solid #00ff88;
+            color: #00ff88;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+        .product-card .more {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+        .contact {
+            text-align: center;
+            background: linear-gradient(135deg, #1a2332, #0a0e17);
+            border-radius: 20px;
+            padding: 4rem;
+        }
+        .contact a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #05070a;
+            color: #666;
+            border-top: 1px solid #1e2a3a;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+            .product-card { grid-template-columns: 1fr; }
+        }
+        .cat-title{max-width:900px;margin:2rem auto 1rem;color:#00d4ff;border-left:4px solid #e60012;padding-left:.6rem;font-size:1.3rem}
+        nav ul { margin-left: auto; }
+        .lang { margin-left: 1.5rem; padding: 0.2rem 0.9rem; border: 1px solid #2a3a4a; border-radius: 50px; font-size: 0.85rem; color: #e0e0e0; text-decoration: none; white-space: nowrap; }
+        .lang:hover { border-color: #00d4ff; color: #00d4ff; }
+        .faq-item { background: #1a2332; border: 1px solid #2a3a4a; border-radius: 15px; padding: 1.5rem 2rem; margin-bottom: 1rem; }
+        .faq-item h3 { color: #00ff88; font-size: 1.15rem; margin-bottom: 0.6rem; }
+        .faq-item h3::before { content: 'Q. '; color: #00d4ff; }
+        .faq-item p { color: #c8d6e5; }
+        .faq-item p::before { content: 'A. '; color: #00d4ff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo" style="text-decoration:none">INRESET</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="blog.html">Dev Diary</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="../index.html" class="lang" lang="ja" hreflang="ja">日本語</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="top">
+        <div class="hero-content">
+            <h1>INRESET</h1>
+            <p>Rebooting the future of technology through electronics repair and development</p>
+            <a href="#contact" class="btn">Contact us</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About</h2>
+        <div class="about">
+            <p>INRESET specializes in the repair and development of electronic components. With precise repair skills and our own development capabilities, we restore your equipment to its best condition and create new value.</p>
+            <br>
+            <p>From restoring broken circuit boards to designing and developing new circuits, we cover a wide range of needs. With fast turnaround and high quality as our motto, we support people who make things.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Electronics repair</h3>
+                <p>Board repair, BGA/CSP replacement and jumper wiring. We can work on discontinued products and boards without schematics. A high restoration rate helps cut costs and reduce environmental impact.</p>
+            </div>
+            <div class="service-card">
+                <h3>Development</h3>
+                <p>Electronic circuit design and development, prototyping and mass-production support. We turn your ideas into practical products.</p>
+            </div>
+            <div class="service-card">
+                <h3>Custom work</h3>
+                <p>Flexible support from small lots to large scale. One-stop service from diagnosis to repair and improvement.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2>Products in development</h2>
+        <h3 class="cat-title">Game console</h3>
+        <a href="mark16.html" class="product-card">
+            <img src="../images/mark16_case_render.jpg" alt="Mark 16 case 3D image (in development)">
+            <div>
+                <span class="badge">In development</span>
+                <h3>Mark 16</h3>
+                <p>An FPGA-based console for 16-bit cartridges. Insert your own cartridges from the top and connect to your TV with DV output. Save states and firmware updates via microSD are planned.</p>
+                <span class="more">Learn more &rarr;</span>
+            </div>
+        </a>
+        <h3 class="cat-title">Game software</h3>
+        <a href="narumaso.html" class="product-card">
+            <img src="../images/narumaso_title.png" alt="Narumasouranroku title screen (in development)">
+            <div>
+                <span class="badge">In development</span>
+                <h3>Narumasouranroku</h3>
+                <p>A dramatic simulation game. Software for the MEGA DRIVE*.</p>
+                <span class="more">Learn more &rarr;</span>
+            </div>
+        </a>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p><a href="mailto:transgun@gmail.com">transgun@gmail.com</a></p>
+        <p>Feel free to contact us about repairs or development.</p>
+    </section>
+
+    <footer>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">* "MEGA DRIVE" and "GENESIS" are registered trademarks of SEGA CORPORATION. INRESET products are developed independently and are not affiliated with, approved, or endorsed by SEGA CORPORATION. These names are used only to describe compatibility.</p>
+        <p>&copy; 2026 INRESET. All rights reserved.</p>
+    </footer>
+</body>
+</html>

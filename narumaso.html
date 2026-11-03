@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>鳴魔奏乱録（開発中） | INRESET</title>
     <meta name="description" content="INRESETが開発中のメガドライブ※用ソフト『鳴魔奏乱録』。ドラマチックシミュレーションゲーム。">
+    <link rel="alternate" hreflang="ja" href="https://ninjaops001.github.io/inreset/narumaso.html">
+    <link rel="alternate" hreflang="en" href="https://ninjaops001.github.io/inreset/en/narumaso.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="INRESET">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="鳴魔奏乱録（開発中） | INRESET">
+    <meta property="og:description" content="INRESETが開発中のメガドライブ※用ソフト『鳴魔奏乱録』。ドラマチックシミュレーションゲーム。">
+    <meta property="og:url" content="https://ninjaops001.github.io/inreset/narumaso.html">
+    <meta property="og:image" content="https://ninjaops001.github.io/inreset/images/og_narumaso.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="鳴魔奏乱録（開発中） | INRESET">
+    <meta name="twitter:description" content="INRESETが開発中のメガドライブ※用ソフト『鳴魔奏乱録』。ドラマチックシミュレーションゲーム。">
+    <meta name="twitter:image" content="https://ninjaops001.github.io/inreset/images/og_narumaso.jpg">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -124,6 +139,14 @@
             table.spec th { border-bottom: none; padding-top: 1rem; }
         }
       .shot{width:100%;border-radius:8px;image-rendering:pixelated;border:1px solid #1e2a3a}
+        nav ul { margin-left: auto; }
+        .lang { margin-left: 1.5rem; padding: 0.2rem 0.9rem; border: 1px solid #2a3a4a; border-radius: 50px; font-size: 0.85rem; color: #e0e0e0; text-decoration: none; white-space: nowrap; }
+        .lang:hover { border-color: #00d4ff; color: #00d4ff; }
+        .faq-item { background: #1a2332; border: 1px solid #2a3a4a; border-radius: 15px; padding: 1.5rem 2rem; margin-bottom: 1rem; }
+        .faq-item h3 { color: #00ff88; font-size: 1.15rem; margin-bottom: 0.6rem; }
+        .faq-item h3::before { content: 'Q. '; color: #00d4ff; }
+        .faq-item p { color: #c8d6e5; }
+        .faq-item p::before { content: 'A. '; color: #00d4ff; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -133,9 +156,11 @@
             <ul>
                 <li><a href="index.html#about">会社概要</a></li>
                 <li><a href="index.html#services">サービス</a></li>
-                <li><a href="mark16.html" class="active">開発中の製品</a></li>
+                <li><a href="index.html#products" class="active">開発中の製品</a></li>
+                <li><a href="blog.html">開発日記</a></li>
                 <li><a href="index.html#contact">お問い合わせ</a></li>
             </ul>
+            <a href="en/narumaso.html" class="lang" lang="en" hreflang="en">EN</a>
         </nav>
     </header>
 
@@ -184,13 +209,22 @@
 
     <section id="spec">
         <h2>概要</h2>
-        <table>
+        <div class="panel">
+        <table class="spec">
             <tr><th>タイトル</th><td>鳴魔奏乱録（なるまそうらんろく）</td></tr>
             <tr><th>ジャンル</th><td>ドラマチック・シミュレーションRPG</td></tr>
             <tr><th>対応機種</th><td>メガドライブ※用ソフト</td></tr>
             <tr><th>開発状況</th><td>試作版がエミュレータで動作中。オープニングと戦闘マップのグラフィックを作り込み中です。</td></tr>
             <tr><th>発売日・価格</th><td>未定</td></tr>
         </table>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2>よくある質問</h2>
+            <div class="faq-item"><h3>メガドライブ※の実機で遊べますか？</h3><p>フラッシュカートリッジを使って、実機で遊べるようにする予定です。現在は試作版がエミュレータで動いている段階で、実機でのテストはまだ行っていません。</p></div>
+            <div class="faq-item"><h3>開発はどこまで進んでいますか？</h3><p>試作版（M1）で、オープニング、タイトル、会話、戦闘、セーブがひととおり動いています。いまはオープニングの演出と戦闘マップのグラフィックを作り込んでいます。</p></div>
+            <div class="faq-item"><h3>発売日と価格は？</h3><p>未定です。決まりしだいお知らせします。</p></div>
     </section>
 
     <section id="contact" class="contact">

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark 16 (in development) | INRESET</title>
+    <meta name="description" content="Mark 16, an FPGA game console in development by INRESET. MEGA DRIVE* cartridge compatible, DV output, save states planned. Crowdfunding planned.">
+    <link rel="alternate" hreflang="ja" href="https://ninjaops001.github.io/inreset/mark16.html">
+    <link rel="alternate" hreflang="en" href="https://ninjaops001.github.io/inreset/en/mark16.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="INRESET">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Mark 16 (in development) | INRESET">
+    <meta property="og:description" content="Mark 16, an FPGA game console in development by INRESET. MEGA DRIVE* cartridge compatible, DV output, save states planned. Crowdfunding planned.">
+    <meta property="og:url" content="https://ninjaops001.github.io/inreset/en/mark16.html">
+    <meta property="og:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mark 16 (in development) | INRESET">
+    <meta name="twitter:description" content="Mark 16, an FPGA game console in development by INRESET. MEGA DRIVE* cartridge compatible, DV output, save states planned. Crowdfunding planned.">
+    <meta name="twitter:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0e17;
+        }
+        header {
+            background: rgba(10, 14, 23, 0.95);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid #1e2a3a;
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #00d4ff; letter-spacing: 2px; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #00d4ff; }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0e17 0%, #1a2332 100%);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+            padding: 7rem 2rem 4rem;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%2300d4ff" opacity="0.1"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 1200px; width: 100%;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border: 1px solid #00ff88; color: #00ff88;
+            border-radius: 50px; font-size: 0.9rem; font-weight: bold;
+            margin-bottom: 1rem; letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 4rem; line-height: 1.1; margin-bottom: 1rem;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero .lead { font-size: 1.4rem; margin-bottom: 1.5rem; color: #b0c4de; }
+        .hero .sub { color: #9fb0c6; margin-bottom: 2rem; }
+        .stripe { display: flex; height: 6px; width: 180px; border-radius: 3px; overflow: hidden; margin-bottom: 1.5rem; }
+        .stripe span { flex: 1; }
+        .stripe .r { background: #e0262e; } .stripe .k { background: #1b1b1f; border: 1px solid #333; } .stripe .b { background: #1e5bd8; }
+        .product-visual {
+            background: #111827; border: 1px solid #2a3a4a; border-radius: 20px;
+            padding: 1rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .product-visual img { width: 100%; display: block; border-radius: 12px; }
+        .product-visual figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; margin-top: 0.6rem; }
+
+        .btn {
+            display: inline-block; padding: 1rem 2.5rem;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            color: #0a0e17; text-decoration: none; border-radius: 50px; font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
+
+        section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+        h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #00d4ff; }
+        .panel { background: #111827; border-radius: 20px; padding: 3rem; margin-bottom: 2rem; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card {
+            background: #1a2332; padding: 2rem; border-radius: 15px;
+            border: 1px solid #2a3a4a; transition: transform 0.3s, border-color 0.3s;
+        }
+        .service-card:hover { transform: translateY(-10px); border-color: #00d4ff; }
+        .service-card h3 { color: #00ff88; margin-bottom: 1rem; font-size: 1.4rem; }
+
+        .menu-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+        .menu-grid figure { margin:0; background:#0d1520; border:1px solid #2a3a4a; border-radius:12px; overflow:hidden; }
+        .menu-grid img { width:100%; display:block; image-rendering:pixelated; }
+        .menu-grid figcaption { padding:.8rem 1rem; color:#c8d6e5; font-size:.95rem; }
+        @media (max-width:900px){ .menu-grid{grid-template-columns:1fr;} }
+        table.spec { width: 100%; border-collapse: collapse; }
+        table.spec th, table.spec td { text-align: left; padding: 1rem; border-bottom: 1px solid #2a3a4a; vertical-align: top; }
+        table.spec th { color: #00ff88; width: 30%; font-weight: bold; }
+        table.spec tr:last-child th, table.spec tr:last-child td { border-bottom: none; }
+        .planned { color: #00d4ff; font-size: 0.9rem; margin-left: 0.4rem; }
+
+        .notes { list-style: none; }
+        .notes li { padding-left: 1.4rem; position: relative; margin-bottom: 0.6rem; color: #b0c4de; }
+        .notes li::before { content: '※'; position: absolute; left: 0; color: #00d4ff; }
+
+        .contact {
+            text-align: center; background: linear-gradient(135deg, #1a2332, #0a0e17);
+            border-radius: 20px; padding: 4rem;
+        }
+        .contact p { margin-bottom: 1rem; }
+        .contact a.mail { color: #00d4ff; text-decoration: none; font-size: 1.2rem; }
+
+        footer { text-align: center; padding: 2rem; background: #05070a; color: #666; border-top: 1px solid #1e2a3a; }
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+            .panel { padding: 1.5rem; }
+            table.spec th, table.spec td { display: block; width: 100%; padding: 0.5rem 0; }
+            table.spec th { border-bottom: none; padding-top: 1rem; }
+        }
+        nav ul { margin-left: auto; }
+        .lang { margin-left: 1.5rem; padding: 0.2rem 0.9rem; border: 1px solid #2a3a4a; border-radius: 50px; font-size: 0.85rem; color: #e0e0e0; text-decoration: none; white-space: nowrap; }
+        .lang:hover { border-color: #00d4ff; color: #00d4ff; }
+        .faq-item { background: #1a2332; border: 1px solid #2a3a4a; border-radius: 15px; padding: 1.5rem 2rem; margin-bottom: 1rem; }
+        .faq-item h3 { color: #00ff88; font-size: 1.15rem; margin-bottom: 0.6rem; }
+        .faq-item h3::before { content: 'Q. '; color: #00d4ff; }
+        .faq-item p { color: #c8d6e5; }
+        .faq-item p::before { content: 'A. '; color: #00d4ff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">INRESET</a>
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#products" class="active">Products</a></li>
+                <li><a href="blog.html">Dev Diary</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="../mark16.html" class="lang" lang="ja" hreflang="ja">日本語</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="top">
+        <div class="hero-inner">
+            <div>
+                <span class="badge">IN DEVELOPMENT</span>
+                <h1>Mark 16</h1>
+                <div class="stripe"><span class="r"></span><span class="k"></span><span class="b"></span></div>
+                <p class="lead">Play your own cartridges on today's TVs.<br>An FPGA console for MEGA DRIVE* cartridges</p>
+                <p class="sub">Not software emulation: the original circuits are reproduced in an FPGA. Insert a cartridge from the top and enjoy a clean picture on your TV through DV output.</p>
+                <a href="#crowdfunding" class="btn">Crowdfunding planned</a>
+            </div>
+            <figure class="product-visual">
+                <img src="../images/mark16_case_render.jpg" alt="Mark 16 case 3D image (in development)">
+                <figcaption>* 3D image of the case in development. The actual product may differ.</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="features">
+        <h2>Features</h2>
+        <div class="features-grid">
+            <div class="service-card">
+                <h3>Your real cartridges</h3>
+                <p>Top-loading design for MEGA DRIVE* cartridges. Just insert your cartridge from the top and play. Overseas GENESIS* cartridges fit as they are.</p>
+            </div>
+            <div class="service-card">
+                <h3>DV output for picture and sound</h3>
+                <p>One cable carries both picture and sound to your TV or monitor, for a sharp image on modern screens.</p>
+            </div>
+            <div class="service-card">
+                <h3>Save states</h3>
+                <p>Save and resume your game at any point. Save data and screenshots are stored on a microSD card.</p>
+            </div>
+            <div class="service-card">
+                <h3>USB controllers</h3>
+                <p>Two USB controller ports for two-player games.</p>
+            </div>
+            <div class="service-card">
+                <h3>Improves with updates</h3>
+                <p>Firmware can be updated from a microSD card. Support for 8-bit cartridges is also planned.</p>
+            </div>
+            <div class="service-card">
+                <h3>A nostalgic design</h3>
+                <p>A red, black and blue design that recalls the 16-bit era. The menu is available in Japanese and English.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2>Menu screens (in development)</h2>
+        <p class="sub">A retro red, black and blue menu. Switch between Japanese and English.</p>
+        <div class="menu-grid">
+            <figure><img src="../images/mark16_menu_main.jpg" alt="Mark 16 main menu"><figcaption>Main menu: boot cartridge, game list, settings and more</figcaption></figure>
+            <figure><img src="../images/mark16_menu_settings.jpg" alt="Mark 16 settings screen"><figcaption>Settings: aspect ratio, language, auto boot and more</figcaption></figure>
+            <figure><img src="../images/mark16_menu_controller.jpg" alt="Mark 16 controller settings"><figcaption>Controller settings: button mapping, turbo, 3/6-button mode</figcaption></figure>
+        </div>
+        <p class="sub">* Screens are from development and may change in the final product.</p>
+    </section>
+
+    <section id="spec">
+        <h2>Main specifications (planned)</h2>
+        <div class="panel">
+            <table class="spec">
+                <tr><th>Method</th><td>Circuit reproduction in FPGA</td></tr>
+                <tr><th>Supported software</th><td>MEGA DRIVE* / GENESIS* cartridges (Japanese and overseas)<br>8-bit cartridges<span class="planned">(planned)</span></td></tr>
+                <tr><th>Cartridge loading</th><td>Top loading</td></tr>
+                <tr><th>Video / audio output</th><td>DV output (video + audio)</td></tr>
+                <tr><th>Controllers</th><td>USB ports &times; 2</td></tr>
+                <tr><th>Power</th><td>USB Type-C</td></tr>
+                <tr><th>Storage</th><td>microSD card (save data, screenshots, updates)</td></tr>
+                <tr><th>Functions</th><td>Save states, screenshots</td></tr>
+                <tr><th>Menu languages</th><td>Japanese / English</td></tr>
+                <tr><th>Sold separately</th><td>AC adapter<br>Controller<span class="planned">(bundling under consideration)</span></td></tr>
+            </table>
+        </div>
+        <div class="panel">
+            <ul class="notes">
+                <li>Specifications and design are under development and may change without notice.</li>
+                <li>The AC adapter is not included (sold separately). Bundling a controller is under consideration.</li>
+                <li>We do not guarantee that all software will work.</li>
+                <li>This is an independent INRESET product, not affiliated with any game console maker.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="crowdfunding">
+        <h2>Crowdfunding planned</h2>
+        <div class="panel" style="text-align: center;">
+            <p>We plan to sell Mark 16 through crowdfunding.</p>
+            <br>
+            <p style="color: #00d4ff; font-style: italic;">Details coming soon.</p>
+        </div>
+    </section>
+
+    <section id="future">
+        <h2>Future plans</h2>
+        <div class="features-grid">
+            <div class="service-card">
+                <h3>Mark 16 CD<span class="planned">(planned)</span></h3>
+                <p>A CD-ROM model compatible with MEGA-CD*. Planned as an expansion of the Mark 16 series.</p>
+            </div>
+            <div class="service-card">
+                <h3>Mark S<span class="planned">(planned)</span></h3>
+                <p>A console compatible with SEGA SATURN*. Planned as INRESET's next-generation console.</p>
+            </div>
+        </div>
+        <p style="text-align:center;color:#888;font-size:0.9rem">* Planned products. Specifications and timing may change.</p>
+    </section>
+
+    <section id="faq">
+        <h2>FAQ</h2>
+            <div class="faq-item"><h3>Can I use overseas (GENESIS*) cartridges?</h3><p>Yes. Overseas cartridges fit as they are. * We do not guarantee that all software will work.</p></div>
+            <div class="faq-item"><h3>How does it connect to a TV?</h3><p>Through DV output. One cable carries both picture and sound to your TV or monitor.</p></div>
+            <div class="faq-item"><h3>Is it an emulator?</h3><p>No. It is not software emulation: the original circuits are reproduced in an FPGA.</p></div>
+            <div class="faq-item"><h3>How much input latency is there?</h3><p>We have a dedicated measurement feature for latency. We will publish results measured on the prototype on this site later.</p></div>
+            <div class="faq-item"><h3>When is the release, and what is the price?</h3><p>We plan to sell it through crowdfunding. The start date and price are not decided yet. We will announce them as soon as they are.</p></div>
+            <div class="faq-item"><h3>Is a controller included?</h3><p>Mark 16 supports USB controllers (2 USB ports). Whether to include a controller is under consideration.</p></div>
+            <div class="faq-item"><h3>Does it support save states?</h3><p>Yes, planned. You will be able to save your game at any point and resume later.</p></div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p><a class="mail" href="mailto:transgun@gmail.com">transgun@gmail.com</a></p>
+        <p>Feel free to send us questions or feedback about Mark 16.</p>
+        <p><a href="index.html" class="btn">Back to top page</a></p>
+    </section>
+
+    <footer>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">* "MEGA DRIVE", "GENESIS", "MEGA-CD" and "SEGA SATURN" are registered trademarks of SEGA CORPORATION. Mark 16 is a product developed independently by INRESET and is not affiliated with, approved, or endorsed by SEGA CORPORATION. These names are used only to describe compatibility.</p>
+        <p>&copy; 2026 INRESET. All rights reserved.</p>
+    </footer>
+</body>
+</html>

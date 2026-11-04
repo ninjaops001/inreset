@@ -120,6 +120,13 @@
         .menu-grid img { width:100%; display:block; image-rendering:pixelated; }
         .menu-grid figcaption { padding:.8rem 1rem; color:#c8d6e5; font-size:.95rem; }
         @media (max-width:900px){ .menu-grid{grid-template-columns:1fr;} }
+        .aspect-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
+        .aspect-grid figure { margin:0; background:#1a2332; border:1px solid #2a3a4a; border-radius:15px; padding:1.2rem; }
+        .aspect-grid img { width:100%; display:block; border-radius:8px; }
+        .aspect-grid h3 { color:#00ff88; margin:1rem 0 .5rem; font-size:1.3rem; }
+        .aspect-grid p { color:#c8d6e5; font-size:.95rem; }
+        .aspect-grid .rec { color:#00d4ff; margin-top:.5rem; font-size:.9rem; }
+        @media (max-width:900px){ .aspect-grid{grid-template-columns:1fr;} }
         table.spec { width: 100%; border-collapse: collapse; }
         table.spec th, table.spec td { text-align: left; padding: 1rem; border-bottom: 1px solid #2a3a4a; vertical-align: top; }
         table.spec th { color: #00ff88; width: 30%; font-weight: bold; }
@@ -230,6 +237,17 @@
             <figure><img src="../images/mark16_menu_controller.jpg" alt="Mark 16 controller settings"><figcaption>Controller settings: button mapping, turbo, 3/6-button mode</figcaption></figure>
         </div>
         <p class="sub">* Screens are from development and may change in the final product.</p>
+    </section>
+
+    <section id="aspect">
+        <h2>Aspect Ratio Settings (Illustrated)</h2>
+        <p class="sub">How a 320×224 game picture appears on a 16:9 TV (1920×1080). The blue frame is the game picture; black areas are borders.</p>
+        <div class="aspect-grid">
+            <figure><img src="../images/aspect_43.svg" alt="4:3 (Standard) diagram" loading="lazy"><h3>4:3 (Standard)</h3><p>The original CRT TV look, with black bars on the left and right.</p><p class="rec">Recommended for: playing with the authentic look of the era</p></figure>
+            <figure><img src="../images/aspect_1x1.svg" alt="1×1 Square Pixels diagram" loading="lazy"><h3>1×1 Square Pixels</h3><p>Each dot stays square, scaled to fill the screen height. The scale isn't a whole number, so dot widths can vary slightly.</p><p class="rec">Recommended for: seeing pixel shapes accurately</p></figure>
+            <figure><img src="../images/aspect_169.svg" alt="16:9 Stretch diagram" loading="lazy"><h3>16:9 Stretch</h3><p>Stretched to fill the whole widescreen. No black bars, but the picture is wider.</p><p class="rec">Recommended for: filling the entire screen</p></figure>
+            <figure><img src="../images/aspect_int.svg" alt="Sharp (Integer Scale) diagram" loading="lazy"><h3>Sharp (Integer Scale)</h3><p>Scaled only by whole numbers (e.g. 4×). Every dot is the same size for the sharpest image, with larger black borders.</p><p class="rec">Recommended for: the crispest pixels above all</p></figure>
+        </div>
     </section>
 
     <section id="spec">

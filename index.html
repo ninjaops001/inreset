@@ -247,6 +247,12 @@
     </style>
 </head>
 <body>
+<div id="splash" onclick="this.remove()" style="position:fixed;inset:0;background:#000;z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:opacity .6s;">
+<img src="images/inreset_logo.png" alt="INRESET" style="width:min(70vw,520px);animation:spl 1.4s steps(12) both;image-rendering:pixelated;">
+<div style="color:#888;font-size:12px;margin-top:24px;letter-spacing:2px;">クリックでスキップ</div></div>
+<style>@keyframes spl{0%{transform:translateY(-60vh);filter:brightness(3)}70%{transform:translateY(0);filter:brightness(1)}85%{filter:brightness(2.5)}100%{filter:brightness(1)}}</style>
+<script>(function(){var s=document.getElementById('splash');if(sessionStorage.getItem('splashSeen')){s.remove();return}sessionStorage.setItem('splashSeen','1');setTimeout(function(){if(s.parentNode){s.style.opacity=0;setTimeout(function(){s.remove()},600)}},2400)})();</script>
+
     <header>
         <nav>
             <div class="logo"><img src="images/inreset_logo.png" alt="INRESET" style="height:40px;width:auto;display:block;"></div>

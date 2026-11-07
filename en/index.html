@@ -331,5 +331,9 @@
         <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">* "MEGA DRIVE" and "GENESIS" are registered trademarks of SEGA CORPORATION. INRESET products are developed independently and are not affiliated with, approved, or endorsed by SEGA CORPORATION. These names are used only to describe compatibility.</p>
         <p>&copy; 2026 INRESET. All rights reserved.</p>
     </footer>
+<div id="alice" style="position:fixed;right:16px;bottom:16px;z-index:999;display:flex;align-items:flex-end;gap:8px;font-size:14px;">
+<div id="alice-msg" style="background:#fff;color:#111;border:3px solid #e60012;border-radius:10px;padding:8px 12px;max-width:220px;box-shadow:0 4px 12px rgba(0,0,0,.4);position:relative;">I'm Alice from INRESET. Welcome!<button onclick="document.getElementById('alice-msg').style.display='none'" aria-label="Close" style="position:absolute;top:-10px;right:-10px;width:22px;height:22px;border-radius:50%;border:none;background:#0047ab;color:#fff;cursor:pointer;line-height:22px;padding:0;">×</button></div>
+<img src="../images/alice.png" alt="Alice" onclick="var b=document.getElementById('alice-msg');b.style.display=b.style.display==='none'?'block':'none'" style="width:72px;height:72px;border-radius:50%;border:3px solid #0047ab;image-rendering:pixelated;cursor:pointer;background:#000;">
+</div>
 </body>
 </html>

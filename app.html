@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MM61W9VECC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MM61W9VECC');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark16Manager｜PCアプリの紹介・ダウンロード | INRESET</title>
+    <meta name="description" content="Mark 16のmicroSDカードをパソコンで整理。ゲームの追加、紹介文・サムネイルの編集、セーブのバックアップができるPCアプリ。Windows・Mac用ベータ版を配布中です。">
+    <link rel="alternate" hreflang="ja" href="https://ninjaops001.github.io/inreset/app.html">
+    <link rel="alternate" hreflang="en" href="https://ninjaops001.github.io/inreset/en/app.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="INRESET">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="Mark16Manager｜PCアプリの紹介・ダウンロード | INRESET">
+    <meta property="og:description" content="Mark 16のmicroSDカードをパソコンで整理。ゲームの追加、紹介文・サムネイルの編集、セーブのバックアップができるPCアプリ。Windows・Mac用ベータ版を配布中です。">
+    <meta property="og:url" content="https://ninjaops001.github.io/inreset/app.html">
+    <meta property="og:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:site" content="@tellmit611">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mark16Manager｜PCアプリの紹介・ダウンロード | INRESET">
+    <meta name="twitter:description" content="Mark 16のmicroSDカードをパソコンで整理。ゲームの追加、紹介文・サムネイルの編集、セーブのバックアップができるPCアプリ。Windows・Mac用ベータ版を配布中です。">
+    <meta name="twitter:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0e17;
+        }
+        header {
+            background: rgba(10, 14, 23, 0.95);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid #1e2a3a;
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #00d4ff; letter-spacing: 2px; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #00d4ff; }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0e17 0%, #1a2332 100%);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+            padding: 7rem 2rem 4rem;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%2300d4ff" opacity="0.1"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 1200px; width: 100%;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border: 1px solid #00ff88; color: #00ff88;
+            border-radius: 50px; font-size: 0.9rem; font-weight: bold;
+            margin-bottom: 1rem; letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 4rem; line-height: 1.1; margin-bottom: 1rem;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero .lead { font-size: 1.4rem; margin-bottom: 1.5rem; color: #b0c4de; }
+        .hero .sub { color: #9fb0c6; margin-bottom: 2rem; }
+        .stripe { display: flex; height: 6px; width: 180px; border-radius: 3px; overflow: hidden; margin-bottom: 1.5rem; }
+        .stripe span { flex: 1; }
+        .stripe .r { background: #e0262e; } .stripe .k { background: #1b1b1f; border: 1px solid #333; } .stripe .b { background: #1e5bd8; }
+        .product-visual {
+            background: #111827; border: 1px solid #2a3a4a; border-radius: 20px;
+            padding: 1rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .product-visual img { width: 100%; display: block; border-radius: 12px; }
+        .product-visual figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; margin-top: 0.6rem; }
+
+        .btn {
+            display: inline-block; padding: 1rem 2.5rem;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            color: #0a0e17; text-decoration: none; border-radius: 50px; font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
+
+        section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+        h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #00d4ff; }
+        .panel { background: #111827; border-radius: 20px; padding: 3rem; margin-bottom: 2rem; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card {
+            background: #1a2332; padding: 2rem; border-radius: 15px;
+            border: 1px solid #2a3a4a; transition: transform 0.3s, border-color 0.3s;
+        }
+        .service-card:hover { transform: translateY(-10px); border-color: #00d4ff; }
+        .service-card h3 { color: #00ff88; margin-bottom: 1rem; font-size: 1.4rem; }
+
+        .menu-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+        .menu-grid figure { margin:0; background:#0d1520; border:1px solid #2a3a4a; border-radius:12px; overflow:hidden; }
+        .menu-grid img { width:100%; display:block; image-rendering:pixelated; }
+        .menu-grid figcaption { padding:.8rem 1rem; color:#c8d6e5; font-size:.95rem; }
+        @media (max-width:900px){ .menu-grid{grid-template-columns:1fr;} }
+        .aspect-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
+        .aspect-grid figure { margin:0; background:#1a2332; border:1px solid #2a3a4a; border-radius:15px; padding:1.2rem; }
+        .aspect-grid img { width:100%; display:block; border-radius:8px; }
+        .aspect-grid h3 { color:#00ff88; margin:1rem 0 .5rem; font-size:1.3rem; }
+        .aspect-grid p { color:#c8d6e5; font-size:.95rem; }
+        .aspect-grid .rec { color:#00d4ff; margin-top:.5rem; font-size:.9rem; }
+        @media (max-width:900px){ .aspect-grid{grid-template-columns:1fr;} }
+        table.spec { width: 100%; border-collapse: collapse; }
+        table.spec th, table.spec td { text-align: left; padding: 1rem; border-bottom: 1px solid #2a3a4a; vertical-align: top; }
+        table.spec th { color: #00ff88; width: 30%; font-weight: bold; }
+        table.spec tr:last-child th, table.spec tr:last-child td { border-bottom: none; }
+        .planned { color: #00d4ff; font-size: 0.9rem; margin-left: 0.4rem; }
+
+        .notes { list-style: none; }
+        .notes li { padding-left: 1.4rem; position: relative; margin-bottom: 0.6rem; color: #b0c4de; }
+        .notes li::before { content: '※'; position: absolute; left: 0; color: #00d4ff; }
+
+        .contact {
+            text-align: center; background: linear-gradient(135deg, #1a2332, #0a0e17);
+            border-radius: 20px; padding: 4rem;
+        }
+        .contact p { margin-bottom: 1rem; }
+        .contact a.mail { color: #00d4ff; text-decoration: none; font-size: 1.2rem; }
+
+        footer { text-align: center; padding: 2rem; background: #05070a; color: #666; border-top: 1px solid #1e2a3a; }
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+            .panel { padding: 1.5rem; }
+            table.spec th, table.spec td { display: block; width: 100%; padding: 0.5rem 0; }
+            table.spec th { border-bottom: none; padding-top: 1rem; }
+        }
+        nav ul { margin-left: auto; }
+        .lang { margin-left: 1.5rem; padding: 0.2rem 0.9rem; border: 1px solid #2a3a4a; border-radius: 50px; font-size: 0.85rem; color: #e0e0e0; text-decoration: none; white-space: nowrap; }
+        .lang:hover { border-color: #00d4ff; color: #00d4ff; }
+        .faq-item { background: #1a2332; border: 1px solid #2a3a4a; border-radius: 15px; padding: 1.5rem 2rem; margin-bottom: 1rem; }
+        .faq-item h3 { color: #00ff88; font-size: 1.15rem; margin-bottom: 0.6rem; }
+        .faq-item h3::before { content: 'Q. '; color: #00d4ff; }
+        .faq-item p { color: #c8d6e5; }
+        .faq-item p::before { content: 'A. '; color: #00d4ff; font-weight: bold; }
+    </style>
+    <link rel="stylesheet" href="site-nav.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="images/inreset_logo.png" alt="INRESET" style="height:40px;width:auto;display:block;"></a>
+            <ul>
+                <li><a href="index.html#about">会社概要</a></li>
+                <li><a href="index.html#services">サービス</a></li>
+                <li><a href="index.html#products">開発中の製品</a></li>
+                <li><a href="app.html" class="active">PCアプリ</a></li>
+                <li><a href="blog.html">開発日記</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+            <a href="en/app.html" class="lang" lang="en" hreflang="en">EN</a>
+        </nav>
+    </header>
+<main>
+<section class="hero app-hero"><div class="hero-inner"><span class="badge">PCアプリ · v0.1.0 ベータ版</span><h1>Mark16Manager</h1><div class="stripe"><span class="r"></span><span class="k"></span><span class="b"></span></div><p class="lead">Mark 16のmicroSDカードを、パソコンでかんたん整理。</p><p class="sub">Mark 16を使う方のための、Windows・Mac用管理アプリです。カードリーダーでmicroSDカードをつなぎ、ゲームの追加、メニューの編集、セーブのバックアップができます。画面は日本語・英語を切り替えられます。Pythonのインストールは不要です。</p><a href="#downloads" class="btn">ベータ版をダウンロード</a><div class="app-contents"><a href="#features">できること</a><a href="#howto">使い方</a><a href="#folders">SDカードの中身</a><a href="#first-launch">初回の起動</a></div></div></section>
+<section id="features"><h2>アプリでできること</h2><p>パソコンでカードを整理して、Mark 16に戻すためのアプリです。アプリ自体でゲームを遊んだり、本体と直接通信したりするものではありません。</p>
+<article class="feature" id="games"><h3>01 · ゲームを追加・整理</h3><p>microSDカードのドライブを選び、ゲームのROMファイルを一覧にドラッグ＆ドロップ。「追加」ボタンでも選べます。ファイルは <code>/MDTANG/ROMS</code> にコピーされます。<code>.md</code>・<code>.bin</code>・<code>.gen</code>形式、1本あたり4 MiBまで対応しています。</p><ul><li>カード内のゲームを一覧表示。名前の変更や削除もできます。</li><li>上下に移動して並び順を保存すると、ファイル名の先頭に番号が付きます。</li><li>555本のソフト一覧から、名前・ジャンル・発売元・年の候補を表示します。候補が正しいか確認して使ってください。</li></ul><figure><a href="images/app/app_games_ja.png"><img src="images/app/app_games_ja.png" alt="日本語のゲーム一覧、紹介文プレビュー、サムネイル編集画面" width="1280" loading="lazy"></a><figcaption>開発途中の画面です。v0.1.0と細部が異なる場合があります。日本語のゲーム画面。画像を押すと大きく見られます。表示はデモ用です。ゲームデータや画像は付属しません。</figcaption></figure></article>
+<div class="detail-grid"><article class="feature"><h3>02 · 表示名を編集</h3><p>ROMのファイル名が、本体メニューの表示名になります。アプリから名前を変えると、関連する紹介文・サムネイルのファイル名も一緒に変わります。ソフト一覧の候補も利用できます。</p></article><article class="feature"><h3>03 · 日本語・英語の紹介文</h3><p>2つの言語を別々に編集し、その場で見え方を確認できます。最大4行、日本語は1行12文字、英語は16文字（UTF-8・512バイトまで）。英語は単語の区切りで折り返し、v33 / m2-menu11の本体メニューと同じルールです。長すぎる文は警告します。</p></article><article class="feature"><h3>04 · サムネイルを作成</h3><p>画像を選ぶかドラッグして、4色の <code>.m16</code> 形式に自動変換。保存データは96×28ピクセル、本体では96×56で表示します。仕上がりを見ながら、紹介文と一緒に保存できます。</p></article></div>
+<article class="feature"><h3>05 · セーブをバックアップ・復元</h3><p>カード内の <code>.srm</code> を、パソコンの日時付きフォルダにまとめてバックアップ。SHA-256でコピーを確認します。バックアップを選んでカードへ戻すこともでき、上書き前のセーブは <code>.srm.bak</code> として残します。</p><p>カセットのRAMコピー起動で保存した <code>/MDTANG/SAVES/CART_*.srm</code> や、旧形式のROMの隣にあるセーブも対象です。カード上のファイルを扱う機能で、実物のカセットのSRAMを直接読み書きすることはできません。</p><figure><a href="images/app/app_saves_ja.png"><img src="images/app/app_saves_ja.png" alt="セーブのバックアップ先と復元用一覧" width="1280" loading="lazy"></a><figcaption>セーブデータ画面。カセットのセーブを含む実機での動作確認は、これから行います。</figcaption></figure></article>
+<article class="feature"><h3>06 · ファームウェアを準備 <span class="planned">本体の更新は今後対応予定</span></h3><p>FPGA用の <code>.fs</code>、Pico用の <code>.uf2</code> を <code>/MDTANG/FPGA</code> に配置します。ファイル名から分かる版数を記録し、比較できる場合は古い版への変更を警告します。</p><div class="notice">今できるのは、カードに更新ファイルを置くところまでです。本体がSDカードから更新する機能は未対応です。画面の版数はカード上の情報で、本体に入っている版数を直接確認したものではありません。</div><figure><a href="images/app/app_firmware_ja.png"><img src="images/app/app_firmware_ja.png" alt="FPGAとPicoの更新ファイルを準備する画面" width="1280" loading="lazy"></a><figcaption>ファームウェア準備画面。この操作だけで本体の更新は行われません。</figcaption></figure></article>
+<article class="feature"><h3>07 · スクリーンショットを書き出し <span class="planned">本体の撮影は今後対応予定</span></h3><p><code>/MDTANG/SHOTS</code> にある対応画像を一覧表示し、PNGにしてパソコンへ保存できます。元の大きさ・2倍を選べます。今後使う予定の <code>.m16s</code> 形式の読み込みにも対応しています。</p><p>本体がこの形式で撮影・保存する機能は、まだ未対応です。将来の機能に向けた準備で、今はアプリから本体画面を撮影できません。</p></article>
+<div class="notice">開発中のベータ版です。実際のカード・本体での確認はこれから行います。変更前にmicroSDカード全体をバックアップしてください。セーブステート、EEPROMセーブ、カセットの直接起動、実物のカセットとのセーブ転送は、このアプリでは利用できません。</div><p>ご自身が利用する権利のあるゲームデータ・画像だけを使ってください。このページではROMを配布していません。</p></section>
+<section id="howto"><h2>使い方の流れ</h2><ol class="steps"><li>Mark 16の電源を切り、microSDカードを取り出します。カードリーダーでパソコンにつなぎます。</li><li>パソコンに合うZIPをダウンロードして、すべて展開します。Mark16Managerを開きます。</li><li>画面上部でSDカードのドライブを選びます。パソコン本体や別のドライブを選ばないよう、よく確認してください。</li><li>ゲームを追加し、名前・紹介文・サムネイルを編集して保存します。必要に応じてセーブもバックアップします。</li><li>アプリを閉じ、パソコンの「安全な取り外し」でカードを取り外します。</li><li>カードをMark 16に戻して、電源を入れます。</li></ol></section>
+<section id="folders"><h2>microSDカードの中身</h2><pre><code>/MDTANG/
+├── ROMS/    ゲーム（.md / .bin / .gen）
+├── INFO/    日本語・英語の紹介文
+├── THUMBS/  メニュー用サムネイル（.m16）
+├── SAVES/   セーブ（CART_*.srmを含む）
+├── FPGA/    更新ファイルの準備（本体は今後対応予定）
+└── SHOTS/   画像（本体の撮影は今後対応予定）</code></pre><p class="os-note">紹介文の例：<code>INFO/ゲーム.bin.ja.txt</code> ／ 画像の例：<code>THUMBS/ゲーム.bin.m16</code>。旧形式のROMの隣にあるセーブもアプリで見つけられます。</p></section>
+<section id="downloads"><h2>v0.1.0をダウンロード</h2><p>署名なしのベータ版です。お使いのパソコンに合うものを選び、ZIPをすべて展開してから開いてください。</p><div class="download-grid"><article class="download-card"><h3>Windows</h3><small>v0.1.0 · ベータ版<br>60.16 MB (60,161,643 bytes)</small><a class="btn" href="https://github.com/ninjaops001/inreset/releases/download/mark16-manager-v0.1.0/Mark16Manager-Windows.zip" aria-label="Windows v0.1.0 ZIP">Windows ZIP ↓</a></article><article class="download-card"><h3>Mac (Apple silicon)</h3><small>v0.1.0 · ベータ版<br>42.34 MB (42,336,672 bytes)</small><a class="btn" href="https://github.com/ninjaops001/inreset/releases/download/mark16-manager-v0.1.0/Mark16Manager-macOS-arm64.zip" aria-label="Mac (Apple silicon) v0.1.0 ZIP">Mac (Apple silicon) ZIP ↓</a></article><article class="download-card"><h3>Mac (Intel)</h3><small>v0.1.0 · ベータ版<br>47.74 MB (47,735,129 bytes)</small><a class="btn" href="https://github.com/ninjaops001/inreset/releases/download/mark16-manager-v0.1.0/Mark16Manager-macOS-x86_64.zip" aria-label="Mac (Intel) v0.1.0 ZIP">Mac (Intel) ZIP ↓</a></article></div><p class="os-note">ビルドと起動チェックで確認できた環境：Windows Server 2025（x64）、macOS 26.7.2（Appleシリコン）、macOS 15.7.9（Intel）。これは自動テスト環境で、最低対応OSを示すものではありません。一般向けWindowsを含む他のOS版での動作、最低対応OSは未確認です。</p><p><a href="https://github.com/ninjaops001/inreset/releases/tag/mark16-manager-v0.1.0">公開リリース・配布ファイルを見る</a></p></section>
+<section id="first-launch"><h2>初回の起動について（署名なし）</h2><p>この公式ページから入手したファイルか確認してから進めてください。パソコン全体のセキュリティ機能を無効にする必要はありません。</p><div class="help-grid"><article class="feature"><h3>Windows</h3><p>ZIPをすべて展開し、Mark16Managerフォルダ内の <code>Mark16Manager.exe</code> を開きます。同じフォルダの中身は一緒に置いてください。「WindowsによってPCが保護されました」と出たら、表示される場合は <strong>「詳細情報」→「実行」</strong> を選びます。</p></article><article class="feature"><h3>Mac</h3><p>ZIPを展開し、<code>Mark16Manager.app</code> を「アプリケーション」に移動します。アプリを右クリックして <strong>「開く」</strong> を選び、確認画面でも「開く」を押します。開けない場合は <strong>「システム設定」→「プライバシーとセキュリティ」→「このまま開く」</strong> も確認してください。</p><p>それでも開けない場合のみ、公式のファイルであることを確認し、ターミナルで次を実行します。別の場所に置いた場合はパスを合わせてください。このアプリだけの隔離属性を外します。</p><pre><code>xattr -dr com.apple.quarantine "/Applications/Mark16Manager.app"</code></pre><p>その後、もう一度開いてください。公証も未実施のため、OSの版によって警告の表示は異なります。</p></article></div></section>
+<section><h2>Mark 16について</h2><p><a href="mark16.html">Mark 16本体の紹介を見る →</a></p></section></main>
+    <footer>
+        <p style="margin-bottom:1rem"><a href="https://x.com/tellmit611" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;background:#000;border:1px solid #444;padding:.5rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:bold"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@tellmit611</a></p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「メガドライブ」「MEGA DRIVE」「GENESIS」「メガCD」「MEGA-CD」「セガサターン」「SEGA SATURN」は株式会社セガの登録商標です。Mark 16はINRESETが独自に開発した製品であり、株式会社セガとは一切関係がなく、同社による承認・保証を受けたものではありません。互換性の説明のために名称を記載しています。</p>
+        <p>&copy; 2026 INRESET. All rights reserved.</p>
+    </footer>
+<div id="alice" style="position:fixed;right:16px;bottom:16px;z-index:999;display:flex;align-items:flex-start;gap:8px;font-size:14px;">
+<div id="alice-msg" style="background:#fff;color:#111;border:3px solid #e60012;border-radius:10px;padding:8px 12px;max-width:220px;box-shadow:0 4px 12px rgba(0,0,0,.4);position:relative;">アリスです。まずはSDカードのドライブを選んでね。編集前のバックアップも忘れずに！<button id="alice-close" aria-label="閉じる" style="position:absolute;top:-10px;right:-10px;width:22px;height:22px;border-radius:50%;border:none;background:#0047ab;color:#fff;cursor:pointer;">×</button></div>
+<button id="alice-toggle" aria-label="アリスの案内を開く・閉じる" aria-controls="alice-msg" aria-expanded="true"><img src="images/alice_full.png" alt="Alice"></button></div>
+<script>
+const bubble=document.getElementById('alice-msg'), toggle=document.getElementById('alice-toggle');
+function setAlice(open){bubble.hidden=!open;toggle.setAttribute('aria-expanded',String(open));}
+toggle.addEventListener('click',()=>setAlice(bubble.hidden));
+document.getElementById('alice-close').addEventListener('click',()=>setAlice(false));
+</script>
+</body>
+</html>

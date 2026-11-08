@@ -1,0 +1,9 @@
+/* Keep the full site navigation reachable on small screens. */
+nav { flex-wrap: wrap; column-gap: 1rem; row-gap: .6rem; }
+nav ul { gap: 1.25rem; }
+@media (max-width: 1100px) { nav { padding: .8rem 1rem; } nav ul { gap: .8rem; font-size: .9rem; } .lang { margin-left: .3rem; } }
+@media (max-width: 768px) {
+  nav ul { display: flex; order: 3; width: 100%; overflow-x: auto; white-space: nowrap; gap: 1.1rem; padding-bottom: .3rem; }
+  nav .lang { margin-left: auto; }
+  html { scroll-padding-top: 130px; }
+}

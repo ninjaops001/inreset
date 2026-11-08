@@ -1,0 +1,39 @@
+
+html { scroll-behavior:smooth; scroll-padding-top:100px; }
+.app-hero { min-height:0; padding:9rem 2rem 3.5rem; display:block; }
+.app-hero .hero-inner { display:block; max-width:1000px; }
+.app-hero h1 { font-size:clamp(2.3rem,6vw,4rem); overflow-wrap:anywhere; }
+.app-hero .sub { max-width:800px; margin-bottom:1.5rem; }
+section { padding:3rem 2rem; }
+h2 { font-size:2rem; margin-bottom:1.5rem; text-align:left; }
+h3 { color:#00ff88; margin-bottom:.8rem; font-size:1.3rem; }
+p + p { margin-top:1rem; }
+section a:not(.btn) { color:#67ddff; }
+.app-contents { display:flex; flex-wrap:wrap; gap:.7rem 1.5rem; margin-top:1.5rem; }
+.feature { background:#111827; border:1px solid #2a3a4a; border-radius:20px; padding:2rem; margin:1.5rem 0; }
+.feature figure { margin-top:1.5rem; }
+.feature img { width:100%; height:auto; display:block; border-radius:10px; border:1px solid #334155; }
+figcaption { color:#a8bbd2; font-size:.85rem; padding-top:.6rem; }
+.feature ul { padding-left:1.3rem; margin-top:.8rem; }
+.detail-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+.detail-grid .feature { margin:0; padding:1.5rem; }
+.notice { border-left:4px solid #ffb84d; padding:1rem 1.4rem; background:#201d1b; color:#ffe2b5; border-radius:0 10px 10px 0; margin:1.5rem 0; }
+.download-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+.download-card { background:#111827; border:1px solid #2a3a4a; border-radius:16px; padding:1.5rem; }
+.download-card .btn { display:block; text-align:center; padding:.8rem 1rem; margin:1rem 0; }
+.download-card small { color:#b0c4de; }
+.steps { padding-left:1.6rem; }.steps li { padding:.5rem 0 .5rem .4rem; }
+pre { background:#080d16; padding:1.5rem; border:1px solid #2a3a4a; border-radius:12px; overflow:auto; line-height:1.9; }
+code { font-family:ui-monospace,monospace; font-size:.9em; overflow-wrap:anywhere; }
+.help-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+.help-grid .feature { margin:0; }
+.os-note { color:#b0c4de; font-size:.9rem; margin-top:1.5rem; }
+footer { padding-bottom:5rem; }
+#alice-toggle { border:none; background:transparent; padding:0; cursor:pointer; flex-shrink:0; }
+#alice-toggle img { height:180px; width:auto; image-rendering:pixelated; filter:drop-shadow(0 4px 8px #0009); }
+:focus-visible { outline:3px solid #ffdb69; outline-offset:4px; }
+@media(max-width:900px) { .detail-grid,.download-grid { grid-template-columns:1fr; } }
+@media(max-width:768px) { .app-hero { padding:10rem 1rem 2rem; } section { padding:2rem 1rem; } .feature { padding:1.2rem; } .help-grid { grid-template-columns:1fr; } #alice-toggle img { height:120px; } #alice-msg { max-width:170px!important; font-size:12px; } h2 { font-size:1.6rem; } }
+
+/* Let long terminal commands scroll inside cards, not widen the page. */
+.feature, .download-card { min-width:0; }

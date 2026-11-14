@@ -161,6 +161,7 @@
         .entry h3 { color: #00ff88; font-size: 1.5rem; margin: 0.4rem 0 1rem; }
         .entry p { color: #c8d6e5; margin-bottom: 0.8rem; }
         .entry img { width: 100%; max-width: 560px; display: block; margin: 1.2rem auto 0.4rem; border-radius: 12px; border: 1px solid #1e2a3a; image-rendering: pixelated; }
+        .entry img.photo { image-rendering: auto; }
         .entry figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; }
         .page-head { padding-top: 8rem; padding-bottom: 2rem; text-align: center; }
         .page-head p { color: #9fb0c6; }
@@ -190,6 +191,15 @@
     </section>
 
     <section id="diary" style="padding-top:1rem">
+        <article class="entry">
+            <time datetime="2026-11-14">2026.11.14</time>
+            <h3>Mark 16 メイン基板（v2）が届き、組み立てました</h3>
+            <p>JLCPCBで作ったMark 16のメイン基板（v2、シルクは「MDTang v2」）が届きました。Tang Primer 25K、WeAct RP2350B Pico、カセットスロット、microSD、USB-A端子を実装して、組み立てました。</p>
+            <p>最初に電源を入れたところ、SDカードのメニューと、SDカードからのゲーム起動まで動きました。</p>
+            <p>カセットスロットのピン配列の向きに問題が見つかりました。スロットの行を入れ替え、microSDの位置を少し動かした修正版（v2.1）は、すでに発注済みです。</p>
+            <p>セーブステートなどの確認と改良は、いまも進めています。</p>
+            <figure><img class="photo" src="images/mark16_pcb_v2.jpg" alt="組み立てたMark 16のメイン基板（v2、シルクはMDTang v2）"><figcaption>Mark 16 メイン基板（v2、組み立て後）</figcaption></figure>
+        </article>
         <article class="entry">
             <time datetime="2026-11-14">2026.11.14</time>
             <h3>PCアプリ「Mark16Manager」をv0.1.2に更新しました</h3>

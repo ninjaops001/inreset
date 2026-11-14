@@ -161,6 +161,7 @@
         .entry h3 { color: #00ff88; font-size: 1.5rem; margin: 0.4rem 0 1rem; }
         .entry p { color: #c8d6e5; margin-bottom: 0.8rem; }
         .entry img { width: 100%; max-width: 560px; display: block; margin: 1.2rem auto 0.4rem; border-radius: 12px; border: 1px solid #1e2a3a; image-rendering: pixelated; }
+        .entry img.photo { image-rendering: auto; }
         .entry figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; }
         .page-head { padding-top: 8rem; padding-bottom: 2rem; text-align: center; }
         .page-head p { color: #9fb0c6; }
@@ -190,6 +191,15 @@
     </section>
 
     <section id="diary" style="padding-top:1rem">
+        <article class="entry">
+            <time datetime="2026-11-14">2026.11.14</time>
+            <h3>Mark 16 main board (v2) arrived and assembled</h3>
+            <p>The JLCPCB-made Mark 16 main board (v2, silkscreen “MDTang v2”) has arrived. We mounted the Tang Primer 25K, WeAct RP2350B Pico, cartridge slot, microSD, and USB-A ports, and assembled it.</p>
+            <p>On first power-on, the SD menu ran, and games could be started from the SD card.</p>
+            <p>We found a problem with the cartridge-slot pin-row orientation. A fixed v2.1 board, with the slot rows swapped and the microSD moved slightly, has already been ordered.</p>
+            <p>Testing and improvements, including save states, are still under way.</p>
+            <figure><img class="photo" src="../images/mark16_pcb_v2.jpg" alt="Assembled Mark 16 main board (v2, silkscreen MDTang v2)"><figcaption>Mark 16 main board (v2, assembled)</figcaption></figure>
+        </article>
         <article class="entry">
             <time datetime="2026-11-14">2026.11.14</time>
             <h3>Mark16Manager updated to v0.1.2</h3>

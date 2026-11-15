@@ -191,7 +191,15 @@
     </section>
 
     <section id="diary" style="padding-top:1rem">
-        <article class="entry">
+                <article class="entry">
+            <time datetime="2026-11-15">2026.11.15</time>
+            <h3>Mark16Manager updated to v0.1.4</h3>
+            <p>We updated the Mark16Manager beta to v0.1.4. Builds are available for Windows and Mac (Apple silicon and Intel).</p>
+            <p>Firmware files (Pico .uf2/.bin and FPGA .fs) are now saved to /Mark16/UPDATE/ under their original names, which is the folder the console (v41+) reads. After writing, the app checks that the file exists and that its size and contents match, and shows the saved location.</p>
+            <p>SMS cores (.m16f) go to /Mark16/FPGA/. A leftover /Mark16/FPGA/mark16_pico.uf2 from v0.1.3 is unused by the console and can be deleted.</p>
+            <p><a href="app.html" style="color:#00d4ff">App page &amp; downloads &rarr;</a></p>
+        </article>
+<article class="entry">
             <time datetime="2026-11-15">2026.11.15</time>
             <h3>Mark16Manager updated to v0.1.3</h3>
             <p>We updated the Mark16Manager beta to v0.1.3. Builds are available for Windows and Mac (Apple silicon and Intel).</p>

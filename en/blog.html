@@ -193,6 +193,19 @@
 
     <section id="diary" style="padding-top:1rem">
                 <article class="entry">
+            <time datetime="2026-11-18">2026.11.18</time>
+            <h3>Console improvements and Mark16Manager v0.1.9</h3>
+            <p>We have been continuing to improve the prototype console.</p>
+            <p>We fixed a bug that made the music in Hellfire play too slowly. The cause was the way the sound chip’s (YM2612) BUSY flag was handled, which did not match a real Mega Drive. We have confirmed the fix on hardware.</p>
+            <p>The second controller port now works too.</p>
+            <p>The menu has also been redesigned. It uses the “Game list” label, a blue box around the selected item, and keeps the illustration. Firmware updates are applied from Settings → Console update. Games can be deleted, with a confirmation step. Message text that was turning blue on the right-hand side now stays in the white area.</p>
+            <p>Save states (storing your progress in slots) and taking screenshots on the console are now available. When you save a screenshot to a computer, it is enlarged to 4× while keeping sharp pixels. Save states still have problems in some software.</p>
+            <p>For Forgotten Worlds, where the player ship could vanish for a moment, we have an FPGA build with sprite-display fixes that is now being tested on hardware.</p>
+            <p>We also published a <a href="faq.html" style="color:#00d4ff">Q&amp;A page</a>.</p>
+            <p>The Mark16Manager beta is now at v0.1.9, with builds for Windows and Mac (Intel). This release does not include a separate Apple silicon build. You can add games to a microSD card, edit thumbnails, intros, maker and release date, back up saves and save states, and export screenshots. It is an unsigned beta for Mark 16 development units.</p>
+            <p><a href="app.html" style="color:#00d4ff">App page &amp; downloads &rarr;</a></p>
+        </article>
+                <article class="entry">
             <time datetime="2026-11-15">2026.11.15</time>
             <h3>Mark16Manager updated to v0.1.5</h3>
             <p>We updated the Mark16Manager beta to v0.1.5. Builds are available for Windows and Mac (Apple silicon and Intel).</p>

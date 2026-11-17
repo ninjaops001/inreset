@@ -331,22 +331,23 @@
                 </figure>
                 <p>Your cartridge, or a game on a microSD card, is first received by the Pico (WeAct RP2350B). The Pico handles the menu, SD card, USB controllers, and save data. A cartridge is copied into RAM and then run from there.</p>
                 <p>The game itself runs on the Tang Primer 25K FPGA board (Gowin GW5A-25). Circuits for the CPUs (68000 and Z80), video (VDP), and sound (YM2612 and SN76489) are built inside the FPGA. Picture and sound go to a TV or monitor through DV output.</p>
+                <p>The microSD root folder is <code>/MARK16</code> (older <code>Mark16</code> and <code>MDTANG</code> cards still work). The menu has “Boot cartridge”, “Game list”, “Save cartridge”, and “Settings”. Firmware updates are applied from Settings → Console update.</p>
             </div>
         </article>
 
         <article class="faq-item" id="games">
             <h3>Which software works?</h3>
             <div class="answer">
-                <p>Most MEGA DRIVE* / GENESIS* software runs. Mark 16 supports domestic and overseas cartridges, and games on a microSD card.</p>
-                <p>Compatibility is still being tested, and we do not guarantee that every title will work. A compatibility list page is planned. Support for 8-bit cartridges is also planned.</p>
+                <p>Most MEGA DRIVE* / GENESIS* software runs. Mark 16 supports domestic and overseas cartridges, and games on a microSD card (root folder <code>/MARK16</code>) or in the console’s built-in flash. The menu’s “Save cartridge” item can store an inserted cartridge to the card or to built-in flash.</p>
+                <p>Compatibility is still being tested, and we do not guarantee that every title will work. For example, a bug that made the music in Hellfire play too slowly has been confirmed fixed on hardware. A compatibility list page is planned. Support for Master System* and other 8-bit systems is also planned.</p>
             </div>
         </article>
 
         <article class="faq-item" id="saves">
             <h3>Can I save?</h3>
             <div class="answer">
-                <p>Yes. On the development hardware, original in-game saves are supported, along with save states (saving and resuming at any point) and screenshots. Data is stored on a microSD card.</p>
-                <p>When you start a game from a cartridge, the save is written to the microSD card, not back into the cartridge, because the cartridge is copied into RAM to run. You can also back up save data with the <a href="app.html">Mark16Manager</a> PC app.</p>
+                <p>Yes. On the development hardware, original in-game saves are supported, along with save states (storing your progress in slots and resuming later) and screenshots. Data is stored on a microSD card. Save states still have problems in some software.</p>
+                <p>When you start a game from a cartridge, the save is written to the microSD card, not back into the cartridge, because the cartridge is copied into RAM to run. You can also back up saves and save states with the <a href="app.html">Mark16Manager</a> PC app (v0.1.9, Windows / Intel Mac).</p>
             </div>
         </article>
 
@@ -361,6 +362,7 @@
             <h3>Will it go on sale?</h3>
             <div class="answer">
                 <p>We plan to sell Mark 16 through crowdfunding. The start date and price have not been decided yet. We will announce them on this site when they are. Details are coming soon.</p>
+                <p>Current development and promotional units use the v2 main board. The retail product’s specifications may change.</p>
                 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdTArvIRJB6kyIP8iQhwwh_5KxHuNYF3dFc2M2ThSJWB8huwA/viewform" target="_blank" rel="noopener">Get an email when it starts</a> (we will use your address only for this notice).</p>
                 <p>For the current specifications, see the <a href="mark16.html">Mark 16 page</a>.</p>
             </div>
@@ -376,7 +378,7 @@
 
     <footer>
         <p style="margin-bottom:1rem"><a href="https://x.com/tellmit611" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;background:#000;border:1px solid #444;padding:.5rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:bold"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@tellmit611</a></p>
-        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">* "MEGA DRIVE", "GENESIS", "MEGA-CD" and "SEGA SATURN" are registered trademarks of SEGA CORPORATION. Mark 16 is a product developed independently by INRESET and is not affiliated with, approved, or endorsed by SEGA CORPORATION. These names are used only to describe compatibility.</p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">* "MEGA DRIVE", "GENESIS", "MASTER SYSTEM", "MEGA-CD" and "SEGA SATURN" are registered trademarks of SEGA CORPORATION. Mark 16 is a product developed independently by INRESET and is not affiliated with, approved, or endorsed by SEGA CORPORATION. These names are used only to describe compatibility.</p>
         <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">This page is general information, not legal advice.</p>
         <p>&copy; 2026 INRESET. All rights reserved.</p>
     </footer>

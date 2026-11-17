@@ -331,22 +331,23 @@
                 </figure>
                 <p>お持ちのカートリッジ、またはmicroSDカードのゲームは、まずPico（WeAct RP2350B）が受け取ります。Picoはメニュー、SDカード、USBコントローラー、セーブデータを担当します。カートリッジの場合は、中身をRAMにコピーしてから動かします。</p>
                 <p>ゲームの実行は、FPGAボード「Tang Primer 25K」（Gowin GW5A-25）が担当します。CPU（68000とZ80）、映像（VDP）、音源（YM2612とSN76489）の回路を、FPGAの中に組んでいます。映像と音声はDV出力で、テレビやモニターに出します。</p>
+                <p>microSDカードのルートフォルダーは <code>/MARK16</code> です（以前の <code>Mark16</code> や <code>MDTANG</code> のカードも使えます）。メニューは「カートリッジ起動」「ゲームリスト」「カートリッジ保存」「設定」で、本体の更新は「設定 → 本体のアップデート」から行います。</p>
             </div>
         </article>
 
         <article class="faq-item" id="games">
             <h3>どんなソフトが動く？</h3>
             <div class="answer">
-                <p>多くのメガドライブ※／GENESIS※のソフトが動きます。国内版・海外版のカートリッジと、microSDカード上のゲームに対応しています。</p>
-                <p>ただし互換性はいまも確認を続けており、すべてのソフトの動作を保証するものではありません。対応ソフトの一覧ページは、これから公開する予定です。8bit系カートリッジへの対応も予定しています。</p>
+                <p>多くのメガドライブ※／GENESIS※のソフトが動きます。国内版・海外版のカートリッジと、microSDカード（ルートフォルダーは <code>/MARK16</code>）や本体の内蔵フラッシュに入れたゲームに対応しています。メニューの「カートリッジ保存」で、差したカートリッジをカードや内蔵フラッシュへ保存できます。</p>
+                <p>ただし互換性はいまも確認を続けており、すべてのソフトの動作を保証するものではありません。たとえば『ヘルファイア』のBGMが遅くなる問題は、実機で直っていることを確認しています。対応ソフトの一覧ページは、これから公開する予定です。マスターシステム※など8bit系への対応も予定しています。</p>
             </div>
         </article>
 
         <article class="faq-item" id="saves">
             <h3>セーブはできる？</h3>
             <div class="answer">
-                <p>はい。開発中の本体では、ゲーム本来のセーブに加えて、セーブステート（どの場面でも状態を保存して再開する機能）とスクリーンショットに対応しています。データはmicroSDカードに保存できます。</p>
-                <p>カートリッジから起動したときのセーブは、カートリッジ内部ではなくmicroSDカードに保存されます。カートリッジはRAMにコピーして動かすためです。パソコン用アプリ「<a href="app.html">Mark16Manager</a>」で、セーブデータのバックアップもできます。</p>
+                <p>はい。開発中の本体では、ゲーム本来のセーブに加えて、セーブステート（途中の状態をスロットに保存して再開する機能）とスクリーンショットに対応しています。データはmicroSDカードに保存できます。一部のソフトでは、セーブステートがまだうまく動かないことがあります。</p>
+                <p>カートリッジから起動したときのセーブは、カートリッジ内部ではなくmicroSDカードに保存されます。カートリッジはRAMにコピーして動かすためです。パソコン用アプリ「<a href="app.html">Mark16Manager</a>」（v0.1.9、Windows / Intel Mac）で、セーブとセーブステートのバックアップもできます。</p>
             </div>
         </article>
 
@@ -361,6 +362,7 @@
             <h3>販売する？</h3>
             <div class="answer">
                 <p>Mark 16は、クラウドファンディングでの販売を予定しています。開始時期と価格は、まだ決まっていません。決まりしだい、このサイトでお知らせします。詳細は近日公開です。</p>
+                <p>いまの開発・宣伝用の試作機は、メイン基板 v2 を使っています。製品版の仕様は変わる場合があります。</p>
                 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdTArvIRJB6kyIP8iQhwwh_5KxHuNYF3dFc2M2ThSJWB8huwA/viewform" target="_blank" rel="noopener">開始をメールで受け取る</a>（メールアドレスはお知らせ以外には使いません）</p>
                 <p>くわしい仕様は、<a href="mark16.html">Mark 16の紹介ページ</a>をご覧ください。</p>
             </div>
@@ -376,7 +378,7 @@
 
     <footer>
         <p style="margin-bottom:1rem"><a href="https://x.com/tellmit611" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;background:#000;border:1px solid #444;padding:.5rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:bold"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@tellmit611</a></p>
-        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「メガドライブ」「MEGA DRIVE」「GENESIS」「メガCD」「MEGA-CD」「セガサターン」「SEGA SATURN」は株式会社セガの登録商標です。Mark 16はINRESETが独自に開発した製品であり、株式会社セガとは一切関係がなく、同社による承認・保証を受けたものではありません。互換性の説明のために名称を記載しています。</p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「メガドライブ」「MEGA DRIVE」「GENESIS」「マスターシステム」「MASTER SYSTEM」「メガCD」「MEGA-CD」「セガサターン」「SEGA SATURN」は株式会社セガの登録商標です。Mark 16はINRESETが独自に開発した製品であり、株式会社セガとは一切関係がなく、同社による承認・保証を受けたものではありません。互換性の説明のために名称を記載しています。</p>
         <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">このページの説明は一般的な情報であり、法的な助言ではありません。</p>
         <p>&copy; 2026 INRESET. All rights reserved.</p>
     </footer>

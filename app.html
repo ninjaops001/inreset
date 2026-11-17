@@ -13,14 +13,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mark16Manager｜PCアプリの紹介・ダウンロード | INRESET</title>
-    <meta name="description" content="Mark 16のmicroSDカードをパソコンで整理。ゲームの追加、紹介文・サムネイルの編集、セーブのバックアップができるPCアプリ。Windows・Mac用ベータ版を配布中です。">
+    <meta name="description" content="Mark 16のmicroSDカードをパソコンで整理。ゲームの追加、紹介文・サムネイルの編集、セーブとセーブステートのバックアップ、スクリーンショットの保存ができるPCアプリ。Windows・Intel Mac用のv0.1.9ベータ版を配布中です。">
     <link rel="alternate" hreflang="ja" href="https://ninjaops001.github.io/inreset/app.html">
     <link rel="alternate" hreflang="en" href="https://ninjaops001.github.io/inreset/en/app.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="INRESET">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:title" content="Mark16Manager｜PCアプリの紹介・ダウンロード | INRESET">
-    <meta property="og:description" content="Mark 16のmicroSDカードをパソコンで整理。ゲームの追加、紹介文・サムネイルの編集、セーブのバックアップができるPCアプリ。Windows・Mac用ベータ版を配布中です。">
+    <meta property="og:description" content="Mark 16のmicroSDカードをパソコンで整理。ゲームの追加、紹介文・サムネイルの編集、セーブとセーブステートのバックアップ、スクリーンショットの保存ができるPCアプリ。Windows・Intel Mac用のv0.1.9ベータ版を配布中です。">
     <meta property="og:url" content="https://ninjaops001.github.io/inreset/app.html">
     <meta property="og:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
     <meta property="og:image:width" content="1200">
@@ -28,7 +28,7 @@
     <meta name="twitter:site" content="@tellmit611">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mark16Manager｜PCアプリの紹介・ダウンロード | INRESET">
-    <meta name="twitter:description" content="Mark 16のmicroSDカードをパソコンで整理。ゲームの追加、紹介文・サムネイルの編集、セーブのバックアップができるPCアプリ。Windows・Mac用ベータ版を配布中です。">
+    <meta name="twitter:description" content="Mark 16のmicroSDカードをパソコンで整理。ゲームの追加、紹介文・サムネイルの編集、セーブとセーブステートのバックアップ、スクリーンショットの保存ができるPCアプリ。Windows・Intel Mac用のv0.1.9ベータ版を配布中です。">
     <meta name="twitter:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -184,7 +184,7 @@
         </nav>
     </header>
 <main>
-<section class="hero app-hero"><div class="hero-inner"><span class="badge">PCアプリ · v0.1.9 ベータ版</span><h1>Mark16Manager</h1><div class="stripe"><span class="r"></span><span class="k"></span><span class="b"></span></div><p class="lead">Mark 16のmicroSDカードを、パソコンでかんたん整理。</p><p class="sub">Mark 16を使う方のための、Windows・Mac用管理アプリです。カードリーダーでmicroSDカードをつなぎ、ゲームの追加、サムネイル、紹介文・メーカー・発売日の編集、セーブとセーブステートのバックアップ、スクリーンショットの保存ができます。画面は日本語・英語を切り替えられます。Pythonのインストールは不要です。開発用本体向けのベータ版です。</p><a href="#downloads" class="btn">ベータ版をダウンロード</a><div class="app-contents"><a href="#features">できること</a><a href="#howto">使い方</a><a href="#folders">SDカードの中身</a><a href="#changelog">更新内容</a><a href="#first-launch">初回の起動</a></div></div></section>
+<section class="hero app-hero"><div class="hero-inner"><span class="badge">PCアプリ · v0.1.9 ベータ版</span><h1>Mark16Manager</h1><div class="stripe"><span class="r"></span><span class="k"></span><span class="b"></span></div><p class="lead">Mark 16のmicroSDカードを、パソコンでかんたん整理。</p><p class="sub">Mark 16を使う方のための、Windows用とMac用（Intel）の管理アプリです。カードリーダーでmicroSDカードをつなぎ、ゲームの追加、サムネイル、紹介文・メーカー・発売日の編集、セーブとセーブステートのバックアップ、スクリーンショットの保存ができます。画面は日本語・英語を切り替えられます。Pythonのインストールは不要です。開発用本体向けのベータ版です。</p><a href="#downloads" class="btn">ベータ版をダウンロード</a><div class="app-contents"><a href="#features">できること</a><a href="#howto">使い方</a><a href="#folders">SDカードの中身</a><a href="#changelog">更新内容</a><a href="#first-launch">初回の起動</a></div></div></section>
 <section id="features"><h2>アプリでできること</h2><p>パソコンでカードを整理して、Mark 16に戻すためのアプリです。アプリ自体でゲームを遊んだり、本体と直接通信したりするものではありません。</p>
 <article class="feature" id="games"><h3>01 · ゲームを追加・整理</h3><p>microSDカードのドライブを選び、ゲームのROMファイルを一覧にドラッグ＆ドロップ。「追加」ボタンでも選べます。ファイルは <code>/MARK16/ROMS</code> にコピーされます。<code>.md</code>・<code>.bin</code>・<code>.gen</code>形式、1本あたり8MBまで対応しています。8MBまでのソフト（スーパーストリートファイターIIなど）を使うには、本体のファームウェア v41 が必要です。以前のファームウェアでは、4MBを超えるファイルはこれまでどおり使えません。</p><ul><li>カード内のゲームを一覧表示。名前の変更や削除もできます。</li><li>上下に移動して並び順を保存すると、ファイル名の先頭に番号が付きます。</li><li>555本のソフト一覧から、名前・ジャンル・発売元・年の候補を表示します。候補が正しいか確認して使ってください。</li></ul><figure><a href="images/app/app_games_ja.png"><img src="images/app/app_games_ja.png" alt="日本語のゲーム一覧、紹介文プレビュー、サムネイル編集画面" width="1280" loading="lazy"></a><figcaption>ゲーム画面（日本語）。タイトルと紹介文の編集も同じタブにあります。画像を押すと大きく見られます。表示はデモ用です。ゲームデータや画像は付属しません。一覧のソフト名は説明用で、権利は各権利者に帰属します。</figcaption></figure></article>
 <div class="detail-grid"><article class="feature"><h3>02 · ファイル名を編集</h3><p>ROMのファイル名は、本体メニューの並び順のもとです。アプリから名前を変えると、関連するタイトル・紹介文・サムネイルのファイル名も一緒に変わります。本体に出す名前は、次の「タイトル」で別に決められます（本体ファームウェア v41d2 以降）。ソフト一覧の候補も利用できます。</p></article><article class="feature"><h3>03 · 日本語・英語のタイトルと短い紹介文</h3><p>ゲームごとに、タイトルと紹介文を日本語・英語で別々に入れられます。本体での見え方をその場で確認でき、一覧に入りきらない長いタイトル、63バイトをこえるタイトル、本体の文字にない字は警告します。紹介文は最大4行、日本語は1行12文字、英語は16文字（UTF-8・512バイトまで）。日本語は本体メニューと同じ追い出しの禁則で折り返し、濁点も本体と同じ1文字に数えます。英語は単語の区切りで折り返します。</p><ul><li><strong>内蔵データ（132本）</strong>：有名なゲームには、このアプリのオリジナルの短い紹介文と公式タイトルが入っています。ROMを追加すると、名前（ファイル名・ROMの名前・型番）が完全に一致したときだけ、空の欄に自動で入ります（オフにもできます）。自分で書いた文は上書きしません。</li><li><strong>まとめて入れる</strong>：「内蔵データで空欄を埋める」ボタンで、すでにあるゲームにも空欄だけ入れられます。似た名前は候補として出るだけで、勝手には入れません。</li><li><strong>古い本体でも使えます</strong>：古いファームウェアはタイトルを無視してファイル名を表示し、紹介文はこれまでどおり読みます。本体にタイトルが出るのは、本体ファームウェア <strong>v41d2</strong> 以降です。</li><li><strong>メーカーと発売日</strong>：SDのゲームに入れられます。本体ファームウェア v42d 以降で、絵の上にメーカー、紹介文の下に発売日が出ます。本体に入っているゲームには付けません。</li></ul><figure><a href="images/app/app_titles_ja.png"><img src="images/app/app_titles_ja.png" alt="日本語のタイトルと紹介文の編集画面と、本体での見え方のプレビュー" width="1024" loading="lazy"></a><figcaption>タイトルと紹介文の編集画面（日本語）。本体での見え方プレビュー付き。デモ用のデータです。ゲームのファイルや画像は含まれません。</figcaption></figure></article><article class="feature"><h3>04 · サムネイルを作成</h3><p>画像を選ぶかドラッグして、メガドライブの512色から選んだ16色の <code>.m16</code> 形式（v2）に自動変換。保存データは96×28ピクセル、本体では96×56で表示します。仕上がりを見ながら、紹介文と一緒に保存できます。以前の4色（672バイト）のサムネイルも読めます。ゲームを追加すると、公開サムネイル集（libretro-thumbnails）から合う絵を自動で取り込み、お使いのパソコンにだけ保存します（最初からオン、オフにもできます）。画像の権利は各権利者にあり、個人利用のみです。すでにサムネイルがあるゲームは上書きしません。</p></article></div>

@@ -13,14 +13,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mark 16（開発中） | INRESET</title>
-    <meta name="description" content="INRESETが開発中のFPGAゲーム機「Mark 16」。メガドライブ※カートリッジ対応、DV出力、セーブステート対応。クラウドファンディングを予定しています。">
+    <meta name="description" content="INRESETが開発中のFPGAゲーム機「Mark 16」。メガドライブ※カートリッジ対応、DV出力、セーブステート・スクリーンショット対応。クラウドファンディングを予定しています。">
     <link rel="alternate" hreflang="ja" href="https://ninjaops001.github.io/inreset/mark16.html">
     <link rel="alternate" hreflang="en" href="https://ninjaops001.github.io/inreset/en/mark16.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="INRESET">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:title" content="Mark 16（開発中） | INRESET">
-    <meta property="og:description" content="INRESETが開発中のFPGAゲーム機「Mark 16」。メガドライブ※カートリッジ対応、DV出力、セーブステート対応予定。クラウドファンディングを予定しています。">
+    <meta property="og:description" content="INRESETが開発中のFPGAゲーム機「Mark 16」。メガドライブ※カートリッジ対応、DV出力、セーブステート・スクリーンショット対応。クラウドファンディングを予定しています。">
     <meta property="og:url" content="https://ninjaops001.github.io/inreset/mark16.html">
     <meta property="og:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
     <meta property="og:image:width" content="1200">
@@ -28,7 +28,7 @@
     <meta name="twitter:site" content="@tellmit611">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mark 16（開発中） | INRESET">
-    <meta name="twitter:description" content="INRESETが開発中のFPGAゲーム機「Mark 16」。メガドライブ※カートリッジ対応、DV出力、セーブステート対応予定。クラウドファンディングを予定しています。">
+    <meta name="twitter:description" content="INRESETが開発中のFPGAゲーム機「Mark 16」。メガドライブ※カートリッジ対応、DV出力、セーブステート・スクリーンショット対応。クラウドファンディングを予定しています。">
     <meta name="twitter:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -215,19 +215,19 @@
             </div>
             <div class="service-card">
                 <h3>セーブステート</h3>
-                <p>ゲームのどの場面でも状態を保存・再開できます。microSDカードにセーブデータやスクリーンショットを保存できます。</p>
+                <p>開発用の本体では、途中の状態をスロットに保存して再開できます。microSDカードにセーブデータやスクリーンショットも保存できます。一部のソフトでは、まだうまく動かないことがあります。</p>
             </div>
             <div class="service-card">
                 <h3>USBコントローラー</h3>
                 <p>USBコントローラー用のポートを2つ搭載。2人で同時に遊べます。</p>
             </div>
             <div class="service-card">
-                <h3>アップデートで進化</h3>
-                <p>microSDカードからファームウェアを更新できます。8bit系カートリッジへの対応も予定しています。</p>
+                <h3>アップデートで改善</h3>
+                <p>microSDカードからファームウェアを更新できます。本体では「設定 → 本体のアップデート」から行います。マスターシステム※など8bit系への対応も予定しています。</p>
             </div>
             <div class="service-card">
                 <h3>お手持ちのソフトをインストール可能</h3>
-                <p>ご自身で所有しているソフトのデータをmicroSDカードに入れて、本体から遊ぶことができます。整理には、<a href="app.html">PCアプリ「Mark16Manager」</a>が使えます。</p>
+                <p>ご自身で所有しているソフトは、microSDカード（ルートフォルダーは <code>/MARK16</code>）や、本体の内蔵フラッシュに入れて遊べます。メニューの「カートリッジ保存」で、差したカートリッジをカードや内蔵フラッシュへ保存できます。整理には、<a href="app.html">PCアプリ「Mark16Manager」</a>（v0.1.9、Windows / Intel Mac）が使えます。</p>
                 <p style="font-size:0.85rem;color:#ff6b6b;margin-top:0.6rem">※違法ダウンロードしたデータの使用、およびゲームデータの配布は法律で禁止されています。ご自身が正規に所有するソフトのみご利用ください。</p>
             </div>
         </div>
@@ -235,13 +235,13 @@
 
     <section id="pcapp">
         <h2>PCアプリ Mark16Manager</h2>
-        <p class="sub">本体のmicroSDカードを、パソコンで整理する管理アプリです。ゲームの追加、サムネイル、紹介文・メーカー・発売日の編集、セーブとセーブステートのバックアップ、スクリーンショットの保存（4倍）ができます。Windows・Mac用の開発用ベータ版を配布中です。</p>
+        <p class="sub">本体のmicroSDカードを、パソコンで整理する管理アプリです。ゲームの追加、サムネイル、紹介文・メーカー・発売日の編集、セーブとセーブステートのバックアップ、スクリーンショットの保存（4倍）ができます。Windows用とMac用（Intel）の開発用ベータ版（v0.1.9）を配布中です。今回はAppleシリコン専用のビルドは含まれていません。</p>
         <p style="text-align:center;margin-top:1.5rem"><a href="app.html" class="btn">紹介とダウンロードへ</a></p>
     </section>
 
     <section id="menu">
         <h2>メニュー画面（開発中）</h2>
-        <p class="sub">レトロな雰囲気の赤・黒・青のメニュー。日本語と英語のタイトルを切り替えられます（Picoファームウェア v41d2）。</p>
+        <p class="sub">開発中のメニューには、「カートリッジ起動」「ゲームリスト」「カートリッジ保存」「設定」があります。本体の更新は「設定 → 本体のアップデート」から行います。日本語と英語を切り替えられます。下の画像は以前の開発時点（v41d2）の画面で、いまの見出しや配置は変わっています。</p>
         <div class="menu-grid">
             <figure><img src="images/mark16_menu_sd_ja.png" alt="Mark 16 ゲームライブラリ（日本語、v41d2）"><figcaption>ゲームライブラリ（microSD）：日本語のタイトルと紹介文。標準サムネイルはレトロな地平線です。</figcaption></figure>
             <figure><img src="images/mark16_menu_settings_ja.png" alt="Mark 16 設定画面（日本語、v41d2）"><figcaption>設定：画面比率、言語、自動起動など。版数は fw v41d2 と表示されます。</figcaption></figure>
@@ -266,20 +266,20 @@
         <div class="panel">
             <table class="spec">
                 <tr><th>方式</th><td>FPGAによる回路再現</td></tr>
-                <tr><th>対応ソフト</th><td>メガドライブ※／GENESIS※カートリッジ対応（国内版・海外版）<br>8bit系カートリッジ<span class="planned">（対応予定）</span></td></tr>
+                <tr><th>対応ソフト</th><td>メガドライブ※／GENESIS※カートリッジ（国内版・海外版）と、microSD上のゲーム<br>マスターシステム※など8bit系<span class="planned">（対応予定）</span></td></tr>
                 <tr><th>カートリッジ挿入</th><td>トップローディング（上から差し込み）</td></tr>
                 <tr><th>映像・音声出力</th><td>DV出力（映像＋音声）</td></tr>
-                <tr><th>コントローラー</th><td>USBポート × 2</td></tr>
+                <tr><th>コントローラー</th><td>USBポート × 2（2人プレイ対応）</td></tr>
                 <tr><th>電源</th><td>USB Type-C</td></tr>
-                <tr><th>ストレージ</th><td>microSDカード（セーブデータ、スクリーンショット、アップデート）</td></tr>
-                <tr><th>機能</th><td>セーブステート、スクリーンショット</td></tr>
+                <tr><th>ストレージ</th><td>microSDカード（ルートフォルダー <code>/MARK16</code>。セーブ、スクリーンショット、アップデート）および本体の内蔵フラッシュ（ゲームの保存）</td></tr>
+                <tr><th>機能</th><td>セーブステート（スロット）、スクリーンショット、microSDからの本体アップデート</td></tr>
                 <tr><th>メニュー言語</th><td>日本語 / 英語</td></tr>
                 <tr><th>別売品</th><td>ACアダプター<br>コントローラー<span class="planned">（付属を検討中）</span></td></tr>
             </table>
         </div>
         <div class="panel">
             <ul class="notes">
-                <li>仕様・デザインは開発中のもので、予告なく変更する場合があります。</li>
+                <li>仕様・デザインは開発中のもので、予告なく変更する場合があります。いまの開発・宣伝用の試作機は、メイン基板 v2 を使っています。</li>
                 <li>ACアダプターは付属しません（別売）。コントローラーの付属は検討中です。</li>
                 <li>すべてのソフトの動作を保証するものではありません。</li>
                 <li>本製品は各ゲーム機メーカーとは関係のない、INRESETの独自製品です。</li>
@@ -339,7 +339,7 @@
 
     <footer>
         <p style="margin-bottom:1rem"><a href="https://x.com/tellmit611" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;background:#000;border:1px solid #444;padding:.5rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:bold"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@tellmit611</a></p>
-        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「メガドライブ」「MEGA DRIVE」「GENESIS」「メガCD」「MEGA-CD」「セガサターン」「SEGA SATURN」は株式会社セガの登録商標です。Mark 16はINRESETが独自に開発した製品であり、株式会社セガとは一切関係がなく、同社による承認・保証を受けたものではありません。互換性の説明のために名称を記載しています。</p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「メガドライブ」「MEGA DRIVE」「GENESIS」「マスターシステム」「MASTER SYSTEM」「メガCD」「MEGA-CD」「セガサターン」「SEGA SATURN」は株式会社セガの登録商標です。Mark 16はINRESETが独自に開発した製品であり、株式会社セガとは一切関係がなく、同社による承認・保証を受けたものではありません。互換性の説明のために名称を記載しています。</p>
         <p>&copy; 2026 INRESET. All rights reserved.</p>
     </footer>
 <div id="alice" style="position:fixed;right:16px;bottom:16px;z-index:999;display:flex;align-items:flex-start;gap:8px;font-size:14px;">

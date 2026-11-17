@@ -163,6 +163,8 @@
         .faq-item h3::before { content: 'Q. '; color: #00d4ff; }
         .faq-item p { color: #c8d6e5; }
         .faq-item p::before { content: 'A. '; color: #00d4ff; font-weight: bold; }
+        .faq-more { text-align:center; margin: -1.5rem auto 2rem; max-width: 40rem; color:#c8d6e5; }
+        .faq-more a { color:#00d4ff; }
     </style>
     <link rel="stylesheet" href="site-nav.css">
 </head>
@@ -176,6 +178,7 @@
                 <li><a href="index.html#products" class="active">開発中の製品</a></li>
                 <li><a href="app.html">PCアプリ</a></li>
                 <li><a href="blog.html">開発日記</a></li>
+                <li><a href="faq.html">よくある質問</a></li>
                 <li><a href="index.html#contact">お問い合わせ</a></li>
             </ul>
             <a href="en/mark16.html" class="lang" lang="en" hreflang="en">EN</a>
@@ -310,6 +313,8 @@
 
     <section id="faq">
         <h2>よくある質問</h2>
+            <p class="faq-more">互換機やFPGA、特許・商標・著作権については、<a href="faq.html">よくある質問（Q&amp;A）</a>で解説しています。</p>
+            <div class="faq-item"><h3>互換機は違法ではありませんか？</h3><p>同じように動く機械を作ること自体が、すぐに違法になるわけではありません。くわしくは<a href="faq.html#legal">Q&amp;A「互換機は違法じゃないの？」</a>をご覧ください。</p></div>
             <div class="faq-item"><h3>海外版（GENESIS※）のカートリッジも使えますか？</h3><p>はい。海外版のカートリッジもそのまま差し込めます。※すべてのソフトの動作を保証するものではありません。</p></div>
             <div class="faq-item"><h3>テレビにはどうつなぎますか？</h3><p>DV出力です。映像と音声を1本のケーブルでまとめて、テレビやモニターへ出力します。</p></div>
             <div class="faq-item"><h3>エミュレーターですか？</h3><p>いいえ。ソフトウェアによるエミュレーションではなく、FPGAで回路そのものを再現しています。</p></div>

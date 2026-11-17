@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MM61W9VECC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MM61W9VECC');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>よくある質問（Q&A） | INRESET</title>
+    <meta name="description" content="INRESETのよくある質問。互換機とは何か、違法ではないのか、特許・商標・著作権のちがい、FPGAとMark 16のしくみをわかりやすく解説します。">
+    <link rel="alternate" hreflang="ja" href="https://ninjaops001.github.io/inreset/faq.html">
+    <link rel="alternate" hreflang="en" href="https://ninjaops001.github.io/inreset/en/faq.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="INRESET">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="よくある質問（Q&A） | INRESET">
+    <meta property="og:description" content="互換機とは何か、違法ではないのか、特許・商標・著作権のちがい、FPGAとMark 16のしくみをわかりやすく解説します。">
+    <meta property="og:url" content="https://ninjaops001.github.io/inreset/faq.html">
+    <meta property="og:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:site" content="@tellmit611">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="よくある質問（Q&A） | INRESET">
+    <meta name="twitter:description" content="互換機とは何か、違法ではないのか、特許・商標・著作権のちがい、FPGAとMark 16のしくみをわかりやすく解説します。">
+    <meta name="twitter:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0e17;
+        }
+        header {
+            background: rgba(10, 14, 23, 0.95);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid #1e2a3a;
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #00d4ff; letter-spacing: 2px; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #00d4ff; }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border: 1px solid #00ff88; color: #00ff88;
+            border-radius: 50px; font-size: 0.9rem; font-weight: bold;
+            margin-bottom: 1rem; letter-spacing: 1px;
+        }
+        .page-head { padding-top: 8rem; padding-bottom: 2rem; text-align: center; }
+        .page-head p { color: #9fb0c6; max-width: 720px; margin: 0 auto; }
+        .notice {
+            max-width: 900px; margin: 0 auto 2rem; padding: 0.9rem 1.2rem;
+            background: #111827; border: 1px solid #2a3a4a; border-radius: 12px;
+            color: #9fb0c6; font-size: 0.9rem; text-align: center;
+        }
+
+        section { padding: 1rem 2rem 4rem; max-width: 900px; margin: 0 auto; }
+        h2 { text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: #00d4ff; }
+
+        .toc {
+            display: block;
+            background: #111827; border: 1px solid #2a3a4a; border-radius: 16px;
+            padding: 1.5rem 2rem; margin: 0 auto 2.5rem; max-width: 900px;
+        }
+        .toc h3 { color: #00d4ff; font-size: 1rem; letter-spacing: 1px; margin-bottom: 0.8rem; }
+        .toc ol { margin-left: 1.2rem; color: #c8d6e5; }
+        .toc a { color: #00d4ff; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+
+        .faq-item { background: #1a2332; border: 1px solid #2a3a4a; border-radius: 15px; padding: 1.5rem 2rem; margin-bottom: 1.2rem; }
+        .faq-item h3 { color: #00ff88; font-size: 1.2rem; margin-bottom: 0.8rem; }
+        .faq-item h3::before { content: 'Q. '; color: #00d4ff; }
+        .answer { color: #c8d6e5; }
+        .answer > p:first-of-type::before { content: 'A. '; color: #00d4ff; font-weight: bold; }
+        .answer p { margin-bottom: 0.8rem; }
+        .answer p:last-child { margin-bottom: 0; }
+        .answer ul, .answer ol { margin: 0 0 0.8rem 1.3rem; }
+        .answer li { margin-bottom: 0.4rem; }
+        .answer a { color: #00d4ff; }
+        .answer h4 {
+            color: #00d4ff; font-size: 1.05rem; margin: 1.3rem 0 0.5rem;
+            padding-top: 0.8rem; border-top: 1px solid #2a3a4a;
+        }
+        .answer h4:first-of-type { border-top: none; padding-top: 0.4rem; }
+        .rights-box {
+            background: #0d1520; border: 1px solid #2a3a4a; border-radius: 12px;
+            padding: 1rem 1.2rem; margin: 0.8rem 0;
+        }
+        .rights-box h4 { margin-top: 0; padding-top: 0; border-top: none; }
+        .credits { font-size: 0.92rem; }
+        .credits li { margin-bottom: 0.35rem; }
+        .fine { font-size: 0.88rem; color: #9fb0c6; }
+
+        .diagram {
+            margin: 1.2rem 0 0.6rem;
+            background: #0d1520; border: 1px solid #2a3a4a; border-radius: 16px;
+            padding: 1.4rem 1rem;
+        }
+        .flow {
+            display: flex; align-items: stretch; justify-content: center;
+            gap: 0.4rem; flex-wrap: nowrap;
+        }
+        .flow-box {
+            background: #1a2332; border: 1px solid #2a3a4a; border-radius: 12px;
+            padding: 0.9rem 0.7rem; text-align: center; flex: 1 1 0;
+            min-width: 0;
+        }
+        .flow-box.fpga { border-color: #00d4ff; }
+        .flow-label {
+            display: inline-block; font-size: 0.72rem; letter-spacing: 1px;
+            color: #00d4ff; border: 1px solid #1e4a5a; border-radius: 999px;
+            padding: 0.1rem 0.5rem; margin-bottom: 0.4rem;
+        }
+        .flow-box h4 { color: #00ff88; font-size: 0.98rem; margin: 0 0 0.35rem; border: none; padding: 0; }
+        .flow-box p { color: #c8d6e5; font-size: 0.82rem; margin: 0; line-height: 1.5; word-break: keep-all; }
+        .flow-box .chips { display: flex; flex-wrap: wrap; gap: 0.3rem; justify-content: center; margin-top: 0.55rem; }
+        .chip {
+            background: #0a0e17; border: 1px solid #2a3a4a; color: #e0e0e0;
+            border-radius: 6px; font-size: 0.72rem; padding: 0.15rem 0.4rem;
+        }
+        .flow-arrow {
+            color: #00d4ff; font-size: 1.4rem; font-weight: bold;
+            display: flex; align-items: center; flex: 0 0 auto; padding: 0 0.1rem;
+        }
+        figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; margin-top: 0.8rem; }
+
+        .contact {
+            text-align: center; background: linear-gradient(135deg, #1a2332, #0a0e17);
+            border-radius: 20px; padding: 3rem 2rem; margin-top: 1rem;
+        }
+        .contact p { margin-bottom: 1rem; }
+        .contact a.mail { color: #00d4ff; text-decoration: none; font-size: 1.2rem; }
+        .btn {
+            display: inline-block; padding: 0.8rem 2rem; margin-top: 0.6rem;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            color: #0a0e17; text-decoration: none; border-radius: 50px; font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
+
+        footer { text-align: center; padding: 2rem; background: #05070a; color: #666; border-top: 1px solid #1e2a3a; }
+        nav ul { margin-left: auto; }
+        .lang { margin-left: 1.5rem; padding: 0.2rem 0.9rem; border: 1px solid #2a3a4a; border-radius: 50px; font-size: 0.85rem; color: #e0e0e0; text-decoration: none; white-space: nowrap; }
+        .lang:hover { border-color: #00d4ff; color: #00d4ff; }
+
+        @media (max-width: 800px) {
+            .flow { flex-direction: column; align-items: center; }
+            .flow-box { width: 100%; max-width: 360px; flex: none; }
+            .flow-arrow { transform: rotate(90deg); padding: 0.2rem 0; }
+            .faq-item { padding: 1.2rem 1.2rem; }
+            .panel, .toc { margin-left: 1rem; margin-right: 1rem; }
+        }
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            h2 { font-size: 2rem; }
+        }
+    </style>
+    <link rel="stylesheet" href="site-nav.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="images/inreset_logo.png" alt="INRESET" style="height:40px;width:auto;display:block;"></a>
+            <ul>
+                <li><a href="index.html#about">会社概要</a></li>
+                <li><a href="index.html#services">サービス</a></li>
+                <li><a href="index.html#products">開発中の製品</a></li>
+                <li><a href="app.html">PCアプリ</a></li>
+                <li><a href="blog.html">開発日記</a></li>
+                <li><a href="faq.html" class="active">よくある質問</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+            <a href="en/faq.html" class="lang" lang="en" hreflang="en">EN</a>
+        </nav>
+    </header>
+
+    <section class="page-head">
+        <span class="badge">Q&amp;A</span>
+        <h2 style="margin-bottom:1rem">よくある質問</h2>
+        <p>互換機とは何か、違法ではないのか、特許・商標・著作権のちがい、FPGAとMark 16のしくみを、わかりやすくまとめました。</p>
+    </section>
+
+    <p class="notice">このページは一般的な情報であり、法的な助言ではありません。個別の判断が必要な場合は、専門家にご相談ください。</p>
+
+    <div class="toc" role="navigation" aria-label="目次">
+        <h3>目次</h3>
+        <ol>
+            <li><a href="#compatible">互換機とは？</a></li>
+            <li><a href="#legal">互換機は違法じゃないの？</a></li>
+            <li><a href="#rights">特許・商標・著作権とは？</a></li>
+            <li><a href="#fpga">FPGAとは？</a></li>
+            <li><a href="#how">Mark 16のしくみ</a></li>
+            <li><a href="#games">どんなソフトが動く？</a></li>
+            <li><a href="#saves">セーブはできる？</a></li>
+            <li><a href="#controllers">コントローラーは？</a></li>
+            <li><a href="#sales">販売する？</a></li>
+        </ol>
+    </div>
+
+    <section style="padding-top:0">
+        <article class="faq-item" id="compatible">
+            <h3>互換機とは？</h3>
+            <div class="answer">
+                <p>互換機とは、元のメーカーとは別のところから出た、「同じソフトが動くように作られたゲーム機」のことです。手元のカートリッジを差して、元の機械と同じように遊べるものを指します。</p>
+                <p>こうした機械は、昔からいろいろな形で店頭に並んだり、使われたりしてきました。パソコンの周辺機器や、昔のゲーム機向けの互換機など、例は少なくありません。ここでの説明は一般的な話であり、ほかの会社の製品が適法かどうかについて述べるものではありません。</p>
+                <p>INRESETの「Mark 16」は、ご自身がお持ちのメガドライブ※／GENESIS※のカートリッジや、microSDカード上のゲームを遊ぶための互換機です。FPGAという部品で、元のゲーム機の回路に近い動きを再現しています。</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="legal">
+            <h3>互換機は違法じゃないの？</h3>
+            <div class="answer">
+                <p>「同じように動く機械を作ること」自体が、すぐに違法になるわけではありません。大切なのは、ほかの人が権利を持つプログラムやデータ（ゲームのROMやBIOSなど）を無断でコピーしたり配ったりしないこと、そして他社の商標やロゴを正しく使うことです。国や地域、個々の事情によって判断が変わることもあります。「どこでも完全に合法」とまでは言い切れません。</p>
+                <p>Mark 16では、次のように権利に配慮しています。</p>
+                <ul>
+                    <li>ゲームのROMやBIOSは、本体に入っておらず、配布もしていません。</li>
+                    <li>FPGAの回路は、公開されている技術情報と、オープンソースのFPGAコアをもとに、INRESETが改修・統合したものです。メニューやSDカード、コントローラー、セーブを担うPico側のソフトは、INRESETが作成しています（公開されている開発用ソフトウェアも利用しています）。利用しているオープンソースは、<a href="#rights">特許・商標・著作権</a>の項でクレジットしています。</li>
+                    <li>セガの公式製品ではなく、セガとの関係・承認・保証もありません。「メガドライブ」などの名称は、互換性を説明するためにだけ使っています。セガのロゴは使いません。</li>
+                    <li>遊ぶときは、ご自身が適法に入手したカートリッジやデータだけを使ってください。違法にコピーされたROMの入手や利用について、INRESETはお手伝いしません。</li>
+                </ul>
+                <p class="fine">権利の種類ごとの説明は、次の「特許・商標・著作権とは？」をご覧ください。このページの説明は一般的な情報であり、法的な助言ではありません。</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="rights">
+            <h3>特許・商標・著作権とは？</h3>
+            <div class="answer">
+                <p>似た言葉でも、守るものがちがいます。かんたんに分けると、次の3つです。</p>
+
+                <div class="rights-box">
+                    <h4>特許（とっきょ）</h4>
+                    <p>新しい仕組みや装置などの「発明」を守る権利です。たとえば、「こういう方法で映像を出す」といった技術的なアイデアが対象になります。</p>
+                    <p>日本では、特許の存続期間は、一般に特許出願の日から20年です（<a href="https://www.jpo.go.jp/system/basic/patent/index.html" target="_blank" rel="noopener">特許庁「初めてだったらここを読む～特許出願のいろは～」</a>）。医薬品など、限られた場合には延長できる制度もあります。</p>
+                    <p>Mark 16との関係：メガドライブ※の本体が発売されたのは1988年です。そのころのハードウェアに関する当初の特許は、一般的には期限が切れていると考えられます。ただし、あとから出願された特許や、国によるちがいもあるため、「すべての特許が切れている」「どこでも問題ない」とまでは言い切れません。</p>
+                </div>
+
+                <div class="rights-box">
+                    <h4>商標（しょうひょう）</h4>
+                    <p>商品やサービスの名前、ロゴなど、「だれの商品かを見分ける印」を守る権利です。ほかの人の名前やロゴを、公式製品であるかのように使うことはできません。</p>
+                    <p>Mark 16との関係：本体の名前とロゴは、INRESET独自のものです。他社の商品名は、互換性を説明するためにだけ使い、公式ロゴは使いません。Mark 16はセガの公式製品ではなく、同社との関係・承認・保証もありません。「メガドライブ」「MEGA DRIVE」「GENESIS」は、株式会社セガの登録商標です。</p>
+                </div>
+
+                <div class="rights-box">
+                    <h4>著作権（ちょさくけん）</h4>
+                    <p>プログラム、ゲームのデータ、BIOS、絵、音楽、文章など、人の創作的な表現を守る権利です。本を勝手にコピーして配ってはいけないのと同じように、ゲームのROMを無断でコピーして配ることはできません。</p>
+                    <p>Mark 16との関係：ゲームのROMやBIOSは、本体に入っておらず、配布もしていません。FPGAの回路とPicoのソフトは、INRESETが作成したものか、権利表示をしたオープンソースをもとにしたものです。遊ぶときは、ご自身が適法に入手したカートリッジやデータだけを使ってください。</p>
+                </div>
+
+                <h4>オープンソースのクレジット</h4>
+                <p>Mark 16のFPGA回路は、次のオープンソースプロジェクトをもとに、INRESETが改修・統合しています。Pico側のソフトは、INRESETが作成し、公開されている開発用ソフトウェアも利用しています。</p>
+                <ul class="credits">
+                    <li><a href="https://github.com/nand2mario/mdtang" target="_blank" rel="noopener">MDTang</a> — Copyright (c) nand2mario — GPL-3.0</li>
+                    <li><a href="https://github.com/MiSTer-devel/Genesis_MiSTer" target="_blank" rel="noopener">Genesis_MiSTer</a> — Copyright (c) Gregory Estrade, Till Harbaum, Alexey Melnikov (Sorgelig) ほか — GPL-3.0 / BSD</li>
+                    <li><a href="https://github.com/ijor/fx68k" target="_blank" rel="noopener">fx68k</a>（68000 CPU）— Copyright (c) 2018 Jorge Cwik — GPL-3.0</li>
+                    <li><a href="https://github.com/jotego/jt12" target="_blank" rel="noopener">jt12</a>（YM2612 音源）— Copyright (c) Jose Tejada (jotego) — GPL-3.0</li>
+                    <li><a href="https://github.com/jotego/jt89" target="_blank" rel="noopener">jt89</a>（SN76489 音源）— Copyright (c) Jose Tejada (jotego) — GPL-3.0</li>
+                    <li>T80（Z80 CPU）— Copyright (c) 2001-2002 Daniel Wallner, 2018 Sorgelig — BSD</li>
+                    <li>VDP（映像）— Copyright (c) 2010 Gregory Estrade, 2018 Till Harbaum, 2018-2019 Alexey Melnikov — BSD</li>
+                    <li>genesis_lpf / audio_iir_filter — Copyright (c) 2019 Gregory Hogan — MIT</li>
+                    <li>映像出力コア — Copyright (c) Sameer Puri — MIT / Apache-2.0</li>
+                    <li>Raspberry Pi Pico SDK — Copyright (c) 2020 Raspberry Pi (Trading) Ltd. — BSD-3-Clause</li>
+                    <li>TinyUSB — Copyright (c) 2018 hathach (tinyusb.org) — MIT</li>
+                    <li>Pico-PIO-USB — Copyright (c) 2021 sekigon-gonnoc — MIT</li>
+                </ul>
+                <p class="fine">この説明は一般的な情報であり、法的な助言ではありません。</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="fpga">
+            <h3>FPGAとは？</h3>
+            <div class="answer">
+                <p>FPGAは、「中の回路を書きかえられるチップ」です。一度作ったら中身が決まっている普通の部品とちがい、あとから回路のつながりを入れ直せます。</p>
+                <p>パソコンやスマートフォンの「エミュレーター」は、元のゲーム機の動きをソフトウェアで計算して再現します。一方、FPGAは回路そのものをチップの中に組みます。そのため、元の機械に近いタイミングで動きやすく、操作してから画面に出るまでの遅れ（レイテンシ）も抑えやすい、という特長があります。</p>
+                <p>Mark 16は、このFPGAでメガドライブ※の主な回路（CPU、映像、音源など）を再現しています。</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="how">
+            <h3>Mark 16のしくみ</h3>
+            <div class="answer">
+                <p>役割を分けると、次のような流れになります。</p>
+                <figure class="diagram">
+                    <div class="flow" role="img" aria-label="カートリッジまたはmicroSDから、Pico、FPGA、DV出力、テレビへの流れ">
+                        <div class="flow-box">
+                            <span class="flow-label">入力</span>
+                            <h4>カートリッジ / microSD</h4>
+                            <p>お持ちのカセット、またはカード上のゲーム</p>
+                        </div>
+                        <div class="flow-arrow" aria-hidden="true">→</div>
+                        <div class="flow-box">
+                            <span class="flow-label">Pico</span>
+                            <h4>WeAct RP2350B</h4>
+                            <p>メニュー、SDカード、USBコントローラー、セーブデータ</p>
+                        </div>
+                        <div class="flow-arrow" aria-hidden="true">→</div>
+                        <div class="flow-box fpga">
+                            <span class="flow-label">FPGA</span>
+                            <h4>Tang Primer 25K</h4>
+                            <p>Gowin GW5A-25 で回路を再現</p>
+                            <div class="chips">
+                                <span class="chip">CPU 68000</span>
+                                <span class="chip">Z80</span>
+                                <span class="chip">VDP</span>
+                                <span class="chip">YM2612</span>
+                                <span class="chip">SN76489</span>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" aria-hidden="true">→</div>
+                        <div class="flow-box">
+                            <span class="flow-label">出力</span>
+                            <h4>DV出力</h4>
+                            <p>映像と音声を、テレビやモニターへ</p>
+                        </div>
+                    </div>
+                    <figcaption>カートリッジはRAMにコピーしてから動かします。ゲームの実行はFPGAが担当します。</figcaption>
+                </figure>
+                <p>お持ちのカートリッジ、またはmicroSDカードのゲームは、まずPico（WeAct RP2350B）が受け取ります。Picoはメニュー、SDカード、USBコントローラー、セーブデータを担当します。カートリッジの場合は、中身をRAMにコピーしてから動かします。</p>
+                <p>ゲームの実行は、FPGAボード「Tang Primer 25K」（Gowin GW5A-25）が担当します。CPU（68000とZ80）、映像（VDP）、音源（YM2612とSN76489）の回路を、FPGAの中に組んでいます。映像と音声はDV出力で、テレビやモニターに出します。</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="games">
+            <h3>どんなソフトが動く？</h3>
+            <div class="answer">
+                <p>多くのメガドライブ※／GENESIS※のソフトが動きます。国内版・海外版のカートリッジと、microSDカード上のゲームに対応しています。</p>
+                <p>ただし互換性はいまも確認を続けており、すべてのソフトの動作を保証するものではありません。対応ソフトの一覧ページは、これから公開する予定です。8bit系カートリッジへの対応も予定しています。</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="saves">
+            <h3>セーブはできる？</h3>
+            <div class="answer">
+                <p>はい。開発中の本体では、ゲーム本来のセーブに加えて、セーブステート（どの場面でも状態を保存して再開する機能）とスクリーンショットに対応しています。データはmicroSDカードに保存できます。</p>
+                <p>カートリッジから起動したときのセーブは、カートリッジ内部ではなくmicroSDカードに保存されます。カートリッジはRAMにコピーして動かすためです。パソコン用アプリ「<a href="app.html">Mark16Manager</a>」で、セーブデータのバックアップもできます。</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="controllers">
+            <h3>コントローラーは？</h3>
+            <div class="answer">
+                <p>USBコントローラー用のポートを2つ搭載しており、2人で同時に遊べます。USBコントローラーに対応しています。コントローラーを製品に付属するかどうかは、検討中です。</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="sales">
+            <h3>販売する？</h3>
+            <div class="answer">
+                <p>Mark 16は、クラウドファンディングでの販売を予定しています。開始時期と価格は、まだ決まっていません。決まりしだい、このサイトでお知らせします。詳細は近日公開です。</p>
+                <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdTArvIRJB6kyIP8iQhwwh_5KxHuNYF3dFc2M2ThSJWB8huwA/viewform" target="_blank" rel="noopener">開始をメールで受け取る</a>（メールアドレスはお知らせ以外には使いません）</p>
+                <p>くわしい仕様は、<a href="mark16.html">Mark 16の紹介ページ</a>をご覧ください。</p>
+            </div>
+        </article>
+
+        <div class="contact" id="contact">
+            <h2 style="margin-bottom:1.2rem">お問い合わせ</h2>
+            <p><a class="mail" href="mailto:transgun@gmail.com">transgun@gmail.com</a></p>
+            <p>ほかにも質問があれば、お気軽にどうぞ。</p>
+            <p><a href="mark16.html" class="btn">Mark 16の紹介へ</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p style="margin-bottom:1rem"><a href="https://x.com/tellmit611" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;background:#000;border:1px solid #444;padding:.5rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:bold"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@tellmit611</a></p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「メガドライブ」「MEGA DRIVE」「GENESIS」「メガCD」「MEGA-CD」「セガサターン」「SEGA SATURN」は株式会社セガの登録商標です。Mark 16はINRESETが独自に開発した製品であり、株式会社セガとは一切関係がなく、同社による承認・保証を受けたものではありません。互換性の説明のために名称を記載しています。</p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">このページの説明は一般的な情報であり、法的な助言ではありません。</p>
+        <p>&copy; 2026 INRESET. All rights reserved.</p>
+    </footer>
+<div id="alice" style="position:fixed;right:16px;bottom:16px;z-index:999;display:flex;align-items:flex-start;gap:8px;font-size:14px;">
+<div id="alice-msg" style="background:#fff;color:#111;border:3px solid #e60012;border-radius:10px;padding:8px 12px;max-width:220px;box-shadow:0 4px 12px rgba(0,0,0,.4);position:relative;">アリスです。互換機やFPGAのことは、このQ&amp;Aを見てくださいね！<button onclick="document.getElementById('alice-msg').style.display='none'" aria-label="閉じる" style="position:absolute;top:-10px;right:-10px;width:22px;height:22px;border-radius:50%;border:none;background:#0047ab;color:#fff;cursor:pointer;line-height:22px;padding:0;">×</button></div>
+<img src="images/alice_full.png" alt="Alice" onclick="var b=document.getElementById('alice-msg');b.style.display=b.style.display==='none'?'block':'none'" style="height:180px;width:auto;image-rendering:pixelated;cursor:pointer;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));">
+</div>
+</body>
+</html>

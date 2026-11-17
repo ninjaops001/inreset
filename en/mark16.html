@@ -163,6 +163,8 @@
         .faq-item h3::before { content: 'Q. '; color: #00d4ff; }
         .faq-item p { color: #c8d6e5; }
         .faq-item p::before { content: 'A. '; color: #00d4ff; font-weight: bold; }
+        .faq-more { text-align:center; margin: -1.5rem auto 2rem; max-width: 40rem; color:#c8d6e5; }
+        .faq-more a { color:#00d4ff; }
     </style>
     <link rel="stylesheet" href="../site-nav.css">
 </head>
@@ -176,6 +178,7 @@
                 <li><a href="index.html#products" class="active">Products</a></li>
                 <li><a href="app.html">App</a></li>
                 <li><a href="blog.html">Dev Diary</a></li>
+                <li><a href="faq.html">Q&amp;A</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <a href="../mark16.html" class="lang" lang="ja" hreflang="ja">日本語</a>
@@ -307,6 +310,8 @@
 
     <section id="faq">
         <h2>FAQ</h2>
+            <p class="faq-more">For compatible consoles, FPGAs, patents, trademarks, and copyright, see the <a href="faq.html">Q&amp;A page</a>.</p>
+            <div class="faq-item"><h3>Is a compatible console illegal?</h3><p>Making hardware that works the same way is not, by itself, generally illegal. See <a href="faq.html#legal">Q&amp;A: “Is a compatible console illegal?”</a> for a careful explanation.</p></div>
             <div class="faq-item"><h3>Can I use overseas (GENESIS*) cartridges?</h3><p>Yes. Overseas cartridges fit as they are. * We do not guarantee that all software will work.</p></div>
             <div class="faq-item"><h3>How does it connect to a TV?</h3><p>Through DV output. One cable carries both picture and sound to your TV or monitor.</p></div>
             <div class="faq-item"><h3>Is it an emulator?</h3><p>No. It is not software emulation: the original circuits are reproduced in an FPGA.</p></div>

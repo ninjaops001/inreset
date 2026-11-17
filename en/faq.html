@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MM61W9VECC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MM61W9VECC');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ (Q&A) | INRESET</title>
+    <meta name="description" content="INRESET FAQ: what a compatible console is, whether it is illegal, how patents, trademarks and copyright differ, and how FPGA and Mark 16 work.">
+    <link rel="alternate" hreflang="ja" href="https://ninjaops001.github.io/inreset/faq.html">
+    <link rel="alternate" hreflang="en" href="https://ninjaops001.github.io/inreset/en/faq.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="INRESET">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="FAQ (Q&A) | INRESET">
+    <meta property="og:description" content="What a compatible console is, whether it is illegal, how patents, trademarks and copyright differ, and how FPGA and Mark 16 work.">
+    <meta property="og:url" content="https://ninjaops001.github.io/inreset/en/faq.html">
+    <meta property="og:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:site" content="@tellmit611">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FAQ (Q&A) | INRESET">
+    <meta name="twitter:description" content="What a compatible console is, whether it is illegal, how patents, trademarks and copyright differ, and how FPGA and Mark 16 work.">
+    <meta name="twitter:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0e17;
+        }
+        header {
+            background: rgba(10, 14, 23, 0.95);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid #1e2a3a;
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #00d4ff; letter-spacing: 2px; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #00d4ff; }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border: 1px solid #00ff88; color: #00ff88;
+            border-radius: 50px; font-size: 0.9rem; font-weight: bold;
+            margin-bottom: 1rem; letter-spacing: 1px;
+        }
+        .page-head { padding-top: 8rem; padding-bottom: 2rem; text-align: center; }
+        .page-head p { color: #9fb0c6; max-width: 720px; margin: 0 auto; }
+        .notice {
+            max-width: 900px; margin: 0 auto 2rem; padding: 0.9rem 1.2rem;
+            background: #111827; border: 1px solid #2a3a4a; border-radius: 12px;
+            color: #9fb0c6; font-size: 0.9rem; text-align: center;
+        }
+
+        section { padding: 1rem 2rem 4rem; max-width: 900px; margin: 0 auto; }
+        h2 { text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: #00d4ff; }
+
+        .toc {
+            display: block;
+            background: #111827; border: 1px solid #2a3a4a; border-radius: 16px;
+            padding: 1.5rem 2rem; margin: 0 auto 2.5rem; max-width: 900px;
+        }
+        .toc h3 { color: #00d4ff; font-size: 1rem; letter-spacing: 1px; margin-bottom: 0.8rem; }
+        .toc ol { margin-left: 1.2rem; color: #c8d6e5; }
+        .toc a { color: #00d4ff; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+
+        .faq-item { background: #1a2332; border: 1px solid #2a3a4a; border-radius: 15px; padding: 1.5rem 2rem; margin-bottom: 1.2rem; }
+        .faq-item h3 { color: #00ff88; font-size: 1.2rem; margin-bottom: 0.8rem; }
+        .faq-item h3::before { content: 'Q. '; color: #00d4ff; }
+        .answer { color: #c8d6e5; }
+        .answer > p:first-of-type::before { content: 'A. '; color: #00d4ff; font-weight: bold; }
+        .answer p { margin-bottom: 0.8rem; }
+        .answer p:last-child { margin-bottom: 0; }
+        .answer ul, .answer ol { margin: 0 0 0.8rem 1.3rem; }
+        .answer li { margin-bottom: 0.4rem; }
+        .answer a { color: #00d4ff; }
+        .answer h4 {
+            color: #00d4ff; font-size: 1.05rem; margin: 1.3rem 0 0.5rem;
+            padding-top: 0.8rem; border-top: 1px solid #2a3a4a;
+        }
+        .answer h4:first-of-type { border-top: none; padding-top: 0.4rem; }
+        .rights-box {
+            background: #0d1520; border: 1px solid #2a3a4a; border-radius: 12px;
+            padding: 1rem 1.2rem; margin: 0.8rem 0;
+        }
+        .rights-box h4 { margin-top: 0; padding-top: 0; border-top: none; }
+        .credits { font-size: 0.92rem; }
+        .credits li { margin-bottom: 0.35rem; }
+        .fine { font-size: 0.88rem; color: #9fb0c6; }
+
+        .diagram {
+            margin: 1.2rem 0 0.6rem;
+            background: #0d1520; border: 1px solid #2a3a4a; border-radius: 16px;
+            padding: 1.4rem 1rem;
+        }
+        .flow {
+            display: flex; align-items: stretch; justify-content: center;
+            gap: 0.4rem; flex-wrap: nowrap;
+        }
+        .flow-box {
+            background: #1a2332; border: 1px solid #2a3a4a; border-radius: 12px;
+            padding: 0.9rem 0.7rem; text-align: center; flex: 1 1 0;
+            min-width: 0;
+        }
+        .flow-box.fpga { border-color: #00d4ff; }
+        .flow-label {
+            display: inline-block; font-size: 0.72rem; letter-spacing: 1px;
+            color: #00d4ff; border: 1px solid #1e4a5a; border-radius: 999px;
+            padding: 0.1rem 0.5rem; margin-bottom: 0.4rem;
+        }
+        .flow-box h4 { color: #00ff88; font-size: 0.98rem; margin: 0 0 0.35rem; border: none; padding: 0; }
+        .flow-box p { color: #c8d6e5; font-size: 0.82rem; margin: 0; line-height: 1.5; word-break: keep-all; }
+        .flow-box .chips { display: flex; flex-wrap: wrap; gap: 0.3rem; justify-content: center; margin-top: 0.55rem; }
+        .chip {
+            background: #0a0e17; border: 1px solid #2a3a4a; color: #e0e0e0;
+            border-radius: 6px; font-size: 0.72rem; padding: 0.15rem 0.4rem;
+        }
+        .flow-arrow {
+            color: #00d4ff; font-size: 1.4rem; font-weight: bold;
+            display: flex; align-items: center; flex: 0 0 auto; padding: 0 0.1rem;
+        }
+        figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; margin-top: 0.8rem; }
+
+        .contact {
+            text-align: center; background: linear-gradient(135deg, #1a2332, #0a0e17);
+            border-radius: 20px; padding: 3rem 2rem; margin-top: 1rem;
+        }
+        .contact p { margin-bottom: 1rem; }
+        .contact a.mail { color: #00d4ff; text-decoration: none; font-size: 1.2rem; }
+        .btn {
+            display: inline-block; padding: 0.8rem 2rem; margin-top: 0.6rem;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            color: #0a0e17; text-decoration: none; border-radius: 50px; font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
+
+        footer { text-align: center; padding: 2rem; background: #05070a; color: #666; border-top: 1px solid #1e2a3a; }
+        nav ul { margin-left: auto; }
+        .lang { margin-left: 1.5rem; padding: 0.2rem 0.9rem; border: 1px solid #2a3a4a; border-radius: 50px; font-size: 0.85rem; color: #e0e0e0; text-decoration: none; white-space: nowrap; }
+        .lang:hover { border-color: #00d4ff; color: #00d4ff; }
+
+        @media (max-width: 800px) {
+            .flow { flex-direction: column; align-items: center; }
+            .flow-box { width: 100%; max-width: 360px; flex: none; }
+            .flow-arrow { transform: rotate(90deg); padding: 0.2rem 0; }
+            .faq-item { padding: 1.2rem 1.2rem; }
+            .panel, .toc { margin-left: 1rem; margin-right: 1rem; }
+        }
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            h2 { font-size: 2rem; }
+        }
+    </style>
+    <link rel="stylesheet" href="../site-nav.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="../images/inreset_logo.png" alt="INRESET" style="height:40px;width:auto;display:block;"></a>
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="app.html">App</a></li>
+                <li><a href="blog.html">Dev Diary</a></li>
+                <li><a href="faq.html" class="active">Q&amp;A</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="../faq.html" class="lang" lang="ja" hreflang="ja">日本語</a>
+        </nav>
+    </header>
+
+    <section class="page-head">
+        <span class="badge">Q&amp;A</span>
+        <h2 style="margin-bottom:1rem">Frequently asked questions</h2>
+        <p>Plain answers on what a compatible console is, whether it is illegal, how patents, trademarks and copyright differ, and how FPGA and Mark 16 work.</p>
+    </section>
+
+    <p class="notice">This page is general information, not legal advice. If you need a decision for a specific case, please consult a professional.</p>
+
+    <div class="toc" role="navigation" aria-label="Contents">
+        <h3>Contents</h3>
+        <ol>
+            <li><a href="#compatible">What is a compatible console?</a></li>
+            <li><a href="#legal">Is a compatible console illegal?</a></li>
+            <li><a href="#rights">Patents, trademarks, and copyright</a></li>
+            <li><a href="#fpga">What is an FPGA?</a></li>
+            <li><a href="#how">How Mark 16 works</a></li>
+            <li><a href="#games">Which software works?</a></li>
+            <li><a href="#saves">Can I save?</a></li>
+            <li><a href="#controllers">What about controllers?</a></li>
+            <li><a href="#sales">Will it go on sale?</a></li>
+        </ol>
+    </div>
+
+    <section style="padding-top:0">
+        <article class="faq-item" id="compatible">
+            <h3>What is a compatible console?</h3>
+            <div class="answer">
+                <p>A compatible console is a game machine made by someone other than the original manufacturer, designed so that the same software can run on it. In practice, that often means you can insert your own cartridges and play them much as you would on the original hardware.</p>
+                <p>Hardware of this kind has long been sold and used in public, in various forms — for example as computer peripherals or as compatible machines for older consoles. This is a general description. It is not a statement about whether any other company’s product is lawful.</p>
+                <p>INRESET’s Mark 16 is a compatible console for MEGA DRIVE* / GENESIS* cartridges you already own, and for games on a microSD card. It uses an FPGA to reproduce circuits close to those of the original console.</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="legal">
+            <h3>Is a compatible console illegal?</h3>
+            <div class="answer">
+                <p>Making hardware that works in the same way is not, by itself, generally illegal. What matters is not copying other people’s copyrighted programs or data (such as game ROMs or BIOS) or distributing them without permission, and not using another company’s trademarks or logos improperly. The answer can also depend on the country, region, and the facts of each case. We cannot say it is “completely legal everywhere.”</p>
+                <p>Mark 16 is designed with these points in mind:</p>
+                <ul>
+                    <li>No game ROMs or BIOS are included in the console, and we do not distribute them.</li>
+                    <li>The FPGA circuits are INRESET’s modifications and integration of publicly documented technology and open-source FPGA cores. The Pico software that handles the menu, SD card, controllers, and saves is written by INRESET (and also uses publicly available development software). The open-source projects we use are credited under <a href="#rights">Patents, trademarks, and copyright</a>.</li>
+                    <li>It is not an official SEGA product, and it is not affiliated with, approved, or endorsed by SEGA. Names such as “MEGA DRIVE” are used only to describe compatibility. We do not use SEGA’s logos.</li>
+                    <li>Please use only cartridges and data that you legally own. INRESET does not support or help with pirated ROMs.</li>
+                </ul>
+                <p class="fine">For a plain explanation of each type of right, see the next section. This page is general information, not legal advice.</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="rights">
+            <h3>Patents, trademarks, and copyright</h3>
+            <div class="answer">
+                <p>These words sound similar, but they protect different things. In simple terms, there are three kinds:</p>
+
+                <div class="rights-box">
+                    <h4>Patents</h4>
+                    <p>A patent protects an “invention,” such as a new mechanism or device. For example, a technical idea about a way to display a picture can be the subject of a patent.</p>
+                    <p>In Japan, a patent generally lasts 20 years from the filing date of the application (<a href="https://www.jpo.go.jp/e/faq/yokuaru/patent.html" target="_blank" rel="noopener">Japan Patent Office, “Patent” FAQ: duration of a patent right</a>; see also the <a href="https://www.jpo.go.jp/system/basic/patent/index.html" target="_blank" rel="noopener">JPO primer in Japanese</a>). In limited cases, such as certain pharmaceuticals, the term can be extended.</p>
+                    <p>How this relates to Mark 16: the original MEGA DRIVE* console was released in 1988. The original hardware patents from that period are generally considered to have expired. That said, later filings and differences between countries can exist, so we cannot say that “every patent has expired” or that there is “no issue anywhere.”</p>
+                </div>
+
+                <div class="rights-box">
+                    <h4>Trademarks</h4>
+                    <p>A trademark protects names, logos, and similar signs that identify whose product or service it is. You must not use another party’s name or logo in a way that makes a product look official when it is not.</p>
+                    <p>How this relates to Mark 16: the console uses INRESET’s own name and logo. Other companies’ product names are used only to describe compatibility, and we do not use official logos. Mark 16 is not an official SEGA product and is not affiliated with, approved, or endorsed by SEGA. “MEGA DRIVE,” “GENESIS,” and related names are registered trademarks of SEGA CORPORATION.</p>
+                </div>
+
+                <div class="rights-box">
+                    <h4>Copyright</h4>
+                    <p>Copyright protects creative expression, such as programs, game data, BIOS, pictures, music, and writing. Just as you must not copy a book and give it away, you must not copy and distribute a game ROM without permission.</p>
+                    <p>How this relates to Mark 16: no game ROMs or BIOS are included or distributed. The FPGA circuits and Pico software are INRESET’s own work or are based on open-source projects that are credited. Please use only cartridges and data that you legally own.</p>
+                </div>
+
+                <h4>Open-source credits</h4>
+                <p>Mark 16’s FPGA circuits are based on the following open-source projects, which INRESET has modified and integrated. The Pico-side software is written by INRESET and also uses publicly available development software.</p>
+                <ul class="credits">
+                    <li><a href="https://github.com/nand2mario/mdtang" target="_blank" rel="noopener">MDTang</a> — Copyright (c) nand2mario — GPL-3.0</li>
+                    <li><a href="https://github.com/MiSTer-devel/Genesis_MiSTer" target="_blank" rel="noopener">Genesis_MiSTer</a> — Copyright (c) Gregory Estrade, Till Harbaum, Alexey Melnikov (Sorgelig) and others — GPL-3.0 / BSD</li>
+                    <li><a href="https://github.com/ijor/fx68k" target="_blank" rel="noopener">fx68k</a> (68000 CPU) — Copyright (c) 2018 Jorge Cwik — GPL-3.0</li>
+                    <li><a href="https://github.com/jotego/jt12" target="_blank" rel="noopener">jt12</a> (YM2612 sound) — Copyright (c) Jose Tejada (jotego) — GPL-3.0</li>
+                    <li><a href="https://github.com/jotego/jt89" target="_blank" rel="noopener">jt89</a> (SN76489 sound) — Copyright (c) Jose Tejada (jotego) — GPL-3.0</li>
+                    <li>T80 (Z80 CPU) — Copyright (c) 2001-2002 Daniel Wallner, 2018 Sorgelig — BSD</li>
+                    <li>VDP (video) — Copyright (c) 2010 Gregory Estrade, 2018 Till Harbaum, 2018-2019 Alexey Melnikov — BSD</li>
+                    <li>genesis_lpf / audio_iir_filter — Copyright (c) 2019 Gregory Hogan — MIT</li>
+                    <li>Video output core — Copyright (c) Sameer Puri — MIT / Apache-2.0</li>
+                    <li>Raspberry Pi Pico SDK — Copyright (c) 2020 Raspberry Pi (Trading) Ltd. — BSD-3-Clause</li>
+                    <li>TinyUSB — Copyright (c) 2018 hathach (tinyusb.org) — MIT</li>
+                    <li>Pico-PIO-USB — Copyright (c) 2021 sekigon-gonnoc — MIT</li>
+                </ul>
+                <p class="fine">This explanation is general information, not legal advice.</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="fpga">
+            <h3>What is an FPGA?</h3>
+            <div class="answer">
+                <p>An FPGA is a chip whose internal circuits can be rewritten. Unlike an ordinary chip whose insides are fixed at manufacture, you can later change how the circuits are connected.</p>
+                <p>An “emulator” on a PC or phone reproduces a console’s behavior by calculating it in software. An FPGA, by contrast, builds the circuits themselves inside the chip. Timing is therefore closer to the original hardware, and the delay from a button press to the picture on screen (latency) is easier to keep low.</p>
+                <p>Mark 16 uses an FPGA to reproduce the main MEGA DRIVE* circuits, including the CPUs, video, and sound.</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="how">
+            <h3>How Mark 16 works</h3>
+            <div class="answer">
+                <p>The roles break down into a simple flow:</p>
+                <figure class="diagram">
+                    <div class="flow" role="img" aria-label="Flow from cartridge or microSD through the Pico and FPGA to DV output and a TV">
+                        <div class="flow-box">
+                            <span class="flow-label">INPUT</span>
+                            <h4>Cartridge / microSD</h4>
+                            <p>Your own cart, or a game on the card</p>
+                        </div>
+                        <div class="flow-arrow" aria-hidden="true">→</div>
+                        <div class="flow-box">
+                            <span class="flow-label">PICO</span>
+                            <h4>WeAct RP2350B</h4>
+                            <p>Menu, SD card, USB controllers, and save data</p>
+                        </div>
+                        <div class="flow-arrow" aria-hidden="true">→</div>
+                        <div class="flow-box fpga">
+                            <span class="flow-label">FPGA</span>
+                            <h4>Tang Primer 25K</h4>
+                            <p>Circuits reproduced on a Gowin GW5A-25</p>
+                            <div class="chips">
+                                <span class="chip">CPU 68000</span>
+                                <span class="chip">Z80</span>
+                                <span class="chip">VDP</span>
+                                <span class="chip">YM2612</span>
+                                <span class="chip">SN76489</span>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" aria-hidden="true">→</div>
+                        <div class="flow-box">
+                            <span class="flow-label">OUTPUT</span>
+                            <h4>DV output</h4>
+                            <p>Picture and sound to a TV or monitor</p>
+                        </div>
+                    </div>
+                    <figcaption>Cartridges are copied into RAM before they run. The FPGA executes the game.</figcaption>
+                </figure>
+                <p>Your cartridge, or a game on a microSD card, is first received by the Pico (WeAct RP2350B). The Pico handles the menu, SD card, USB controllers, and save data. A cartridge is copied into RAM and then run from there.</p>
+                <p>The game itself runs on the Tang Primer 25K FPGA board (Gowin GW5A-25). Circuits for the CPUs (68000 and Z80), video (VDP), and sound (YM2612 and SN76489) are built inside the FPGA. Picture and sound go to a TV or monitor through DV output.</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="games">
+            <h3>Which software works?</h3>
+            <div class="answer">
+                <p>Most MEGA DRIVE* / GENESIS* software runs. Mark 16 supports domestic and overseas cartridges, and games on a microSD card.</p>
+                <p>Compatibility is still being tested, and we do not guarantee that every title will work. A compatibility list page is planned. Support for 8-bit cartridges is also planned.</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="saves">
+            <h3>Can I save?</h3>
+            <div class="answer">
+                <p>Yes. On the development hardware, original in-game saves are supported, along with save states (saving and resuming at any point) and screenshots. Data is stored on a microSD card.</p>
+                <p>When you start a game from a cartridge, the save is written to the microSD card, not back into the cartridge, because the cartridge is copied into RAM to run. You can also back up save data with the <a href="app.html">Mark16Manager</a> PC app.</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="controllers">
+            <h3>What about controllers?</h3>
+            <div class="answer">
+                <p>There are two USB ports for controllers, so two people can play at once. USB controllers are supported. Whether a controller will be included with the product is still under consideration.</p>
+            </div>
+        </article>
+
+        <article class="faq-item" id="sales">
+            <h3>Will it go on sale?</h3>
+            <div class="answer">
+                <p>We plan to sell Mark 16 through crowdfunding. The start date and price have not been decided yet. We will announce them on this site when they are. Details are coming soon.</p>
+                <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdTArvIRJB6kyIP8iQhwwh_5KxHuNYF3dFc2M2ThSJWB8huwA/viewform" target="_blank" rel="noopener">Get an email when it starts</a> (we will use your address only for this notice).</p>
+                <p>For the current specifications, see the <a href="mark16.html">Mark 16 page</a>.</p>
+            </div>
+        </article>
+
+        <div class="contact" id="contact">
+            <h2 style="margin-bottom:1.2rem">Contact</h2>
+            <p><a class="mail" href="mailto:transgun@gmail.com">transgun@gmail.com</a></p>
+            <p>If you have other questions, feel free to write to us.</p>
+            <p><a href="mark16.html" class="btn">About Mark 16</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p style="margin-bottom:1rem"><a href="https://x.com/tellmit611" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;background:#000;border:1px solid #444;padding:.5rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:bold"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@tellmit611</a></p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">* "MEGA DRIVE", "GENESIS", "MEGA-CD" and "SEGA SATURN" are registered trademarks of SEGA CORPORATION. Mark 16 is a product developed independently by INRESET and is not affiliated with, approved, or endorsed by SEGA CORPORATION. These names are used only to describe compatibility.</p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">This page is general information, not legal advice.</p>
+        <p>&copy; 2026 INRESET. All rights reserved.</p>
+    </footer>
+<div id="alice" style="position:fixed;right:16px;bottom:16px;z-index:999;display:flex;align-items:flex-start;gap:8px;font-size:14px;">
+<div id="alice-msg" style="background:#fff;color:#111;border:3px solid #e60012;border-radius:10px;padding:8px 12px;max-width:220px;box-shadow:0 4px 12px rgba(0,0,0,.4);position:relative;">I'm Alice. For compatible consoles and FPGAs, start with this Q&amp;A!<button onclick="document.getElementById('alice-msg').style.display='none'" aria-label="Close" style="position:absolute;top:-10px;right:-10px;width:22px;height:22px;border-radius:50%;border:none;background:#0047ab;color:#fff;cursor:pointer;line-height:22px;padding:0;">×</button></div>
+<img src="../images/alice_full.png" alt="Alice" onclick="var b=document.getElementById('alice-msg');b.style.display=b.style.display==='none'?'block':'none'" style="height:180px;width:auto;image-rendering:pixelated;cursor:pointer;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));">
+</div>
+</body>
+</html>

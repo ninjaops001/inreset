@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MM61W9VECC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MM61W9VECC');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ソフト対応リスト | INRESET</title>
+    <meta name="description" content="Mark 16で実機確認したメガドライブ／GENESISソフトの対応リスト。セーブステートとスクリーンショットの結果も掲載しています。">
+    <link rel="alternate" hreflang="ja" href="https://ninjaops001.github.io/inreset/compat.html">
+    <link rel="alternate" hreflang="en" href="https://ninjaops001.github.io/inreset/en/compat.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="INRESET">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="ソフト対応リスト | INRESET">
+    <meta property="og:description" content="Mark 16で実機確認したメガドライブ／GENESISソフトの対応リスト。セーブステートとスクリーンショットの結果も掲載しています。">
+    <meta property="og:url" content="https://ninjaops001.github.io/inreset/compat.html">
+    <meta property="og:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:site" content="@tellmit611">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ソフト対応リスト | INRESET">
+    <meta name="twitter:description" content="Mark 16で実機確認したメガドライブ／GENESISソフトの対応リスト。セーブステートとスクリーンショットの結果も掲載しています。">
+    <meta name="twitter:image" content="https://ninjaops001.github.io/inreset/images/og_mark16.jpg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0e17;
+        }
+        header {
+            background: rgba(10, 14, 23, 0.95);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid #1e2a3a;
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #00d4ff; letter-spacing: 2px; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 2rem; margin-left: auto; }
+        nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #00d4ff; }
+        .lang { margin-left: 1.5rem; padding: 0.2rem 0.9rem; border: 1px solid #2a3a4a; border-radius: 50px; font-size: 0.85rem; color: #e0e0e0; text-decoration: none; white-space: nowrap; }
+        .lang:hover { border-color: #00d4ff; color: #00d4ff; }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border: 1px solid #00ff88; color: #00ff88;
+            border-radius: 50px; font-size: 0.9rem; font-weight: bold;
+            margin-bottom: 1rem; letter-spacing: 1px;
+        }
+        .page-head { padding-top: 8rem; padding-bottom: 1.5rem; text-align: center; }
+        .page-head p { color: #9fb0c6; max-width: 760px; margin: 0 auto; }
+        h2 { text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: #00d4ff; }
+
+        .notice, .legend, .intro {
+            max-width: 1100px; margin: 0 auto 1.2rem; padding: 1rem 1.3rem;
+            background: #111827; border: 1px solid #2a3a4a; border-radius: 12px;
+            color: #c8d6e5; font-size: 0.95rem;
+        }
+        .notice p, .intro p { margin-bottom: 0.7rem; }
+        .notice p:last-child, .intro p:last-child { margin-bottom: 0; }
+        .legend { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; align-items: center; }
+        .legend span { white-space: nowrap; }
+        .legend strong { margin-right: 0.2rem; }
+
+        section.list { padding: 0.5rem 1.2rem 3.5rem; max-width: 1100px; margin: 0 auto; }
+        .table-wrap { overflow-x: auto; border: 1px solid #2a3a4a; border-radius: 16px; background: #111827; }
+        table.compat { width: 100%; border-collapse: collapse; min-width: 820px; }
+        table.compat th, table.compat td {
+            padding: 0.75rem 0.85rem; text-align: left; vertical-align: top;
+            border-bottom: 1px solid #2a3a4a; font-size: 0.95rem;
+        }
+        table.compat th {
+            background: #0d1520; color: #00d4ff; font-weight: 600;
+            white-space: nowrap; position: sticky; top: 0;
+        }
+        table.compat tbody tr:last-child td { border-bottom: none; }
+        table.compat tbody tr:hover { background: #1a2332; }
+        table.compat td.title { color: #fff; font-weight: 600; white-space: nowrap; }
+        .st-ok { color: #00ff88; font-weight: 700; white-space: nowrap; }
+        .st-issue { color: #ffcc44; font-weight: 700; white-space: nowrap; }
+        .st-no { color: #ff6b6b; font-weight: 700; white-space: nowrap; }
+        .st-unk { color: #7f8ea3; white-space: nowrap; }
+        td.memo { color: #c8d6e5; min-width: 16em; }
+        td.date { color: #9fb0c6; white-space: nowrap; }
+        .fine { max-width: 1100px; margin: 1rem auto 0; color: #9fb0c6; font-size: 0.88rem; }
+        .fine a { color: #00d4ff; }
+
+        footer { text-align: center; padding: 2rem; background: #05070a; color: #666; border-top: 1px solid #1e2a3a; }
+        footer a.xlink {
+            display: inline-flex; align-items: center; gap: .5rem; color: #fff; background: #000;
+            border: 1px solid #444; padding: .5rem 1.2rem; border-radius: 999px;
+            text-decoration: none; font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            h2 { font-size: 2rem; }
+        }
+    </style>
+    <link rel="stylesheet" href="site-nav.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="images/inreset_logo.png" alt="INRESET" style="height:40px;width:auto;display:block;"></a>
+            <ul>
+                <li><a href="index.html#about">会社概要</a></li>
+                <li><a href="index.html#services">サービス</a></li>
+                <li><a href="index.html#products">開発中の製品</a></li>
+                <li><a href="app.html">PCアプリ</a></li>
+                <li><a href="blog.html">開発日記</a></li>
+                <li><a href="faq.html">よくある質問</a></li>
+                <li><a href="compat.html" class="active">対応表</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+            <a href="en/compat.html" class="lang" lang="en" hreflang="en">EN</a>
+        </nav>
+    </header>
+
+    <section class="page-head">
+        <span class="badge">COMPAT</span>
+        <h2>ソフト対応リスト</h2>
+        <p>Mark 16の開発用の本体で確認した、メガドライブ※／GENESIS※ソフトの結果です。</p>
+    </section>
+
+    <div class="notice">
+        <p>開発中の試作機で、開発者が適法に所有しているカートリッジとデータを使って確認した結果です。更新で結果が変わることがあります。すべてのソフトの動作を保証するものではありません。一覧はこれから増やしていきます。</p>
+        <p>セーブステートとスクリーンショットは、実機での報告があったものだけを記入しています。報告がない欄は「未確認」です。箱絵やゲーム画面は掲載していません。</p>
+    </div>
+
+    <div class="legend">
+        <span><strong class="st-ok">◎ 問題なし</strong>　確認した範囲では、問題は見つかっていません</span>
+        <span><strong class="st-issue">△ 不具合あり</strong>　動くが、不具合の報告があります</span>
+        <span><strong class="st-no">× 動かない</strong>　起動しない、または非対応です</span>
+        <span><strong class="st-unk">未確認</strong>　その機能についての報告は、まだありません</span>
+    </div>
+
+    <section class="list">
+        <div class="table-wrap">
+            <table class="compat">
+                <thead>
+                <tr><th>タイトル</th><th>状態</th><th>セーブステート</th><th>スクショ</th><th>メモ</th><th>確認日</th></tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="title">アフターバーナーII</td>
+                    <td class="st-issue">△ 不具合あり</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="memo">機体の動きが遅い（2026.11.15の更新後も、ほとんど変わらなかったとの報告）。画面の横ノイズも、以前報告されています。</td>
+                    <td class="date">2026.11.15</td>
+                </tr>
+                <tr>
+                    <td class="title">フォーゴットンワールド</td>
+                    <td class="st-issue">△ 不具合あり</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="memo">やられたあと、自機が2〜3秒消えることがある。</td>
+                    <td class="date">2026.11.17</td>
+                </tr>
+                <tr>
+                    <td class="title">アウトラン</td>
+                    <td class="st-ok">◎ 問題なし</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="st-issue">△ 不具合あり</td>
+                    <td class="memo">本体の不具合報告はない。プレイ中のスクリーンショットが、文字だけの青緑の画面になったとの報告。</td>
+                    <td class="date">2026.11.15</td>
+                </tr>
+                <tr>
+                    <td class="title">アトミックロボキッド</td>
+                    <td class="st-ok">◎ 問題なし</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="memo">以前は音が出なかったが、更新で修正済み。</td>
+                    <td class="date">2026.10.30</td>
+                </tr>
+                <tr>
+                    <td class="title">ソニック</td>
+                    <td class="st-ok">◎ 問題なし</td>
+                    <td class="st-issue">△ 不具合あり</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="memo">ゲームはステージクリアまで遊べるとの報告。セーブステートは、ステージクリア直後に保存して読み込むと固まる。</td>
+                    <td class="date">2026.11.16</td>
+                </tr>
+                <tr>
+                    <td class="title">ソニック3</td>
+                    <td class="st-ok">◎ 問題なし</td>
+                    <td class="st-issue">△ 不具合あり</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="memo">対戦モードまで遊べるとの報告。対戦モードでセーブステートを保存して読み込むと固まる。</td>
+                    <td class="date">2026.11.16</td>
+                </tr>
+                <tr>
+                    <td class="title">スーパーストリートファイターII</td>
+                    <td class="st-ok">◎ 問題なし</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="memo">起動して遊べるとの報告あり（5MB）。</td>
+                    <td class="date">2026.11.15</td>
+                </tr>
+                <tr>
+                    <td class="title">パノラマコットン</td>
+                    <td class="st-ok">◎ 問題なし</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="memo">以前は画面がちらついたが、更新で修正済み。</td>
+                    <td class="date">2026.10.31</td>
+                </tr>
+                <tr>
+                    <td class="title">フェリオス</td>
+                    <td class="st-ok">◎ 問題なし</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="memo">以前は画面の切り替え直後に音が残り続けたが、更新で修正済み。</td>
+                    <td class="date">2026.10.31</td>
+                </tr>
+                <tr>
+                    <td class="title">ヘルファイア</td>
+                    <td class="st-ok">◎ 問題なし</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="memo">以前は曲が約半分のテンポだったが、更新で修正済み。</td>
+                    <td class="date">2026.11.17</td>
+                </tr>
+                <tr>
+                    <td class="title">ファンタシースター復刻版</td>
+                    <td class="st-no">× 動かない</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="st-unk">未確認</td>
+                    <td class="memo">マスターシステム※用のため、現在は非対応。黒い画面になるとの報告。</td>
+                    <td class="date">2026.11.15</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="fine">タイトルの権利は、各権利者に帰属します。対応の説明のために名称を記載しています。<a href="mark16.html">Mark 16の紹介</a>／<a href="faq.html#games">よくある質問</a></p>
+    </section>
+
+    <footer>
+        <p style="margin-bottom:1rem"><a class="xlink" href="https://x.com/tellmit611" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@tellmit611</a></p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「メガドライブ」「MEGA DRIVE」「GENESIS」「マスターシステム」「MASTER SYSTEM」「メガCD」「MEGA-CD」「セガサターン」「SEGA SATURN」は株式会社セガの登録商標です。Mark 16はINRESETが独自に開発した製品であり、株式会社セガとは一切関係がなく、同社による承認・保証を受けたものではありません。互換性の説明のために名称を記載しています。</p>
+        <p>&copy; 2026 INRESET. All rights reserved.</p>
+    </footer>
+<div id="alice" style="position:fixed;right:16px;bottom:16px;z-index:999;display:flex;align-items:flex-start;gap:8px;font-size:14px;">
+<div id="alice-msg" style="background:#fff;color:#111;border:3px solid #e60012;border-radius:10px;padding:8px 12px;max-width:220px;box-shadow:0 4px 12px rgba(0,0,0,.4);position:relative;">アリスです。実機で確認したソフトを、ここにまとめています！<button onclick="document.getElementById('alice-msg').style.display='none'" aria-label="閉じる" style="position:absolute;top:-10px;right:-10px;width:22px;height:22px;border-radius:50%;border:none;background:#0047ab;color:#fff;cursor:pointer;line-height:22px;padding:0;">×</button></div>
+<img src="images/alice_full.png" alt="Alice" onclick="var b=document.getElementById('alice-msg');b.style.display=b.style.display==='none'?'block':'none'" style="height:180px;width:auto;image-rendering:pixelated;cursor:pointer;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));">
+</div>
+</body>
+</html>

@@ -18,7 +18,7 @@ figcaption { color:#a8bbd2; font-size:.85rem; padding-top:.6rem; }
 .detail-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
 .detail-grid .feature { margin:0; padding:1.5rem; }
 .notice { border-left:4px solid #ffb84d; padding:1rem 1.4rem; background:#201d1b; color:#ffe2b5; border-radius:0 10px 10px 0; margin:1.5rem 0; }
-.download-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; max-width:760px; }
+.download-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
 .download-card { background:#111827; border:1px solid #2a3a4a; border-radius:16px; padding:1.5rem; }
 .download-card .btn { display:block; text-align:center; padding:.8rem 1rem; margin:1rem 0; }
 .download-card small { color:#b0c4de; }
@@ -41,3 +41,5 @@ footer { padding-bottom:5rem; }
 .checksums { background:#080d16; border:1px solid #2a3a4a; border-radius:12px; padding:1rem 1.2rem; overflow-x:auto; font-size:.8rem; color:#c8d6e5; margin-top:.8rem; }
 .checksums code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; white-space:pre; }
 .download-note { color:#b0c4de; font-size:.9rem; margin-top:1rem; }
+
+.feature img.dialog-shot { width:auto; max-width:min(100%,420px); height:auto; }

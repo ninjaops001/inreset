@@ -195,6 +195,16 @@
     <section id="diary" style="padding-top:1rem">
                 <article class="entry">
             <time datetime="2026-11-18">2026.11.18</time>
+            <h3>Mark16Manager updated to v0.2.1</h3>
+            <p>We updated the Mark16Manager beta to v0.2.1. Builds are available for Windows and Mac (Apple silicon and Intel).</p>
+            <p>A new Delete tab lets you pick firmware (UPDATE folder), screenshots, and save data (including save states) on the SD card and remove them. A confirmation dialog appears first, and selected files are moved to the computer’s Trash. Game ROMs and intro files (INFO) are never deleted.</p>
+            <p>Screenshots can now be saved to the computer as a selection (multi-select is allowed). A Save all button is still available. List thumbnails are larger, and a preview shows the selected image, scaled with nearest neighbour so pixels stay sharp.</p>
+            <p>A new MDTANG folder is never created. All creates and writes go under /MARK16. If a card already has only MDTANG, the app can still read it, and the first write moves that folder to /MARK16.</p>
+            <p>It is an unsigned beta for Mark 16 development units.</p>
+            <p><a href="app.html" style="color:#00d4ff">App page &amp; downloads &rarr;</a></p>
+        </article>
+                <article class="entry">
+            <time datetime="2026-11-18">2026.11.18</time>
             <h3>Console improvements and Mark16Manager v0.1.9</h3>
             <p>We have been continuing to improve the prototype console.</p>
             <p>We fixed a bug that made the music in Hellfire play too slowly. The cause was the way the sound chip’s (YM2612) BUSY flag was handled, which did not match a real Mega Drive. We have confirmed the fix on hardware.</p>

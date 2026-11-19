@@ -79,9 +79,13 @@
             margin-bottom: 1rem; letter-spacing: 1px;
         }
         .hero h1 {
-            font-size: 4rem; line-height: 1.1; margin-bottom: 1rem;
-            background: linear-gradient(90deg, #00d4ff, #00ff88);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            margin: 0 0 1rem;
+            line-height: 0;
+        }
+        .hero h1 img {
+            display: block;
+            width: min(100%, 26rem);
+            height: auto;
         }
         .hero .lead { font-size: 1.4rem; margin-bottom: 1.5rem; color: #b0c4de; }
         .hero .sub { color: #9fb0c6; margin-bottom: 2rem; }
@@ -149,7 +153,7 @@
             .hero-inner { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 img { width: min(100%, 20rem); }
             nav ul { display: none; }
             .panel { padding: 1.5rem; }
             table.spec th, table.spec td { display: block; width: 100%; padding: 0.5rem 0; }
@@ -190,7 +194,7 @@
         <div class="hero-inner">
             <div>
                 <span class="badge">開発中 / IN DEVELOPMENT</span>
-                <h1>Mark 16</h1>
+                <h1><img src="images/mark16_logo.svg" alt="MARK 16 ロゴ" width="1509" height="372"></h1>
                 <div class="stripe"><span class="r"></span><span class="k"></span><span class="b"></span></div>
                 <p class="lead">手持ちのカートリッジを、いまのテレビで。<br>FPGA採用のメガドライブ※カートリッジ対応ゲーム機</p>
                 <p class="sub">ソフトウェアによるエミュレーションではなく、FPGAで回路そのものを再現。カートリッジを上から差し込み、DV出力でテレビにきれいに映します。</p>

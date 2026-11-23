@@ -94,7 +94,14 @@
             margin: 1.4rem 0 1.6rem;
         }
         .shots figure { margin: 0; background: #0d1520; border: 1px solid #2a3a4a; border-radius: 12px; overflow: hidden; }
-        .shots img { width: 100%; display: block; image-rendering: pixelated; }
+        .shots img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            display: block;
+            image-rendering: auto;
+        }
         .shots figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; padding: 0.5rem 0.6rem 0.7rem; }
         h3 { color: #00ff88; font-size: 1.15rem; margin: 1.4rem 0 0.6rem; }
         table.controls { width: 100%; border-collapse: collapse; margin: 0.4rem 0 0.8rem; }
@@ -176,19 +183,19 @@
             <p>災害（地震と火事）に襲われた高層ビルで、会社員の主人公が2階から屋上まで登り、ヘリコプターで救出されるまでを遊びます。導入では、1階のロビーからエレベーターに乗り、2階に着いた直後に1階で大爆発が起きます（導入は START で飛ばせます）。</p>
             <div class="shots">
                 <figure>
-                    <img src="images/games/building_title.png" alt="ザ・ビルディングのタイトル画面。夜の街と燃える高層ビル、ヘリコプター" width="800" height="555">
+                    <img src="images/games/building_title.png" alt="ザ・ビルディングのタイトル画面。夜の街と燃える高層ビル、ヘリコプター" width="800" height="600">
                     <figcaption>タイトル画面</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/games/building_lobby.png" alt="導入の1階ロビー。受付を横切り、エレベーターへ向かう主人公" width="800" height="555">
+                    <img src="images/games/building_lobby.png" alt="導入の1階ロビー。受付を横切り、エレベーターへ向かう主人公" width="800" height="600">
                     <figcaption>導入：1階ロビー</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/games/building_stage1.png" alt="ステージ1のオフィスフロア。下から火が迫り、主人公がエレベーターの前に立っている" width="800" height="555">
+                    <img src="images/games/building_stage1.png" alt="ステージ1のオフィスフロア。下から火が迫り、主人公がエレベーターの前に立っている" width="800" height="600">
                     <figcaption>ステージ1（2〜4階）</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/games/building_rooftop.png" alt="屋上。縄ばしごを下ろしたヘリコプターと、つかまれという表示" width="800" height="555">
+                    <img src="images/games/building_rooftop.png" alt="屋上。縄ばしごを下ろしたヘリコプターと、つかまれという表示" width="800" height="600">
                     <figcaption>屋上：ヘリによる救出</figcaption>
                 </figure>
             </div>
@@ -236,19 +243,19 @@
             <p>画面中央のドラムセットを、パッドの各ボタンで叩くだけのシンプルなドラムです。フリー演奏のほか、オリジナル3曲に合わせて叩けるセッションと、ボタンのわりあてを変えるオプションがあります。</p>
             <div class="shots">
                 <figure>
-                    <img src="images/games/drum_title.png" alt="シンプルドラムのタイトル画面。フリー、セッション、オプションのメニューとドラムセット" width="800" height="555">
+                    <img src="images/games/drum_title.png" alt="シンプルドラムのタイトル画面。フリー、セッション、オプションのメニューとドラムセット" width="800" height="600">
                     <figcaption>タイトル画面</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/games/drum_play.png" alt="フリー演奏の画面。ドラムの各パーツにボタンのわりあてが表示されている" width="800" height="555">
+                    <img src="images/games/drum_play.png" alt="フリー演奏の画面。ドラムの各パーツにボタンのわりあてが表示されている" width="800" height="600">
                     <figcaption>フリー演奏</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/games/drum_select.png" alt="セッションの曲選択画面。ロック8ビート、ハードシャッフル、スローブルース" width="800" height="555">
+                    <img src="images/games/drum_select.png" alt="セッションの曲選択画面。ロック8ビート、ハードシャッフル、スローブルース" width="800" height="600">
                     <figcaption>セッション：曲の選択</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/games/drum_session.png" alt="セッション演奏中。キックを叩いた瞬間と、右側のギタリスト、左上のグルーヴメーター" width="800" height="555">
+                    <img src="images/games/drum_session.png" alt="セッション演奏中。キックを叩いた瞬間と、右側のギタリスト、左上のグルーヴメーター" width="800" height="600">
                     <figcaption>セッション演奏中</figcaption>
                 </figure>
             </div>

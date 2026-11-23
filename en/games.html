@@ -94,7 +94,14 @@
             margin: 1.4rem 0 1.6rem;
         }
         .shots figure { margin: 0; background: #0d1520; border: 1px solid #2a3a4a; border-radius: 12px; overflow: hidden; }
-        .shots img { width: 100%; display: block; image-rendering: pixelated; }
+        .shots img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            display: block;
+            image-rendering: auto;
+        }
         .shots figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; padding: 0.5rem 0.6rem 0.7rem; }
         h3 { color: #00ff88; font-size: 1.15rem; margin: 1.4rem 0 0.6rem; }
         table.controls { width: 100%; border-collapse: collapse; margin: 0.4rem 0 0.8rem; }
@@ -176,19 +183,19 @@
             <p>You play an office worker climbing from the 2nd floor to the rooftop of a high-rise hit by disaster (earthquake and fire), then escaping by helicopter. The intro takes you from the 1st-floor lobby into an elevator; just after you reach the 2nd floor, a large explosion hits the 1st floor (you can skip the intro with START).</p>
             <div class="shots">
                 <figure>
-                    <img src="../images/games/building_title.png" alt="Title screen of The Building: a night skyline, a burning tower, and a helicopter" width="800" height="555">
+                    <img src="../images/games/building_title.png" alt="Title screen of The Building: a night skyline, a burning tower, and a helicopter" width="800" height="600">
                     <figcaption>Title screen</figcaption>
                 </figure>
                 <figure>
-                    <img src="../images/games/building_lobby.png" alt="Intro on the 1st-floor lobby, with the hero walking toward the elevator" width="800" height="555">
+                    <img src="../images/games/building_lobby.png" alt="Intro on the 1st-floor lobby, with the hero walking toward the elevator" width="800" height="600">
                     <figcaption>Intro: 1st-floor lobby</figcaption>
                 </figure>
                 <figure>
-                    <img src="../images/games/building_stage1.png" alt="Stage 1 office floors, with fire rising from below and the hero by the elevator" width="800" height="555">
+                    <img src="../images/games/building_stage1.png" alt="Stage 1 office floors, with fire rising from below and the hero by the elevator" width="800" height="600">
                     <figcaption>Stage 1 (floors 2–4)</figcaption>
                 </figure>
                 <figure>
-                    <img src="../images/games/building_rooftop.png" alt="The rooftop, with a helicopter lowering a rope ladder and a prompt to grab it" width="800" height="555">
+                    <img src="../images/games/building_rooftop.png" alt="The rooftop, with a helicopter lowering a rope ladder and a prompt to grab it" width="800" height="600">
                     <figcaption>Rooftop rescue</figcaption>
                 </figure>
             </div>
@@ -236,19 +243,19 @@
             <p>A simple drum kit in the middle of the screen, played with the buttons on your pad. You can play freely, drum along with three original tracks in Session, or change the button mapping in Option.</p>
             <div class="shots">
                 <figure>
-                    <img src="../images/games/drum_title.png" alt="Simple Drum title screen, with Free, Session and Option, and the drum kit" width="800" height="555">
+                    <img src="../images/games/drum_title.png" alt="Simple Drum title screen, with Free, Session and Option, and the drum kit" width="800" height="600">
                     <figcaption>Title screen</figcaption>
                 </figure>
                 <figure>
-                    <img src="../images/games/drum_play.png" alt="Free play, with button labels on each part of the kit" width="800" height="555">
+                    <img src="../images/games/drum_play.png" alt="Free play, with button labels on each part of the kit" width="800" height="600">
                     <figcaption>Free play</figcaption>
                 </figure>
                 <figure>
-                    <img src="../images/games/drum_select.png" alt="Session track select: Rock 8-beat, Hard shuffle and Slow blues" width="800" height="555">
+                    <img src="../images/games/drum_select.png" alt="Session track select: Rock 8-beat, Hard shuffle and Slow blues" width="800" height="600">
                     <figcaption>Session: track select</figcaption>
                 </figure>
                 <figure>
-                    <img src="../images/games/drum_session.png" alt="Session play, with a kick hit, a guitarist on the right, and a groove meter" width="800" height="555">
+                    <img src="../images/games/drum_session.png" alt="Session play, with a kick hit, a guitarist on the right, and a groove meter" width="800" height="600">
                     <figcaption>Session in progress</figcaption>
                 </figure>
             </div>

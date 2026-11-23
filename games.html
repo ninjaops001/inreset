@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MM61W9VECC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MM61W9VECC');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オリジナルゲーム | INRESET</title>
+    <meta name="description" content="INRESETが制作したメガドライブ用ソフト「ザ・ビルディング」と「シンプルドラム」。MARK 16と、一部のメガドライブエミュレーターに対応。ダウンロードできます。">
+    <link rel="alternate" hreflang="ja" href="https://ninjaops001.github.io/inreset/games.html">
+    <link rel="alternate" hreflang="en" href="https://ninjaops001.github.io/inreset/en/games.html">
+    <link rel="alternate" hreflang="x-default" href="https://ninjaops001.github.io/inreset/en/games.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="INRESET">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="オリジナルゲーム | INRESET">
+    <meta property="og:description" content="INRESETが制作したメガドライブ用ソフト「ザ・ビルディング」と「シンプルドラム」。MARK 16と、一部のメガドライブエミュレーターに対応。">
+    <meta property="og:url" content="https://ninjaops001.github.io/inreset/games.html">
+    <meta property="og:image" content="https://ninjaops001.github.io/inreset/images/og_games.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:site" content="@tellmit611">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="オリジナルゲーム | INRESET">
+    <meta name="twitter:description" content="INRESETが制作したメガドライブ用ソフト「ザ・ビルディング」と「シンプルドラム」。MARK 16と、一部のメガドライブエミュレーターに対応。">
+    <meta name="twitter:image" content="https://ninjaops001.github.io/inreset/images/og_games.jpg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0e17;
+        }
+        header {
+            background: rgba(10, 14, 23, 0.95);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid #1e2a3a;
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #00d4ff; letter-spacing: 2px; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 2rem; margin-left: auto; }
+        nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #00d4ff; }
+
+        .page-hero {
+            padding: 8rem 2rem 3.5rem;
+            background: linear-gradient(135deg, #0a0e17 0%, #1a2332 100%);
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: 2.8rem; line-height: 1.2; margin-bottom: 1rem;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .page-hero .lead { font-size: 1.2rem; color: #b0c4de; max-width: 58rem; margin: 0 auto 1.5rem; }
+        .compat {
+            display: inline-block;
+            background: #111827;
+            border: 1px solid #2a3a4a;
+            border-radius: 14px;
+            padding: 1rem 1.4rem;
+            text-align: left;
+            max-width: 740px;
+            color: #c8d6e5;
+            font-size: 0.98rem;
+        }
+        .compat strong { color: #00ff88; }
+        .compat .note { color: #9fb0c6; font-size: 0.9rem; margin-top: 0.4rem; }
+
+        section { padding: 3.5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        h2 { text-align: center; font-size: 2.2rem; margin-bottom: 0.4rem; color: #00d4ff; }
+        .game { background: #111827; border-radius: 20px; padding: 2.5rem; margin-bottom: 2.5rem; border: 1px solid #1e2a3a; }
+        .game-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 1rem; margin-bottom: 1.2rem; }
+        .game h2 { text-align: left; margin: 0; }
+        .game .subtitle { color: #9fb0c6; margin-top: 0.35rem; }
+        .game p { color: #c8d6e5; margin: 0.8rem 0; }
+        .shots {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.4rem 0 1.6rem;
+        }
+        .shots figure { margin: 0; background: #0d1520; border: 1px solid #2a3a4a; border-radius: 12px; overflow: hidden; }
+        .shots img { width: 100%; display: block; image-rendering: pixelated; }
+        .shots figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; padding: 0.5rem 0.6rem 0.7rem; }
+        h3 { color: #00ff88; font-size: 1.15rem; margin: 1.4rem 0 0.6rem; }
+        table.controls { width: 100%; border-collapse: collapse; margin: 0.4rem 0 0.8rem; }
+        table.controls th, table.controls td { text-align: left; padding: 0.45rem 0.7rem; border-bottom: 1px solid #2a3a4a; vertical-align: top; }
+        table.controls th { color: #00d4ff; width: 28%; font-weight: 600; }
+        table.controls td { color: #c8d6e5; }
+        ul.feat { margin: 0.3rem 0 0.8rem 1.2rem; color: #c8d6e5; }
+        ul.feat li { margin: 0.3rem 0; }
+        .how { background: #1a2332; border: 1px solid #2a3a4a; border-radius: 12px; padding: 1.1rem 1.3rem; margin: 0.8rem 0 1.2rem; }
+        .how ol { margin-left: 1.2rem; color: #c8d6e5; }
+        .how li { margin: 0.35rem 0; }
+        .how code { color: #00d4ff; font-size: 0.95em; }
+        .btn {
+            display: inline-block; padding: 0.9rem 2.1rem;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            color: #0a0e17; text-decoration: none; border-radius: 50px; font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
+        .terms { color: #9fb0c6; font-size: 0.9rem; margin-top: 0.8rem; }
+        footer {
+            text-align: center; padding: 2rem;
+            background: #05070a; color: #666;
+            border-top: 1px solid #1e2a3a;
+        }
+        footer a.xlink {
+            display: inline-flex; align-items: center; gap: .5rem;
+            color: #fff; background: #000; border: 1px solid #444;
+            padding: .5rem 1.2rem; border-radius: 999px; text-decoration: none; font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .page-hero h1 { font-size: 2rem; }
+            .shots { grid-template-columns: 1fr; }
+            .game { padding: 1.4rem; }
+            table.controls th { width: 36%; }
+        }
+
+    </style>
+    <link rel="stylesheet" href="site-nav.css">
+    <script src="lang-switch.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="images/inreset_logo.png" alt="INRESET" style="height:40px;width:auto;display:block;"></a>
+            <ul>
+                <li><a href="index.html#about">会社概要</a></li>
+                <li><a href="index.html#services">サービス</a></li>
+                <li><a href="index.html#products">開発中の製品</a></li>
+                <li><a href="app.html">PCアプリ</a></li>
+                <li><a href="games.html" class="active">オリジナルゲーム</a></li>
+                <li><a href="blog.html">開発日記</a></li>
+                <li><a href="faq.html">よくある質問</a></li>
+                <li><a href="compat.html">対応表</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+            <a href="en/games.html" class="lang" lang="en" hreflang="en" aria-label="English version">🌐 English</a>
+        </nav>
+    </header>
+
+    <div class="page-hero" id="top">
+        <h1>オリジナルゲーム</h1>
+        <p class="lead">INRESETが制作した、メガドライブ用ソフトです。無料でダウンロードして遊べます。</p>
+        <div class="compat">
+            <div><strong>対応機種</strong>　MARK 16 および 一部のメガドライブ※エミュレーター</div>
+            <p class="note">すべてのエミュレーターでの動作を保証するものではありません。</p>
+        </div>
+    </div>
+
+    <section id="the-building">
+        <article class="game">
+            <div class="game-head">
+                <div>
+                    <h2>ザ・ビルディング</h2>
+                    <p class="subtitle">THE BUILDING　／　メガドライブ用ソフト（遊べる試作）</p>
+                </div>
+                <a class="btn" href="downloads/the_building.zip" download>ダウンロード</a>
+            </div>
+            <p>災害（地震と火事）に襲われた高層ビルで、会社員の主人公が2階から屋上まで登り、ヘリコプターで救出されるまでを遊びます。導入では、1階のロビーからエレベーターに乗り、2階に着いた直後に1階で大爆発が起きます（導入は START で飛ばせます）。</p>
+            <div class="shots">
+                <figure>
+                    <img src="images/games/building_title.png" alt="ザ・ビルディングのタイトル画面。夜の街と燃える高層ビル、ヘリコプター" width="800" height="555">
+                    <figcaption>タイトル画面</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/games/building_lobby.png" alt="導入の1階ロビー。受付を横切り、エレベーターへ向かう主人公" width="800" height="555">
+                    <figcaption>導入：1階ロビー</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/games/building_stage1.png" alt="ステージ1のオフィスフロア。下から火が迫り、主人公がエレベーターの前に立っている" width="800" height="555">
+                    <figcaption>ステージ1（2〜4階）</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/games/building_rooftop.png" alt="屋上。縄ばしごを下ろしたヘリコプターと、つかまれという表示" width="800" height="555">
+                    <figcaption>屋上：ヘリによる救出</figcaption>
+                </figure>
+            </div>
+            <h3>操作</h3>
+            <table class="controls">
+                <tr><th>十字キー 左右</th><td>歩く（だんだん速くなり、離すと少し滑って止まる）</td></tr>
+                <tr><th>A / B / C</th><td>ジャンプ（長く押すほど高く跳ぶ。はしごにつかまっている間は飛び降り）</td></tr>
+                <tr><th>十字キー 上・下</th><td>はしご・ロープを登る・降りる。空中で上を押していると、ふちにつかまる</td></tr>
+                <tr><th>十字キー 下</th><td>傾いた床で踏ん張る（すべり落ちない）</td></tr>
+                <tr><th>ぶら下がり中</th><td>上または前でよじ登る（下かボタンで手を離す）</td></tr>
+                <tr><th>ロープ中の A/B/C</th><td>手を離す（左右を押しながらなら、その向きへ跳び移る）</td></tr>
+                <tr><th>START</th><td>タイトルから導入へ。導入中にもう一度押すと飛ばして、2階のプレイ開始</td></tr>
+            </table>
+            <h3>内容</h3>
+            <ul class="feat">
+                <li>ステージは7つ（各4フロア、2階〜28階）と屋上です。上へ行くはしごを探して登ります。</li>
+                <li>残機は3。ミスすると、そのステージの最初からやり直しです。</li>
+                <li>迫りくる火事、炎、落下、ガス爆発、暴風、傾いた床、天井の破片などがあります。</li>
+                <li>絵と音楽、効果音はすべてINRESETのオリジナルです。</li>
+                <li>スコア・タイム・セーブ・ポーズは、まだありません。</li>
+            </ul>
+            <h3>MARK 16 での遊び方</h3>
+            <div class="how">
+                <ol>
+                    <li>microSDカードのルートに <code>MARK16</code> フォルダーを用意します（古い <code>MDTANG</code> フォルダーではありません）。</li>
+                    <li>ZIPを解凍し、<code>the_building.bin</code> を <code>MARK16/ROMS</code> へコピーします。</li>
+                    <li>カードを本体に入れ、ゲーム一覧から選んで遊びます。整理には <a href="app.html" style="color:#00d4ff">PCアプリ「Mark16Manager」</a> も使えます。</li>
+                </ol>
+            </div>
+            <p><a class="btn" href="downloads/the_building.zip" download>ザ・ビルディングをダウンロード</a></p>
+            <p class="terms">無料で遊べます。販売目的での再配布はご遠慮ください。ZIPにはROMと、操作・対応機種を書いた短い説明（日本語／英語）が入っています。</p>
+        </article>
+    </section>
+
+    <section id="simple-drum">
+        <article class="game">
+            <div class="game-head">
+                <div>
+                    <h2>シンプルドラム</h2>
+                    <p class="subtitle">SIMPLE DRUM　／　メガドライブ用ソフト</p>
+                </div>
+                <a class="btn" href="downloads/simple_drum.zip" download>ダウンロード</a>
+            </div>
+            <p>画面中央のドラムセットを、パッドの各ボタンで叩くだけのシンプルなドラムです。フリー演奏のほか、オリジナル3曲に合わせて叩けるセッションと、ボタンのわりあてを変えるオプションがあります。</p>
+            <div class="shots">
+                <figure>
+                    <img src="images/games/drum_title.png" alt="シンプルドラムのタイトル画面。フリー、セッション、オプションのメニューとドラムセット" width="800" height="555">
+                    <figcaption>タイトル画面</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/games/drum_play.png" alt="フリー演奏の画面。ドラムの各パーツにボタンのわりあてが表示されている" width="800" height="555">
+                    <figcaption>フリー演奏</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/games/drum_select.png" alt="セッションの曲選択画面。ロック8ビート、ハードシャッフル、スローブルース" width="800" height="555">
+                    <figcaption>セッション：曲の選択</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/games/drum_session.png" alt="セッション演奏中。キックを叩いた瞬間と、右側のギタリスト、左上のグルーヴメーター" width="800" height="555">
+                    <figcaption>セッション演奏中</figcaption>
+                </figure>
+            </div>
+            <h3>操作</h3>
+            <p>タイトルは「フリー／セッション／オプション」のメニューです。上下で選び、A／C／START で決定。プレイ中の START でタイトルに戻ります。MODE は使いません。</p>
+            <table class="controls">
+                <tr><th>A</th><td>バスドラム（キック）</td></tr>
+                <tr><th>B</th><td>スネア</td></tr>
+                <tr><th>C</th><td>フロアトム</td></tr>
+                <tr><th>X</th><td>ハイトム</td></tr>
+                <tr><th>Y</th><td>ミッドトム</td></tr>
+                <tr><th>Z</th><td>リム／クラップ</td></tr>
+                <tr><th>上</th><td>クラッシュシンバル</td></tr>
+                <tr><th>下</th><td>オープン・ハイハット</td></tr>
+                <tr><th>左</th><td>クローズド・ハイハット</td></tr>
+                <tr><th>右</th><td>ライドシンバル</td></tr>
+            </table>
+            <p>上の表は既定のわりあてです。オプションでパッド種別（AUTO／6ボタン／3ボタン）、かさねおと（オフ／オン、既定はオフ）、各入力の音色わりあてを変えられます。3ボタンパッドだけでもメニューは操作できます。設定は電源を切ると元に戻ります。</p>
+            <h3>セッション</h3>
+            <ul class="feat">
+                <li><code>1・ロック 8ビート</code>（既定 130 BPM）</li>
+                <li><code>2・ハード シャッフル</code>（既定 156 BPM）</li>
+                <li><code>3・スロー ブルース</code>（既定 84 BPM）</li>
+            </ul>
+            <p>左右でテンポを調整してスタートすると、4拍のカウントインのあと、リードギターとベース、パワーコードに合わせてドラムを自由に叩けます。右側にギタリスト、左上に拍とグルーヴメーターが出ます（失敗の判定はありません）。ドラムの音はすべて自作の合成音です。</p>
+            <h3>MARK 16 での遊び方</h3>
+            <div class="how">
+                <ol>
+                    <li>microSDカードのルートに <code>MARK16</code> フォルダーを用意します（古い <code>MDTANG</code> フォルダーではありません）。</li>
+                    <li>ZIPを解凍し、<code>simple_drum.bin</code> を <code>MARK16/ROMS</code> へコピーします。</li>
+                    <li>カードを本体に入れ、ゲーム一覧から選んで遊びます。整理には <a href="app.html" style="color:#00d4ff">PCアプリ「Mark16Manager」</a> も使えます。</li>
+                </ol>
+            </div>
+            <p><a class="btn" href="downloads/simple_drum.zip" download>シンプルドラムをダウンロード</a></p>
+            <p class="terms">無料で遊べます。販売目的での再配布はご遠慮ください。ZIPにはROMと、操作・対応機種を書いた短い説明（日本語／英語）が入っています。</p>
+        </article>
+    </section>
+
+    <footer>
+        <p style="margin-bottom:1rem"><a href="https://x.com/tellmit611" target="_blank" rel="noopener" class="xlink"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@tellmit611</a></p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「メガドライブ」「MEGA DRIVE」「GENESIS」は株式会社セガの登録商標です。INRESETのソフトはINRESETが独自に制作したものであり、株式会社セガとは一切関係がなく、同社による承認・保証を受けたものではありません。対応機種の説明のために名称を記載しています。</p>
+        <p>&copy; 2026 INRESET. All rights reserved.</p>
+    </footer>
+<div id="alice" style="position:fixed;right:16px;bottom:16px;z-index:999;display:flex;align-items:flex-start;gap:8px;font-size:14px;">
+<div id="alice-msg" style="background:#fff;color:#111;border:3px solid #e60012;border-radius:10px;padding:8px 12px;max-width:220px;box-shadow:0 4px 12px rgba(0,0,0,.4);position:relative;">アリスです。INRESETのオリジナルゲーム、遊んでみてください！<button onclick="document.getElementById('alice-msg').style.display='none'" aria-label="閉じる" style="position:absolute;top:-10px;right:-10px;width:22px;height:22px;border-radius:50%;border:none;background:#0047ab;color:#fff;cursor:pointer;line-height:22px;padding:0;">×</button></div>
+<img src="images/alice_full.png" alt="Alice" onclick="var b=document.getElementById('alice-msg');b.style.display=b.style.display==='none'?'block':'none'" style="height:180px;width:auto;image-rendering:pixelated;cursor:pointer;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));">
+</div>
+</body>
+</html>

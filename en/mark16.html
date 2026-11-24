@@ -150,6 +150,24 @@
         table.spec tr:last-child th, table.spec tr:last-child td { border-bottom: none; }
         .planned { color: #00d4ff; font-size: 0.9rem; margin-left: 0.4rem; }
 
+
+        .nobr { white-space:nowrap; }
+        .latency-lead { color:#b0c4de; text-align:center; max-width:52rem; margin:-1.5rem auto 2.5rem; }
+        @media (max-width:768px){ #latency h2 { font-size:1.85rem; } }
+        .latency-grid { display:grid; grid-template-columns:1.15fr 0.85fr; gap:2rem; align-items:start; }
+        .latency-grid figure { margin:0; background:#0d1520; border:1px solid #2a3a4a; border-radius:12px; overflow:hidden; }
+        .latency-grid img { width:100%; height:auto; display:block; }
+        .latency-grid figcaption { padding:.8rem 1rem; color:#7f8ea3; font-size:.85rem; }
+        table.latency { width:100%; border-collapse:collapse; margin-bottom:1.2rem; }
+        table.latency caption { text-align:left; color:#00d4ff; font-weight:bold; margin-bottom:.8rem; caption-side:top; }
+        table.latency th, table.latency td { text-align:left; padding:.75rem .6rem; border-bottom:1px solid #2a3a4a; vertical-align:top; }
+        table.latency thead th { color:#00d4ff; font-size:.9rem; }
+        table.latency tbody th { color:#00ff88; font-weight:bold; width:42%; }
+        table.latency td { font-variant-numeric:tabular-nums; }
+        table.latency tbody tr:last-child th, table.latency tbody tr:last-child td { border-bottom:none; }
+        table.latency tbody tr.avg { background:rgba(0,212,255,0.08); }
+        @media (max-width:900px){ .latency-grid{grid-template-columns:1fr;} }
+
         .notes { list-style: none; }
         .notes li { padding-left: 1.4rem; position: relative; margin-bottom: 0.6rem; color: #b0c4de; }
         .notes li::before { content: '※'; position: absolute; left: 0; color: #00d4ff; }
@@ -307,6 +325,39 @@
         </div>
     </section>
 
+
+    <section id="latency">
+        <h2>Input latency results</h2>
+        <p class="latency-lead">We measured input latency on a prototype unit with a dedicated test program. The test records the time from a controller state change to the next vertical blank (VBLANK), which is when a game reads the pad. Display or TV lag is not included.</p>
+        <div class="latency-grid">
+            <figure>
+                <img src="../images/mark16_lagtest_padpoll.jpg" alt="MARK 16 input-latency test screen (LAG TEST, PAD POLL mode). Average of 50 samples: 7.08 ms (0.42 frames)" width="1480" height="959" loading="lazy">
+                <figcaption>Prototype measurement. Our own test program, LAG TEST (mode 4/4, PAD POLL).</figcaption>
+            </figure>
+            <div>
+                <table class="latency">
+                    <caption>Results (50 samples)</caption>
+                    <thead>
+                        <tr><th>Item</th><th>Time</th><th>Frames</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th>LAST</th><td>9.08 ms</td><td>0.54 F</td></tr>
+                        <tr class="avg"><th>AVG</th><td>7.08 ms</td><td>0.42 F</td></tr>
+                        <tr><th>MIN</th><td>0.82 ms</td><td>0.04 F</td></tr>
+                        <tr><th>MAX</th><td>13.34 ms</td><td>0.80 F</td></tr>
+                    </tbody>
+                </table>
+                <ul class="notes">
+                    <li>The pad is polled about every 13 µs, and the time until the next VBLANK read (when the game sees the change) is recorded.</li>
+                    <li>One frame is about 16.7 ms (NTSC 60 Hz).</li>
+                    <li>The average is about 0.42 frames, and every sample was under 1 frame. This matches original hardware behavior, where the pad is read once per frame.</li>
+                    <li>TV or monitor display lag is not included. End-to-end delay to the picture on screen needs a separate method.</li>
+                    <li>These figures are from a prototype measurement.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <section id="crowdfunding">
         <h2>Crowdfunding planned</h2>
         <div class="panel" style="text-align: center;">
@@ -342,7 +393,7 @@
             <div class="faq-item"><h3>Can I use overseas (GENESIS*) cartridges?</h3><p>Yes. Overseas cartridges fit as they are. * We do not guarantee that all software will work.</p></div>
             <div class="faq-item"><h3>How does it connect to a TV?</h3><p>Through DV output. One cable carries both picture and sound to your TV or monitor.</p></div>
             <div class="faq-item"><h3>Is it an emulator?</h3><p>No. It is not software emulation: the original circuits are reproduced in an FPGA.</p></div>
-            <div class="faq-item"><h3>How much input latency is there?</h3><p>We have a dedicated measurement feature for latency. We will publish results measured on the prototype on this site later.</p></div>
+            <div class="faq-item"><h3>How much input latency is there?</h3><p>On a prototype unit, the delay from a controller change to the moment the game reads it averaged 7.08 ms (about 0.42 frames), and all 50 samples were under 1 frame. TV or monitor display lag is not included. See the <a href="#latency">input latency results</a> for details.</p></div>
             <div class="faq-item"><h3>When is the release, and what is the price?</h3><p>Crowdfunding for the console is planned for the first half of 2027. The price has not been decided yet. We will announce further details as soon as they are.</p></div>
             <div class="faq-item"><h3>Is a controller included?</h3><p>Mark 16 supports USB controllers (2 USB ports). Whether to include a controller is under consideration.</p></div>
             <div class="faq-item"><h3>Can I use an Xbox controller?</h3><p>Yes. Plug in a wired Xbox controller (XInput) to use it as an analog controller. On supported games such as After Burner II, the stick works like an XE-1AP analog pad; in regular games, it also works as the D-pad. The triggers are analog too: in supported games, RT (and right stick up) raises the throttle, and LT lowers it. Xbox Start (≡) is START, and the center Xbox button opens the console menu.</p></div>

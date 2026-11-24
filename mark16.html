@@ -150,6 +150,24 @@
         table.spec tr:last-child th, table.spec tr:last-child td { border-bottom: none; }
         .planned { color: #00d4ff; font-size: 0.9rem; margin-left: 0.4rem; }
 
+
+        .nobr { white-space:nowrap; }
+        .latency-lead { color:#b0c4de; text-align:center; max-width:52rem; margin:-1.5rem auto 2.5rem; }
+        @media (max-width:768px){ #latency h2 { font-size:1.85rem; } }
+        .latency-grid { display:grid; grid-template-columns:1.15fr 0.85fr; gap:2rem; align-items:start; }
+        .latency-grid figure { margin:0; background:#0d1520; border:1px solid #2a3a4a; border-radius:12px; overflow:hidden; }
+        .latency-grid img { width:100%; height:auto; display:block; }
+        .latency-grid figcaption { padding:.8rem 1rem; color:#7f8ea3; font-size:.85rem; }
+        table.latency { width:100%; border-collapse:collapse; margin-bottom:1.2rem; }
+        table.latency caption { text-align:left; color:#00d4ff; font-weight:bold; margin-bottom:.8rem; caption-side:top; }
+        table.latency th, table.latency td { text-align:left; padding:.75rem .6rem; border-bottom:1px solid #2a3a4a; vertical-align:top; }
+        table.latency thead th { color:#00d4ff; font-size:.9rem; }
+        table.latency tbody th { color:#00ff88; font-weight:bold; width:42%; }
+        table.latency td { font-variant-numeric:tabular-nums; }
+        table.latency tbody tr:last-child th, table.latency tbody tr:last-child td { border-bottom:none; }
+        table.latency tbody tr.avg { background:rgba(0,212,255,0.08); }
+        @media (max-width:900px){ .latency-grid{grid-template-columns:1fr;} }
+
         .notes { list-style: none; }
         .notes li { padding-left: 1.4rem; position: relative; margin-bottom: 0.6rem; color: #b0c4de; }
         .notes li::before { content: '※'; position: absolute; left: 0; color: #00d4ff; }
@@ -307,6 +325,39 @@
         </div>
     </section>
 
+
+    <section id="latency">
+        <h2>入力遅延の測定結果</h2>
+        <p class="latency-lead">専用のテストソフトで、試作機の入力遅延を測りました。コントローラーの変化をゲームが読むまでの時間です。<span class="nobr">表示の遅れは含まれません。</span></p>
+        <div class="latency-grid">
+            <figure>
+                <img src="images/mark16_lagtest_padpoll.jpg" alt="MARK 16の入力遅延テスト画面（LAG TEST、PAD POLLモード）。50回測定の平均は7.08ms（0.42フレーム）" width="1480" height="959" loading="lazy">
+                <figcaption>試作機での測定画面。自作のテストソフト「LAG TEST」（モード 4/4 PAD POLL）</figcaption>
+            </figure>
+            <div>
+                <table class="latency">
+                    <caption>測定結果（50回）</caption>
+                    <thead>
+                        <tr><th>項目</th><th>時間</th><th>フレーム</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th>LAST（直前）</th><td>9.08ms</td><td>0.54F</td></tr>
+                        <tr class="avg"><th>AVG（平均）</th><td>7.08ms</td><td>0.42F</td></tr>
+                        <tr><th>MIN（最小）</th><td>0.82ms</td><td>0.04F</td></tr>
+                        <tr><th>MAX（最大）</th><td>13.34ms</td><td>0.80F</td></tr>
+                    </tbody>
+                </table>
+                <ul class="notes">
+                    <li>パッドの変化を約13マイクロ秒ごとに<span class="nobr">読み取り</span>、次のVBLANKでゲームがそれを読むまでの時間を記録しています。</li>
+                    <li>1フレームは約16.7ms（NTSC 60Hz）です。</li>
+                    <li>平均は約0.42フレームで、50回すべて1フレーム未満でした。元のゲーム機と同じく、パッドを1フレームに1回読む動きに相当します。</li>
+                    <li><span class="nobr">テレビやモニター</span>の<span class="nobr">表示遅延</span>は<span class="nobr">含まれません</span>。画面に映るまでの全体の遅れは、別の方法で測る必要があります。</li>
+                    <li>試作機での測定です。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <section id="crowdfunding">
         <h2>クラウドファンディング予定</h2>
         <div class="panel" style="text-align: center;">
@@ -345,7 +396,7 @@
             <div class="faq-item"><h3>海外版（GENESIS※）のカートリッジも使えますか？</h3><p>はい。海外版のカートリッジもそのまま差し込めます。※すべてのソフトの動作を保証するものではありません。</p></div>
             <div class="faq-item"><h3>テレビにはどうつなぎますか？</h3><p>DV出力です。映像と音声を1本のケーブルでまとめて、テレビやモニターへ出力します。</p></div>
             <div class="faq-item"><h3>エミュレーターですか？</h3><p>いいえ。ソフトウェアによるエミュレーションではなく、FPGAで回路そのものを再現しています。</p></div>
-            <div class="faq-item"><h3>入力の遅延はどのくらいですか？</h3><p>遅延を測るための専用の測定機能を用意しています。試作機で測定した結果を、後日このサイトで公開します。</p></div>
+            <div class="faq-item"><h3>入力の遅延はどのくらいですか？</h3><p>試作機で測定した結果、コントローラーの変化をゲームが読むまでの遅れは平均7.08ms（約0.42フレーム）で、50回の測定はすべて1フレーム未満でした。テレビやモニターの表示遅延は含まれません。くわしくは<a href="#latency">入力遅延の測定結果</a>をご覧ください。</p></div>
             <div class="faq-item"><h3>発売日と価格は？</h3><p>本体のクラウドファンディングは2027年上半期を予定しています。価格は未定です。詳細が決まりしだいお知らせします。</p></div>
             <div class="faq-item"><h3>コントローラーは付属しますか？</h3><p>USBコントローラーに対応しています（USBポート × 2）。コントローラーを付属するかどうかは検討中です。</p></div>
             <div class="faq-item"><h3>Xboxコントローラーは使えますか？</h3><p>はい。有線のXboxコントローラー（XInput）を挿すと、アナログコントローラーとして使えます。スティックは、アフターバーナーIIなど対応ソフトではXE-1AP（アナログジョイパッド）と同じアナログ操作になり、ふつうのゲームでは十字キーとしても使えます。トリガーもアナログで、対応ソフトではRT（と右スティック上）で加速、LTで減速（スロットル）できます。スタート（≡）はSTART、中央のXboxボタンで本体メニューを開けます。</p></div>

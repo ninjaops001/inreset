@@ -258,7 +258,7 @@
             </div>
             <div class="service-card">
                 <h3>Save states</h3>
-                <p>On development units, you can store your progress in slots and resume later. Save data and screenshots are stored on a microSD card. Some software still has problems.</p>
+                <p>You can store your progress in slots and resume later. Save states remain after the console is switched off. Original in-game saves (such as SRAM) are also supported. Data is stored on a microSD card. We have confirmed this on hardware. We do not guarantee that every title will work.</p>
             </div>
             <div class="service-card">
                 <h3>USB controllers</h3>
@@ -269,8 +269,8 @@
                 <p>Firmware can be updated from a microSD card, via Settings → Console update.</p>
             </div>
             <div class="service-card">
-                <h3>Master System compatible software</h3>
-                <p>Mark 16 also supports Master System* compatible software. We have confirmed this on hardware, but we do not guarantee that every title will work. Game Gear* and SG-1000* compatible software is still being prototyped, and hardware checks are still to come. The cores are based on open-source projects (GPL), and we will publish the source.</p>
+                <h3>Master System and SG-1000 compatible software</h3>
+                <p>Mark 16 also supports Master System* and SG-1000* compatible software. We have confirmed this on hardware, but we do not guarantee that every title will work. Game Gear* compatible software is still being checked on hardware. The cores are based on open-source projects (GPL), and we will publish the source.</p>
             </div>
             <div class="service-card">
                 <h3>Per-system volume</h3>
@@ -295,7 +295,7 @@
         <p class="sub">The development menu has “Boot cartridge”, “Game list”, “Save cartridge”, and “Settings”. Settings also include a per-system volume item. Firmware updates are applied from Settings → Console update. You can switch between Japanese and English. The settings and volume images are from a newer build; the game library and controller settings are from an earlier build (v41d2).</p>
         <div class="menu-grid">
             <figure><img src="../images/mark16_menu_sd_en.png" alt="Mark 16 game library (English, in development)"><figcaption>Game library (microSD): English titles and intros. The default thumbnail is a retro horizon.</figcaption></figure>
-            <figure><img src="../images/mark16_menu_settings_v46a_en.png" alt="Mark 16 settings screen (English, in development)"><figcaption>Settings: aspect ratio, language, and auto boot, plus a per-system volume item.</figcaption></figure>
+            <figure><img src="../images/mark16_menu_settings_site_en.png" alt="Mark 16 settings screen (English, in development)"><figcaption>Settings: aspect ratio, language, and auto boot, plus a per-system volume item.</figcaption></figure>
             <figure><img src="../images/mark16_menu_controller_en.png" alt="Mark 16 controller settings (English, in development)"><figcaption>Controller settings: button mapping, turbo, 3/6-button mode</figcaption></figure>
             <figure><img src="../images/mark16_menu_volume_en.png" alt="Mark 16 volume settings (English, in development)"><figcaption>Volume settings: 50–200% per system. 100% is the usual level. Confirmed on hardware.</figcaption></figure>
         </div>
@@ -350,13 +350,13 @@
         <div class="panel">
             <table class="spec">
                 <tr><th>Method</th><td>Circuit reproduction in FPGA</td></tr>
-                <tr><th>Supported software</th><td>MEGA DRIVE* / GENESIS* cartridges (Japanese and overseas), and games on a microSD card<br>Master System* compatible software (confirmed on hardware; we do not guarantee that every title will work)<br>Game Gear* / SG-1000* compatible software<span class="planned">(in prototype; hardware checks still to come)</span><br>See the <a href="compat.html">compatibility list</a> for titles checked on hardware</td></tr>
+                <tr><th>Supported software</th><td>MEGA DRIVE* / GENESIS* cartridges (Japanese and overseas), and games on a microSD card<br>Master System* / SG-1000* compatible software (confirmed on hardware; we do not guarantee that every title will work)<br>Game Gear* compatible software<span class="planned">(being checked on hardware)</span><br>See the <a href="compat.html">compatibility list</a> for titles checked on hardware</td></tr>
                 <tr><th>Cartridge loading</th><td>Top loading</td></tr>
                 <tr><th>Video / audio output</th><td>DV output (video + audio)</td></tr>
                 <tr><th>Controllers</th><td>USB ports &times; 2 (two-player)</td></tr>
                 <tr><th>Power</th><td>USB Type-C</td></tr>
                 <tr><th>Storage</th><td>microSD card (root folder <code>/MARK16</code>; saves, screenshots, updates) and the console’s built-in flash (for games)</td></tr>
-                <tr><th>Functions</th><td>Save states (slots), screenshots, firmware updates from microSD, per-system volume (50–200%)</td></tr>
+                <tr><th>Functions</th><td>Save states (slots; they remain after power-off), original in-game saves (such as SRAM), screenshots, firmware updates from microSD, per-system volume (50–200%)</td></tr>
                 <tr><th>Menu languages</th><td>Japanese / English</td></tr>
                 <tr><th>Sold separately</th><td>AC adapter<br>Controller<span class="planned">(bundling under consideration)</span></td></tr>
             </table>
@@ -435,7 +435,7 @@
         <h2>FAQ</h2>
             <p class="faq-more">For compatible consoles, FPGAs, patents, trademarks, and copyright, see the <a href="faq.html">Q&amp;A page</a>.</p>
             <div class="faq-item"><h3>Is a compatible console illegal?</h3><p>Making hardware that works the same way is not, by itself, generally illegal. See <a href="faq.html#legal">Q&amp;A: “Is a compatible console illegal?”</a> for a careful explanation.</p></div>
-            <div class="faq-item"><h3>Which software works?</h3><p>Most MEGA DRIVE* / GENESIS* software runs, but we do not guarantee that every title will work. Titles checked on hardware are listed on the <a href="compat.html">compatibility list</a>. Mark 16 also supports Master System* compatible software, which we have confirmed on hardware (we do not guarantee that every title will work). Game Gear* and SG-1000* compatible software is still being prototyped.</p></div>
+            <div class="faq-item"><h3>Which software works?</h3><p>Most MEGA DRIVE* / GENESIS* software runs, but we do not guarantee that every title will work. Titles checked on hardware are listed on the <a href="compat.html">compatibility list</a>. Mark 16 also supports Master System* and SG-1000* compatible software, which we have confirmed on hardware (we do not guarantee that every title will work). Game Gear* compatible software is still being checked on hardware.</p></div>
             <div class="faq-item"><h3>Can I use overseas (GENESIS*) cartridges?</h3><p>Yes. Overseas cartridges fit as they are. * We do not guarantee that all software will work.</p></div>
             <div class="faq-item"><h3>How does it connect to a TV?</h3><p>Through DV output. One cable carries both picture and sound to your TV or monitor.</p></div>
             <div class="faq-item"><h3>Is it an emulator?</h3><p>No. It is not software emulation: the original circuits are reproduced in an FPGA.</p></div>
@@ -444,7 +444,7 @@
             <div class="faq-item"><h3>Is a controller included?</h3><p>Mark 16 supports USB controllers (2 USB ports). Whether to include a controller is under consideration.</p></div>
             <div class="faq-item"><h3>Can I use an Xbox controller?</h3><p>Yes. Plug in a wired Xbox controller (XInput) to use it as an analog controller. On supported games such as After Burner II, the stick works like an XE-1AP analog pad; in regular games, it also works as the D-pad. The triggers are analog too: in supported games, RT (and right stick up) raises the throttle, and LT lowers it. Xbox Start (≡) is START, and the center Xbox button opens the console menu.</p></div>
             <div class="faq-item"><h3>Can I change the volume?</h3><p>Yes. In Settings, you can adjust volume per system from 50% to 200%. 100% is the usual level. The chosen value is stored on the console for each system. We have confirmed this on hardware.</p></div>
-            <div class="faq-item"><h3>Does it support save states?</h3><p>Yes, on development units. You can store your progress in slots and resume later. Some software still has problems. Saves and save states can be backed up to a computer with the <a href="app.html">PC app</a>.</p></div>
+            <div class="faq-item"><h3>Does it support save states?</h3><p>Yes. You can store your progress in slots and resume later. Save states remain after the console is switched off. Original in-game saves (such as SRAM) are also supported. We have confirmed this on hardware. We do not guarantee that every title will work. Saves and save states can be backed up to a computer with the <a href="app.html">PC app</a>.</p></div>
     </section>
 
     <section id="contact" class="contact">

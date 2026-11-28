@@ -164,6 +164,10 @@
         .entry img { width: 100%; max-width: 560px; display: block; margin: 1.2rem auto 0.4rem; border-radius: 12px; border: 1px solid #1e2a3a; image-rendering: pixelated; }
         .entry img.photo { image-rendering: auto; }
         .entry figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; }
+        .diary-pics { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.2rem; }
+        .diary-pics figure { margin:0; }
+        .diary-pics img { width:100%; max-width:none; margin:0.2rem 0 0.4rem; }
+        @media (max-width:700px){ .diary-pics{grid-template-columns:1fr;} }
         .page-head { padding-top: 8rem; padding-bottom: 2rem; text-align: center; }
         .page-head p { color: #9fb0c6; }
     </style>
@@ -196,6 +200,22 @@
     </section>
 
     <section id="diary" style="padding-top:1rem">
+                <article class="entry">
+            <time datetime="2026-11-29">2026.11.29</time>
+            <h3>ケースとソフトの改善を進めています</h3>
+            <p>販売準備中の Mark 16 について、このところ進めたことをまとめます。</p>
+            <p>3Dプリントのケースでは、前面の電源つまみ、LEDの光を前面に出す導光棒、天面左の MARK 16 ロゴ（浮き彫り）を入れています。microSD の差し込み口は、下ケースだけで四方を囲む形にしています。図の色分け（上下の灰色、赤いつまみ、青いボタン）は、部品を見分けるためのもので、製品の色ではありません。形は、まだ変わることがあります。</p>
+            <div class="diary-pics">
+                <figure><img class="photo" src="images/mark16_case_draft_front.jpg" alt="開発中のMark 16ケースを斜め前から見た3Dイメージ"><figcaption>斜め前から見た、開発中のケース</figcaption></figure>
+                <figure><img class="photo" src="images/mark16_case_draft_ports.jpg" alt="開発中のMark 16ケース正面"><figcaption>正面。USB、microSD、導光棒の穴、電源つまみ</figcaption></figure>
+                <figure><img class="photo" src="images/mark16_case_draft_sd.jpg" alt="microSDの差し込み口。カードが少し出た状態"><figcaption>microSDの差し込み口（下ケースだけで囲む）</figcaption></figure>
+                <figure><img class="photo" src="images/mark16_case_draft_knob.jpg" alt="前面の電源つまみのアップ"><figcaption>電源つまみ（赤は説明用の色です）</figcaption></figure>
+            </div>
+            <p>基板は、改良した版を発注し、製造を進めています。いま公開している初号機の写真は、以前の基板とケースです。</p>
+            <p>ソフト面では、マスターシステム※互換のソフトを実機で遊べることを確認しました。ゲームギア※とSG-1000※互換は、まだ実機確認の途中です。また、機種ごとに音量を 50〜200% で変えられる設定は、実機でも使えることを確認しました。100% がふつうの大きさで、以前と同じ音のはずです。</p>
+            <figure><img src="images/mark16_menu_volume_ja.png" alt="Mark 16 の音量設定画面（日本語）"><figcaption>音量設定画面（実機でも確認済み）</figcaption></figure>
+            <p>コアはオープンソース（GPL）をもとに改修しており、ソースは公開します。くわしくは、<a href="mark16.html" style="color:#00d4ff">Mark 16 の紹介ページ</a>と<a href="faq.html" style="color:#00d4ff">よくある質問</a>をご覧ください。</p>
+        </article>
                 <article class="entry">
             <time datetime="2026-11-22">2026.11.22</time>
             <h3>初号機が完成しました</h3>
@@ -317,7 +337,7 @@
 
     <footer>
         <p style="margin-bottom:1rem"><a href="https://x.com/tellmit611" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;background:#000;border:1px solid #444;padding:.5rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:bold"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@tellmit611</a></p>
-        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「メガドライブ」「MEGA DRIVE」は株式会社セガの登録商標です。INRESETの製品は独自に開発したものであり、株式会社セガとは一切関係がなく、同社による承認・保証を受けたものではありません。</p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「メガドライブ」「MEGA DRIVE」「マスターシステム」「MASTER SYSTEM」「ゲームギア」「GAME GEAR」「SG-1000」は株式会社セガの登録商標です。INRESETの製品は独自に開発したものであり、株式会社セガとは一切関係がなく、同社による承認・保証を受けたものではありません。互換性の説明のために名称を記載しています。</p>
         <p>&copy; 2026 INRESET. All rights reserved.</p>
     </footer>
 <div id="alice" style="position:fixed;right:16px;bottom:16px;z-index:999;display:flex;align-items:flex-start;gap:8px;font-size:14px;">

@@ -212,6 +212,7 @@
             <li><a href="#games">Which software works?</a></li>
             <li><a href="#saves">Can I save?</a></li>
             <li><a href="#screenshots">Can I take screenshots?</a></li>
+            <li><a href="#volume">Can I change the volume?</a></li>
             <li><a href="#controllers">What about controllers?</a></li>
             <li><a href="#sales">Will it go on sale?</a></li>
         </ol>
@@ -257,7 +258,7 @@
                 <div class="rights-box">
                     <h4>Trademarks</h4>
                     <p>A trademark protects names, logos, and similar signs that identify whose product or service it is. You must not use another party’s name or logo in a way that makes a product look official when it is not.</p>
-                    <p>How this relates to Mark 16: the console uses INRESET’s own name and logo. Other companies’ product names are used only to describe compatibility, and we do not use official logos. Mark 16 is not an official SEGA product and is not affiliated with, approved, or endorsed by SEGA. “MEGA DRIVE,” “GENESIS,” and related names are registered trademarks of SEGA CORPORATION.</p>
+                    <p>How this relates to Mark 16: the console uses INRESET’s own name and logo. Other companies’ product names are used only to describe compatibility, and we do not use official logos. Mark 16 is not an official SEGA product and is not affiliated with, approved, or endorsed by SEGA. “MEGA DRIVE,” “GENESIS,” “MASTER SYSTEM,” “GAME GEAR,” “SG-1000,” and related names are registered trademarks of SEGA CORPORATION.</p>
                 </div>
 
                 <div class="rights-box">
@@ -267,13 +268,15 @@
                 </div>
 
                 <h4>Open-source credits</h4>
-                <p>Mark 16’s FPGA circuits are based on the following open-source projects, which INRESET has modified and integrated. The Pico-side software is written by INRESET and also uses publicly available development software.</p>
+                <p>Mark 16’s FPGA circuits are based on the following open-source projects, which INRESET has modified and integrated. The console software that handles the menu, SD card, controllers, and saves is written by INRESET and also uses publicly available development software. Cores for Master System*, Game Gear*, and SG-1000* compatibility are also based on these open-source projects. The cores are GPL, and we will publish the source.</p>
                 <ul class="credits">
                     <li><a href="https://github.com/nand2mario/mdtang" target="_blank" rel="noopener">MDTang</a> — Copyright (c) nand2mario — GPL-3.0</li>
                     <li><a href="https://github.com/MiSTer-devel/Genesis_MiSTer" target="_blank" rel="noopener">Genesis_MiSTer</a> — Copyright (c) Gregory Estrade, Till Harbaum, Alexey Melnikov (Sorgelig) and others — GPL-3.0 / BSD</li>
                     <li><a href="https://github.com/ijor/fx68k" target="_blank" rel="noopener">fx68k</a> (68000 CPU) — Copyright (c) 2018 Jorge Cwik — GPL-3.0</li>
                     <li><a href="https://github.com/jotego/jt12" target="_blank" rel="noopener">jt12</a> (YM2612 sound) — Copyright (c) Jose Tejada (jotego) — GPL-3.0</li>
                     <li><a href="https://github.com/jotego/jt89" target="_blank" rel="noopener">jt89</a> (SN76489 sound) — Copyright (c) Jose Tejada (jotego) — GPL-3.0</li>
+                    <li><a href="https://github.com/MiSTer-devel/SMS_MiSTer" target="_blank" rel="noopener">SMS_MiSTer</a> — Copyright (c) 2019 Sorgelig and others — GPL-2.0 or later</li>
+                    <li><a href="https://github.com/ika-musume/IKAOPLL" target="_blank" rel="noopener">IKAOPLL</a> (YM2413 sound) — Copyright (c) 2023 Raki (Sehyeon Kim) — BSD-2-Clause</li>
                     <li>T80 (Z80 CPU) — Copyright (c) 2001-2002 Daniel Wallner, 2018 Sorgelig — BSD</li>
                     <li>VDP (video) — Copyright (c) 2010 Gregory Estrade, 2018 Till Harbaum, 2018-2019 Alexey Melnikov — BSD</li>
                     <li>genesis_lpf / audio_iir_filter — Copyright (c) 2019 Gregory Hogan — MIT</li>
@@ -344,7 +347,7 @@
             <h3>Which software works?</h3>
             <div class="answer">
                 <p>Most MEGA DRIVE* / GENESIS* software runs. Mark 16 supports domestic and overseas cartridges, and games on a microSD card (root folder <code>/MARK16</code>) or in the console’s built-in flash. The menu’s “Save cartridge” item can store an inserted cartridge to the card or to built-in flash.</p>
-                <p>Compatibility is still being tested, and we do not guarantee that every title will work. Titles checked on hardware are listed on the <a href="compat.html">software compatibility list</a>. Support for Master System* and other 8-bit systems is also planned.</p>
+                <p>Compatibility is still being tested, and we do not guarantee that every title will work. Titles checked on hardware are listed on the <a href="compat.html">software compatibility list</a>. Mark 16 also supports Master System* compatible software, which we have confirmed on hardware. We do not guarantee that every title will work. Game Gear* and SG-1000* compatible software is still being prototyped, and hardware checks are still to come. Titles will be added to the list after they have been checked.</p>
             </div>
         </article>
 
@@ -363,6 +366,14 @@
             </div>
         </article>
 
+
+        <article class="faq-item" id="volume">
+            <h3>Can I change the volume?</h3>
+            <div class="answer">
+                <p>Yes. In Settings, you can adjust volume per system — MEGA DRIVE*, Master System*, Game Gear*, and SG-1000* — from 50% to 200%. 100% is the usual level. The chosen value is stored on the console for each system. We have confirmed this on hardware.</p>
+                <p>The look of the screens may still change in the final product.</p>
+            </div>
+        </article>
         <article class="faq-item" id="controllers">
             <h3>What about controllers?</h3>
             <div class="answer">
@@ -374,7 +385,7 @@
             <h3>Will it go on sale?</h3>
             <div class="answer">
                 <p>Crowdfunding for the console is planned for the first half of 2027. The price has not been decided yet. We will announce further details on this site when they are.</p>
-                <p>Current development and promotional units use the v2 main board. The retail product’s specifications may change.</p>
+                <p>Current development and promotional units use an earlier main board. An improved board is now being manufactured. The retail product’s specifications may change.</p>
                 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdTArvIRJB6kyIP8iQhwwh_5KxHuNYF3dFc2M2ThSJWB8huwA/viewform" target="_blank" rel="noopener">Get an email when it starts</a> (we will use your address only for this notice).</p>
                 <p>For the current specifications, see the <a href="mark16.html">Mark 16 page</a>.</p>
             </div>
@@ -390,7 +401,7 @@
 
     <footer>
         <p style="margin-bottom:1rem"><a href="https://x.com/tellmit611" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;background:#000;border:1px solid #444;padding:.5rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:bold"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@tellmit611</a></p>
-        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">* "MEGA DRIVE", "GENESIS", "MASTER SYSTEM", "MEGA-CD" and "SEGA SATURN" are registered trademarks of SEGA CORPORATION. Mark 16 is a product developed independently by INRESET and is not affiliated with, approved, or endorsed by SEGA CORPORATION. These names are used only to describe compatibility.</p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">* "MEGA DRIVE", "GENESIS", "MASTER SYSTEM", "GAME GEAR", "SG-1000", "MEGA-CD" and "SEGA SATURN" are registered trademarks of SEGA CORPORATION. Mark 16 is a product developed independently by INRESET and is not affiliated with, approved, or endorsed by SEGA CORPORATION. These names are used only to describe compatibility.</p>
         <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">* "Xbox" is a trademark of Microsoft Corporation. "XE-1AP" is a trademark of Dempa Publications, Inc. (電波新聞社).</p>
         <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">This page is general information, not legal advice.</p>
         <p>&copy; 2026 INRESET. All rights reserved.</p>

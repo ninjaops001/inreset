@@ -212,6 +212,7 @@
             <li><a href="#games">どんなソフトが動く？</a></li>
             <li><a href="#saves">セーブはできる？</a></li>
             <li><a href="#screenshots">スクリーンショットは撮れる？</a></li>
+            <li><a href="#volume">音量は変えられる？</a></li>
             <li><a href="#controllers">コントローラーは？</a></li>
             <li><a href="#sales">販売する？</a></li>
         </ol>
@@ -257,7 +258,7 @@
                 <div class="rights-box">
                     <h4>商標（しょうひょう）</h4>
                     <p>商品やサービスの名前、ロゴなど、「だれの商品かを見分ける印」を守る権利です。ほかの人の名前やロゴを、公式製品であるかのように使うことはできません。</p>
-                    <p>Mark 16との関係：本体の名前とロゴは、INRESET独自のものです。他社の商品名は、互換性を説明するためにだけ使い、公式ロゴは使いません。Mark 16はセガの公式製品ではなく、同社との関係・承認・保証もありません。「メガドライブ」「MEGA DRIVE」「GENESIS」は、株式会社セガの登録商標です。</p>
+                    <p>Mark 16との関係：本体の名前とロゴは、INRESET独自のものです。他社の商品名は、互換性を説明するためにだけ使い、公式ロゴは使いません。Mark 16はセガの公式製品ではなく、同社との関係・承認・保証もありません。「メガドライブ」「MEGA DRIVE」「GENESIS」「マスターシステム」「MASTER SYSTEM」「ゲームギア」「GAME GEAR」「SG-1000」などは、株式会社セガの登録商標です。</p>
                 </div>
 
                 <div class="rights-box">
@@ -267,13 +268,15 @@
                 </div>
 
                 <h4>オープンソースのクレジット</h4>
-                <p>Mark 16のFPGA回路は、次のオープンソースプロジェクトをもとに、INRESETが改修・統合しています。Pico側のソフトは、INRESETが作成し、公開されている開発用ソフトウェアも利用しています。</p>
+                <p>Mark 16のFPGA回路は、次のオープンソースプロジェクトをもとに、INRESETが改修・統合しています。メニューやSDカード、コントローラー、セーブを担う本体側のソフトは、INRESETが作成し、公開されている開発用ソフトウェアも利用しています。マスターシステム※／ゲームギア※／SG-1000※互換のコアも、これらのオープンソースをもとに改修しています。コアはGPLのため、ソースは公開します。</p>
                 <ul class="credits">
                     <li><a href="https://github.com/nand2mario/mdtang" target="_blank" rel="noopener">MDTang</a> — Copyright (c) nand2mario — GPL-3.0</li>
                     <li><a href="https://github.com/MiSTer-devel/Genesis_MiSTer" target="_blank" rel="noopener">Genesis_MiSTer</a> — Copyright (c) Gregory Estrade, Till Harbaum, Alexey Melnikov (Sorgelig) ほか — GPL-3.0 / BSD</li>
                     <li><a href="https://github.com/ijor/fx68k" target="_blank" rel="noopener">fx68k</a>（68000 CPU）— Copyright (c) 2018 Jorge Cwik — GPL-3.0</li>
                     <li><a href="https://github.com/jotego/jt12" target="_blank" rel="noopener">jt12</a>（YM2612 音源）— Copyright (c) Jose Tejada (jotego) — GPL-3.0</li>
                     <li><a href="https://github.com/jotego/jt89" target="_blank" rel="noopener">jt89</a>（SN76489 音源）— Copyright (c) Jose Tejada (jotego) — GPL-3.0</li>
+                    <li><a href="https://github.com/MiSTer-devel/SMS_MiSTer" target="_blank" rel="noopener">SMS_MiSTer</a> — Copyright (c) 2019 Sorgelig ほか — GPL-2.0 以降</li>
+                    <li><a href="https://github.com/ika-musume/IKAOPLL" target="_blank" rel="noopener">IKAOPLL</a>（YM2413 音源）— Copyright (c) 2023 Raki (Sehyeon Kim) — BSD-2-Clause</li>
                     <li>T80（Z80 CPU）— Copyright (c) 2001-2002 Daniel Wallner, 2018 Sorgelig — BSD</li>
                     <li>VDP（映像）— Copyright (c) 2010 Gregory Estrade, 2018 Till Harbaum, 2018-2019 Alexey Melnikov — BSD</li>
                     <li>genesis_lpf / audio_iir_filter — Copyright (c) 2019 Gregory Hogan — MIT</li>
@@ -344,7 +347,7 @@
             <h3>どんなソフトが動く？</h3>
             <div class="answer">
                 <p>多くのメガドライブ※／GENESIS※のソフトが動きます。国内版・海外版のカートリッジと、microSDカード（ルートフォルダーは <code>/MARK16</code>）や本体の内蔵フラッシュに入れたゲームに対応しています。メニューの「カートリッジ保存」で、差したカートリッジをカードや内蔵フラッシュへ保存できます。</p>
-                <p>ただし互換性はいまも確認を続けており、すべてのソフトの動作を保証するものではありません。実機で確認したソフトは、<a href="compat.html">ソフト対応リスト</a>にまとめています。マスターシステム※など8bit系への対応も予定しています。</p>
+                <p>ただし互換性はいまも確認を続けており、すべてのソフトの動作を保証するものではありません。実機で確認したソフトは、<a href="compat.html">ソフト対応リスト</a>にまとめています。マスターシステム※互換のソフトにも対応しており、実機でも動作を確認しています。すべてのソフトの動作を保証するものではありません。ゲームギア※／SG-1000※互換のソフトは、いま試作中で、実機での確認はこれから進めていきます。対応表への掲載は、確認が終わってからです。</p>
             </div>
         </article>
 
@@ -363,6 +366,14 @@
             </div>
         </article>
 
+
+        <article class="faq-item" id="volume">
+            <h3>音量は変えられる？</h3>
+            <div class="answer">
+                <p>はい。設定から、メガドライブ※、マスターシステム※、ゲームギア※、SG-1000※の音量を、それぞれ 50〜200% で変えられます。100% がふつうの大きさです。選んだ値は、機種ごとに本体へ保存されます。実機でも使えることを確認しています。</p>
+                <p>製品版では、画面の見た目などが変わる場合があります。</p>
+            </div>
+        </article>
         <article class="faq-item" id="controllers">
             <h3>コントローラーは？</h3>
             <div class="answer">
@@ -374,7 +385,7 @@
             <h3>販売する？</h3>
             <div class="answer">
                 <p>本体のクラウドファンディングは2027年上半期を予定しています。価格はまだ決まっていません。詳細が決まりしだい、このサイトでお知らせします。</p>
-                <p>いまの開発・宣伝用の試作機は、メイン基板 v2 を使っています。製品版の仕様は変わる場合があります。</p>
+                <p>いまの開発・宣伝用の試作機は、以前のメイン基板を使っています。改良した基板は、いま製造を進めています。製品版の仕様は変わる場合があります。</p>
                 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdTArvIRJB6kyIP8iQhwwh_5KxHuNYF3dFc2M2ThSJWB8huwA/viewform" target="_blank" rel="noopener">開始をメールで受け取る</a>（メールアドレスはお知らせ以外には使いません）</p>
                 <p>くわしい仕様は、<a href="mark16.html">Mark 16の紹介ページ</a>をご覧ください。</p>
             </div>
@@ -390,7 +401,7 @@
 
     <footer>
         <p style="margin-bottom:1rem"><a href="https://x.com/tellmit611" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;background:#000;border:1px solid #444;padding:.5rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:bold"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@tellmit611</a></p>
-        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「メガドライブ」「MEGA DRIVE」「GENESIS」「マスターシステム」「MASTER SYSTEM」「メガCD」「MEGA-CD」「セガサターン」「SEGA SATURN」は株式会社セガの登録商標です。Mark 16はINRESETが独自に開発した製品であり、株式会社セガとは一切関係がなく、同社による承認・保証を受けたものではありません。互換性の説明のために名称を記載しています。</p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「メガドライブ」「MEGA DRIVE」「GENESIS」「マスターシステム」「MASTER SYSTEM」「ゲームギア」「GAME GEAR」「SG-1000」「メガCD」「MEGA-CD」「セガサターン」「SEGA SATURN」は株式会社セガの登録商標です。Mark 16はINRESETが独自に開発した製品であり、株式会社セガとは一切関係がなく、同社による承認・保証を受けたものではありません。互換性の説明のために名称を記載しています。</p>
         <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">※「Xbox」は Microsoft Corporation の商標です。「XE-1AP」は株式会社電波新聞社の商標です。</p>
         <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">このページの説明は一般的な情報であり、法的な助言ではありません。</p>
         <p>&copy; 2026 INRESET. All rights reserved.</p>

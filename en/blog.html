@@ -164,6 +164,10 @@
         .entry img { width: 100%; max-width: 560px; display: block; margin: 1.2rem auto 0.4rem; border-radius: 12px; border: 1px solid #1e2a3a; image-rendering: pixelated; }
         .entry img.photo { image-rendering: auto; }
         .entry figcaption { text-align: center; color: #7f8ea3; font-size: 0.85rem; }
+        .diary-pics { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.2rem; }
+        .diary-pics figure { margin:0; }
+        .diary-pics img { width:100%; max-width:none; margin:0.2rem 0 0.4rem; }
+        @media (max-width:700px){ .diary-pics{grid-template-columns:1fr;} }
         .page-head { padding-top: 8rem; padding-bottom: 2rem; text-align: center; }
         .page-head p { color: #9fb0c6; }
     </style>
@@ -196,6 +200,22 @@
     </section>
 
     <section id="diary" style="padding-top:1rem">
+                <article class="entry">
+            <time datetime="2026-11-29">2026.11.29</time>
+            <h3>Case and software improvements underway</h3>
+            <p>A short update on Mark 16, which is preparing for launch.</p>
+            <p>On the 3D-printed case, we have added a front power knob, light pipes that carry the LED glow to the front, and a raised MARK 16 logo on the top left. The microSD opening is now fully enclosed by the bottom case. The colours in the images (two-tone grey, a red knob, and a blue button) are only to tell the parts apart — they are not the product colours. The shape may still change.</p>
+            <div class="diary-pics">
+                <figure><img class="photo" src="../images/mark16_case_draft_front.jpg" alt="Work-in-progress Mark 16 case, front three-quarter 3D view"><figcaption>Work-in-progress case, front three-quarter view</figcaption></figure>
+                <figure><img class="photo" src="../images/mark16_case_draft_ports.jpg" alt="Front of the work-in-progress Mark 16 case"><figcaption>Front: USB, microSD, light-pipe holes, and power knob</figcaption></figure>
+                <figure><img class="photo" src="../images/mark16_case_draft_sd.jpg" alt="microSD opening with the card slightly extended"><figcaption>microSD opening, enclosed by the bottom case</figcaption></figure>
+                <figure><img class="photo" src="../images/mark16_case_draft_knob.jpg" alt="Close-up of the front power knob"><figcaption>Power knob (red is an explanatory colour only)</figcaption></figure>
+            </div>
+            <p>An improved board has been ordered and is now being manufactured. The first-unit photo already on this site uses the earlier board and case.</p>
+            <p>On the software side, we have confirmed that Master System* compatible software runs on hardware. Game Gear* and SG-1000* compatibility is still being checked on hardware. We have also confirmed a per-system volume setting from 50% to 200% on hardware. 100% is the usual level, and should sound the same as before.</p>
+            <figure><img src="../images/mark16_menu_volume_en.png" alt="Mark 16 volume settings screen (English)"><figcaption>Volume settings screen (confirmed on hardware)</figcaption></figure>
+            <p>The cores are based on open-source projects (GPL), and we will publish the source. See the <a href="mark16.html" style="color:#00d4ff">Mark 16 page</a> and the <a href="faq.html" style="color:#00d4ff">Q&amp;A</a> for more.</p>
+        </article>
                 <article class="entry">
             <time datetime="2026-11-22">2026.11.22</time>
             <h3>First unit complete</h3>
@@ -317,7 +337,7 @@
 
     <footer>
         <p style="margin-bottom:1rem"><a href="https://x.com/tellmit611" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;background:#000;border:1px solid #444;padding:.5rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:bold"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@tellmit611</a></p>
-        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">* "MEGA DRIVE" and "GENESIS" are registered trademarks of SEGA CORPORATION. INRESET products are developed independently and are not affiliated with, approved, or endorsed by SEGA CORPORATION. These names are used only to describe compatibility.</p>
+        <p style="font-size:0.8rem;max-width:800px;margin:0 auto 1rem;line-height:1.6">* "MEGA DRIVE", "GENESIS", "MASTER SYSTEM", "GAME GEAR" and "SG-1000" are registered trademarks of SEGA CORPORATION. INRESET products are developed independently and are not affiliated with, approved, or endorsed by SEGA CORPORATION. These names are used only to describe compatibility.</p>
         <p>&copy; 2026 INRESET. All rights reserved.</p>
     </footer>
 <div id="alice" style="position:fixed;right:16px;bottom:16px;z-index:999;display:flex;align-items:flex-start;gap:8px;font-size:14px;">
